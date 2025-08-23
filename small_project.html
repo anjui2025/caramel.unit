@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6QKWZMKZ0W');
+</script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AN JUI</title>
+
+  <!-- Main Required CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+
+<body class="index-page">
+
+  <!-- Header -->
+ <header id="header" class="header d-flex align-items-center dark-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logow.svg" alt="Caramel Unit Logo" style="height:80px;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="about.html">關於這裡</a></li>
+          <li><a href="project.html">完整作品集</a></li>
+          <li><a href="small_project.html" class="active">小作品集</a></li>
+          <li><a href="contact.html">聯絡我</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px; color:#faeacf;"></i></a>
+        <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345" target="_blank"><i class="bi bi-linkedin" style="font-size: 24px; color:#faeacf;"></i></a>
+        <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px; color:#faeacf;"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Mini Side Projects Section -->
+    <section id="mini-projects" class="mini-projects" aria-label="Mini side projects">
+      <div class="container">
+        <div class="mp-header">
+          <h2>小作品集</h2>
+          <p class="mp-sub">一些因為自己或是朋友需要所以寫的小工具們~</p>
+        </div>
+
+        <div class="mp-grid">
+          <!-- Card: To-do List -->
+          <article class="mp-card" data-aos="fade-up">
+            <a class="mp-thumb" href="https://anjui2025.github.io/to-do-list/" target="_blank" rel="noopener">
+              <!-- 建議替換為你的截圖或短GIF -->
+              <video class="img-fluid" autoplay muted loop playsinline>
+                <source src="assets/img/TODO_DEMO.mp4" type="video/mp4">
+                你的瀏覽器不支援影片播放
+              </video>
+              <span class="mp-chip">Live Demo</span>
+            </a>
+
+            <div class="mp-body">
+              <h3 class="mp-title">To-do List｜簡單代辦清單小工具</h3>
+              <p class="mp-desc">用最少的介面完成日常代辦；儲存localStorage、快速鍵操作，部署在 GitHub Pages。</p>
+
+              <ul class="mp-tags">
+                <li>#Mini Project</li>
+                <li>#HTML/CSS/JS</li>
+                <li>#GitHub Pages</li>
+              </ul>
+
+              <div class="mp-actions">
+                <a class="mp-btn" href="https://anjui2025.github.io/to-do-list/" target="_blank" rel="noopener">Demo</a>
+                <a class="mp-btn mp-ghost" href="https://github.com/anjui2025/to-do-list" target="_blank" rel="noopener">Repo</a>
+                <button
+                  type="button"
+                  class="mp-btn mp-ghost js-readmore"
+                  data-bs-toggle="modal"
+                  data-bs-target="#mpModal"
+                  data-title="To-do List｜簡單代辦清單小工具"
+                  data-desc="極簡、不打擾思考的代辦清單。專注在「新增 → 勾選完成 → 清理」；localStorage 儲存、支援鍵盤快速鍵，部署於 GitHub Pages。"
+                  data-video="assets/img/TODO_DEMO.mp4"
+                  data-demo="https://anjui2025.github.io/to-do-list/"
+                  data-repo="https://github.com/anjui2025/to-do-list"
+                  data-why="我需要一個開了就用、不用登入的清單；練習 localStorage 與 GitHub Pages"
+                  data-features="新增/完成/刪除; 本機儲存(離線可用); 鍵盤快速鍵(Enter新增/Del刪除); 響應式版面"
+                >Read more</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="mp-card" data-aos="fade-up">
+            <a class="mp-thumb" href="https://anjui2025.github.io/picdata/index.html" target="_blank" rel="noopener">
+              <!-- 建議替換為你的截圖或短GIF -->
+              <video class="img-fluid" autoplay muted loop playsinline>
+                <source src="assets/img/PIC_DEMO.mp4" type="video/mp4">
+                你的瀏覽器不支援影片播放
+              </video>
+              <span class="mp-chip">Live Demo</span>
+            </a>
+
+            <div class="mp-body">
+              <h3 class="mp-title">圖片儲存庫｜快速存下自己參考的照片</h3>
+              <p class="mp-desc">用最少的介面完成日常代辦；儲存localStorage、快速鍵操作，部署在 GitHub Pages。</p>
+
+              <ul class="mp-tags">
+                <li>#Mini Project</li>
+                <li>#HTML/CSS/JS</li>
+                <li>#GitHub Pages</li>
+              </ul>
+
+              <div class="mp-actions">
+                <a class="mp-btn" href="https://anjui2025.github.io/picdata/index.html" target="_blank" rel="noopener">Demo</a>
+                <a class="mp-btn mp-ghost" href="https://github.com/anjui2025/picdata/" target="_blank" rel="noopener">Repo</a>
+                <button
+                  type="button"
+                  class="mp-btn mp-ghost js-readmore"
+                  data-bs-toggle="modal"
+                  data-bs-target="#mpModal"
+                  data-title="圖片儲存庫｜快速存下專案參考照片"
+                  data-desc="把散落在各處的靈感集中管理：快速貼上圖片網址與備註，純前端、輕量好用。"
+                  data-video="assets/img/PIC_DEMO.mp4"
+                  data-demo="https://anjui2025.github.io/picdata/index.html"
+                  data-repo="https://github.com/anjui2025/picdata"
+                  data-why="做專案時常需要暫存參考圖；希望比雲端書籤更直覺"
+                  data-features="快速新增/刪除; 文字備註; 連結點擊預覽; localStorage 儲存"
+                >Read more</button>
+              </div>
+            </div>
+          </article>  
+          
+          
+           <article class="mp-card" data-aos="fade-up">
+            <a class="mp-thumb" href="https://anjui2025.github.io/SPIN/" target="_blank" rel="noopener">
+              <!-- 建議替換為你的截圖或短GIF -->
+              <video class="img-fluid" autoplay muted loop playsinline>
+                <source src="assets/img/SPIN_DEMO.mp4" type="video/mp4">
+                你的瀏覽器不支援影片播放
+              </video>
+              <span class="mp-chip">Live Demo</span>
+            </a>
+
+            <div class="mp-body">
+              <h3 class="mp-title">轉盤｜快速做決定</h3>
+              <p class="mp-desc">用的轉盤，方便自己快速使用，並且可以將常用的東西出存起來，部署在 GitHub Pages。</p>
+
+              <ul class="mp-tags">
+                <li>#Mini Project</li>
+                <li>#HTML/CSS/JS</li>
+                <li>#GitHub Pages</li>
+              </ul>
+
+              <div class="mp-actions">
+                <a class="mp-btn" href="https://anjui2025.github.io/SPIN/" target="_blank" rel="noopener">Demo</a>
+                <a class="mp-btn mp-ghost" href="https://github.com/anjui2025/SPIN/" target="_blank" rel="noopener">Repo</a>
+                <button
+                  type="button"
+                  class="mp-btn mp-ghost js-readmore"
+                  data-bs-toggle="modal"
+                  data-bs-target="#mpModal"
+                  data-title="轉盤｜快速做決定"
+                  data-desc="好用的轉盤，方便自己快速使用，並且可以將常用的東西出存起來"
+                  data-video="assets/img/SPIN_DEMO.mp4"
+                  data-demo="https://anjui2025.github.io/SPIN/"
+                  data-repo="https://github.com/anjui2025/SPIN/"
+                  data-why="有時候不知道怎麼決定的時候就會想用個轉盤"
+                  data-features="localStorage 儲存、正規化、平均分配"
+                >Read more</button>
+              </div>
+            </div>
+          </article>    
+          
+          <article class="mp-card" data-aos="fade-up">
+            <a class="mp-thumb" href="2D.html" target="_blank" rel="noopener">
+          <figure class="works-thumb">
+            <img src="assets/img/2D/i5.png" alt="插圖">
+            <span class="works-chip">繪圖</span>
+          </figure>
+              <span class="mp-chip">繪圖</span>
+            </a>
+
+            <div class="mp-body">
+              <h3 class="mp-title">2D｜繪圖</h3>
+              <p class="mp-desc">用的轉盤，方便自己快速使用，並且可以將常用的東西出存起來，部署在 GitHub Pages。</p>
+
+              <ul class="mp-tags">
+                <li>#Mini Project</li>
+                <li>#Illustrator</li>
+                <li>#procreate</li>
+              </ul>
+
+              <div class="mp-actions">
+                <a href="2D.html" class="mp-btn">Read more</a>
+              </div>
+            </div>
+          </article> 
+
+          <article class="mp-card" data-aos="fade-up">
+            <a class="mp-thumb" href="3D.html" target="_blank" rel="noopener">
+          <figure class="works-thumb">
+            <img src="assets/img/3D/2.jpg" alt="3D">
+            <span class="works-chip">3D</span>
+          </figure>
+              <span class="mp-chip">3D</span>
+            </a>
+
+            <div class="mp-body">
+              <h3 class="mp-title">3D｜列印、雷射雕刻與切割與手工藝品</h3>
+              <p class="mp-desc">平常喜歡作的一些立體作品</p>
+
+              <ul class="mp-tags">
+                <li>#Mini Project</li>
+                <li>#3D printer</li>
+                <li>#雷射切割</li>
+                <li>#雷射雕刻</li>
+              </ul>
+
+              <div class="mp-actions">
+                <a href="3D.html" class="mp-btn">Read more</a>
+              </div>
+            </div>
+          </article>    
+          
+          <article class="mp-card" data-aos="fade-up">
+            <a class="mp-thumb" href="AIart.html" target="_blank" rel="noopener">
+          <figure class="works-thumb">
+            <img src="assets/img/aiart/img-4.png" alt="AI藝術">
+            <span class="works-chip">AI藝術</span>
+          </figure>
+              <span class="mp-chip">AI藝術</span>
+            </a>
+
+            <div class="mp-body">
+              <h3 class="mp-title">ai_art｜AI藝術</h3>
+              <p class="mp-desc">利用文字生成圖片</p>
+
+              <ul class="mp-tags">
+                <li>#MIDJOURNEY</li>
+                <li>#CHATGPT</li>
+              </ul>
+
+              <div class="mp-actions">
+                <a href="AIart.html" class="mp-btn">Read more</a>
+              </div>
+            </div>
+          </article>            
+
+          <!-- 複製上方 article 以新增更多 mini projects -->
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+<div class="modal fade" id="mpModal" tabindex="-1" aria-labelledby="mpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="mpModalLabel" class="modal-title">Mini Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+      </div>
+
+      <div class="modal-body">
+        <div id="mpModalVideoWrap" class="ratio ratio-16x9 mb-3 d-none">
+          <video id="mpModalVideo" muted loop playsinline></video>
+        </div>
+
+        <p id="mpModalDesc" class="text-muted mb-3"></p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <h6 class="mb-2">為什麼做</h6>
+            <p id="mpModalWhy" class="mb-0 text-body"></p>
+          </div>
+          <div class="col-md-6">
+            <h6 class="mb-2">功能重點</h6>
+            <ul id="mpModalFeatures" class="mb-0"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a id="mpModalDemo" href="#" target="_blank" class="btn btn-dark d-none">查看 Demo</a>
+        <a id="mpModalRepo" href="#" target="_blank" class="btn btn-outline-dark d-none">查看程式碼</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer dark-background py-3">
+    <div class="container">
+      <div class="row align-items-center text-center text-lg-start gy-3">
+        <div class="col-12 col-lg-4">
+          <img src="assets/img/logo.png" alt="logo" style="height: 60px;">
+        </div>
+        <div class="col-12 col-lg-4">
+          <p class="mb-0">
+            © <strong class="px-1 sitename">AN JUI</strong> All Rights Reserved ._.   
+            Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+          </p>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-nowrap">
+            <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px;"></i></a>
+            <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345 " target="_blank"><i class="bi bi-linkedin" style="font-size: 24px;"></i></a>
+            <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Main Required JS -->
+  
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+</body>
+
+</html>
