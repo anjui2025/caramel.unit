@@ -1,298 +1,356 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-6QKWZMKZ0W');
-</script>
+    gtag('config', 'G-6QKWZMKZ0W');
+  </script>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>CARAMEL UNIT | hakkayoung</title>
-  <link href="assets/img/onlylogo.svg" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caramel Unit | 夥紅創客</title>
+    
+    <link href="assets/img/s-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Main Required CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="og:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="og:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
 
-  <!-- AOS CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="twitter:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="twitter:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
+    <style>
+        /* 捲動優化 (針對專案內頁) */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 140px; 
+        }
+        body { 
+            overflow-y: visible; 
+        }
+        .main-stage { overflow: visible !important; }
+        
+        /* 產品清單樣式 (本頁專屬) */
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        .product-list li {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #eee;
+            transition: border-color 0.3s;
+        }
+        .product-list li:hover { border-left-color: var(--caramel); }
+        .product-list strong { color: var(--text-main); font-size: 1.1rem; }
+    </style>
 </head>
+<body>
 
-<body class="index-page">
+    <nav class="sidebar">
+        <a href="index.html">
+            <img src="assets/img/logo2.png" alt="Caramel Unit Logo" class="sidebar-logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">Home <span>首頁</span></a>
+            <a href="about.html" class="nav-item">About <span>關於</span></a>
+            <a href="project.html" class="nav-item active">Major Units <span>完整零件</span></a>
+            <a href="small_project.html" class="nav-item">Fragments <span>生活碎片</span></a>
+            <a href="contact.html" class="nav-item">Contact <span>訊號</span></a>
+        </div>
+    </nav>
 
-  <!-- Header -->
- <header id="header" class="header d-flex align-items-center dark-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logow.svg" alt="Caramel Unit Logo" style="height:80px;">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">關於這裡</a></li>
-          <li><a href="project.html" class="active">完整作品集</a></li>
-          <li><a href="small_project.html">小作品集</a></li>
-          <li><a href="contact.html">聯絡我</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345" target="_blank"><i class="bi bi-linkedin" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px; color:#faeacf;"></i></a>
-      </div>
-
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <a href="index.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Home</span><span class="zh">首頁</span></a>
+        <a href="about.html" class="mobile-link" onclick="toggleMenu()"><span class="en">About</span><span class="zh">關於</span></a>
+        <a href="project.html" class="mobile-link active" onclick="toggleMenu()"><span class="en">Major Units</span><span class="zh">完整零件</span></a>
+        <a href="small_project.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Fragments</span><span class="zh">生活碎片</span></a>
+        <a href="contact.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Contact</span><span class="zh">聯絡</span></a>
     </div>
-  </header>
 
-  <main class="main">
-  <div id="my-tab-test">
-    <section style="text-align: center; padding: 50px;">
-      <h2>夥紅創客。藝起玩HAKKA</h2>
-      <!-- <p style="color: #444;">選擇下方標籤，查看不同的專案說明內容</p> -->
-
-      <!-- 按鈕列 -->
-      <div class="tab-buttons" style="margin-top: 30px;">
-        <button class="tab-btn" data-tab="overview">最終成果</button>
-        <button class="tab-btn" data-tab="background">背景與理念</button>
-        <button class="tab-btn" data-tab="content">文創大禮包</button>
-      </div>
-
-      <!-- 最終成果 -->
-      <div class="tab-content">
-        <div class="tab-panel" id="overview">
-
-          <!-- Portfolio Details Section -->
-      <section id="portfolio-details" class="portfolio-details section">
-
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-              <div class="col-lg-8">
-                <div class="portfolio-details-slider swiper init-swiper">
-
-                  <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      "autoplay": {
-                        "delay": 20000
-                      },
-                      "slidesPerView": "auto",
-                      "pagination": {
-                        "el": ".swiper-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                      }
-                    }
-                  </script>
-
-                  <div class="swiper-wrapper align-items-center">
-
-                  <!-- 第1張-->
-                    <div class="swiper-slide">
-                      <img src="assets/img/hakkayoung/1.png" alt="110年度第三名">
-                    </div>
-
-                    <!-- 第2張-->
-                    <div class="swiper-slide">
-                      <img src="assets/img/hakkayoung/2.jpg" alt="小禾程市集">
-                    </div>
-
-                  </div>
-                  <div class="swiper-pagination"></div>
+    <main class="main-stage">
+        
+        <div class="case-header">
+            <h1 class="case-title">夥紅創客。藝起玩HAKKA</h1>
+            <p class="case-subtitle">Hakka Culture Creative Design Project</p>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>文創商品 / 網站設計</p>
                 </div>
-              </div>
-
-              <div class="col-lg-4">
-                  <div class="portfolio-description text-start" data-aos="fade-up" data-aos-delay="300">
-                  <h2>簡介</h2>
-                  <p>
-                    從參賽者到協作者，我與「藝起玩 HAKKA」的緣分延續了好幾年。這不只是一場競賽，更是一段用設計與文化對話的旅程。
-                  </p>
-                  <p>
-                      網站連結：<a href="https://gf-tp-hakka.github.io/hakkayoung/index.html" target="_blank">2024 藝起玩 HAKKA 活動官網</a>
-                      </p>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>設計師 / 網站開發</p>
                 </div>
-                <br>
-                <div class="portfolio-info text-start" data-aos="fade-up" data-aos-delay="200">
-                  <h3>夥紅創客。藝起玩HAKKA</h3>
-                  <ul>
-                    <li><strong>專案類型</strong>: 參賽、網站設計、市集</li>
-                    <li><strong>專案地點</strong>: 臺北市政府客家事務委員會</li>
-                    <li><strong>專案日期</strong>: 2024</li>
-                    <li><strong>關鍵技術</strong>: HTML、CSS、JS、印刷輸出</li>
-                  </ul>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2024</p>
                 </div>
-                
-              </div>
-
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>Illustrator, HTML/CSS</p>
+                </div>
             </div>
-
-          </div>
-
-      </section>
         </div>
 
-    <!-- 創作背景 -->
-        <div class="tab-panel text-start" id="background">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-              <div class="row gy-4 align-items-center">
-
-                <!-- 左側圖片 -->
-                  <div class="col-md-6">
-                    <img src="assets/img/hakkayoung/3.jpg"
-                        class="img-fluid rounded shadow-sm mx-auto d-block"
-                        alt="文創大禮包整體內容物"
-                        style="max-width: 80%; height: auto;">
-                  </div>
-
-                  <!-- 右側文字 -->
-                  <div class="col-md-6 text-start" style="line-height: 1.8; font-size: 1.05rem;">
-                    <h3></h3>
-                    <br>
-                      <p>
-                      「藝起玩 HAKKA」是由客家委員會舉辦，鼓勵青年以設計、藝術與創意詮釋客家文化的系列活動。我最初以參賽者身分參加競賽，並獲選為得獎團隊之一。
-                      當時的創作是與「怪奇美少女」合作，透過她獨特的角色插畫風格，發展出一系列融合客家元素的文創文具禮包，作品以幽默、色彩與文化意象交織出屬於當代青年的文化表達。
-                      這次合作也讓我對角色IP與跨領域創作有了更深的體會。
-                      </p>
-                      <p>
-                      活動結束後，我仍持續參與藝起玩 HAKKA 的延伸活動，包含以學長姊身分回到活動現場協助市集（小禾埕市集）攤位佈置與導覽，
-                      也有幸承接了 2024 年度藝起玩 HAKKA 官方網站的整體製作工作。網站採用 GitHub Pages 架設，並以清爽風格與清楚分類，
-                      呈現活動成果與參賽作品，讓更多人能線上感受青年創作與客家文化之間的火花。
-                      </p>
-                      <p>
-                      這段經驗不只是創作與設計，更是文化與連結的累積，讓我看見設計如何參與在地、延續記憶，也打開了我在未來創作上的更多想像。
-                      </p>
-                      <p>
-                      網站連結：<a href="https://gf-tp-hakka.github.io/hakkayoung/index.html" target="_blank">2024 藝起玩 HAKKA 活動官網</a>
-                      </p>
-                  </div>
-
-              </div>
-          </div>
-</div>
-<!-- 設計過程 -->          
-          <div class="tab-panel text-start" id="content">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-              <!-- 加入白底卡片樣式 -->
-              <div class="bg-white p-4 rounded shadow-sm  mx-auto custom-max-width" >
-                <!-- <h3>設計過程與創作挑戰</h3> -->
-
-                <!-- 展覽內容發想 -->
-                  <div class="sub-section-title" id="section-idea" data-aos="fade-up">
-                    <span>文創大禮包</span>
-                  </div>
-                  <p><strong>流行元素X親和力高的文具商品</strong></p>
-                     <p>
-                        有感於許多文化在傳承上遭遇年代隔閡，造成美好傳統的遺失，我們因此希望藉由自身的力量，打破此困境。
-                        以流行元素與親和力高的文具商品，將客家文化帶入年輕族群的生活日常中。
-                      </p>
-
-                      <p>
-                        文創大禮包的每一項商品與包裝皆由我們自行發想與繪製，再與適合的印刷廠商合作製作完成。
-                        禮包內容包含：帆布袋、資料夾、徽章、貼紙與明信片，整體風格俏皮有個性，讓客家元素搖身一變成為兼具設計感與話題性的流行配件。
-                      </p>
-
-                      <p>
-                        我們希望大眾對於「客家文化」的印象不再只是花布、藍染等傳統符號，而能透過生活化的插圖設計，認識到——客家味，也可以很酷、很文青，甚至非常時尚。
-                      </p>
-
-                    <p><strong>文創大禮包內容物</strong></p>
-                      <ol>
-                        <li>
-                          <strong>明信片：</strong>
-                          將客家小炒的食材與配料（豬肉、魷魚、豆干、芹菜、辣椒等）整齊排列，
-                          以清新雜誌風重新演繹經典料理，讓「食」成為視覺的藝術。
-                        </li>
-
-                        <li>
-                          <strong>貼紙組：</strong>
-                          將各種客家形象角色化，轉化為能貼在生活用品一隅的療癒小夥伴，讓傳統文化融入日常。
-                        </li>
-
-                        <li>
-                          <strong>帆布袋：</strong>
-                          三位女子身穿傳統藍衫，戴上墨鏡、擺出浮誇模特兒姿勢，融合傳統與時尚。
-                          袋上搭配客語「派頭」一詞及音標（pai-teuˇ，意為時髦），創造出今昔交錯的趣味感。
-                        </li>
-
-                        <li>
-                          <strong>徽章：</strong>
-                          以新丁粄為設計靈感，發展出可愛的娃娃角色，並將其圓臉設計成活潑可愛的圓形徽章。
-                        </li>
-
-                        <li>
-                          <strong>資料夾：</strong>
-                          將經典客語歌曲《客家本色》歌詞轉化為漫畫形式，搭配跳色構圖，讓老歌也能擁有青春活潑的新表情。
-                        </li>
-                      </ol>
-                 <img src="assets/img/hakkayoung/01.jpg" class="img-fluid rounded shadow mb-4" alt="文創大禮包" >
-                 <img src="assets/img/hakkayoung/02.jpg" class="img-fluid rounded shadow mb-4" alt="創作者照片" >
-                 <img src="assets/img/hakkayoung/03.jpg" class="img-fluid rounded shadow mb-4" alt="產品介紹" >
-                 <img src="assets/img/hakkayoung/04.jpg" class="img-fluid rounded shadow mb-4" alt="主要內容物" >
-                 <img src="assets/img/hakkayoung/05.jpg" class="img-fluid rounded shadow mb-4" alt="好可愛胸章" >
-                 <img src="assets/img/hakkayoung/06.jpg" class="img-fluid rounded shadow mb-4" alt="好好吃明信片" >
-                 <img src="assets/img/hakkayoung/07.jpg" class="img-fluid rounded shadow mb-4" alt="好有趣貼紙" >
-                 <img src="assets/img/hakkayoung/08.jpg" class="img-fluid rounded shadow mb-4" alt="好經典資料夾" >
-                 <img src="assets/img/hakkayoung/09.jpg" class="img-fluid rounded shadow mb-4" alt="好時尚帆布袋" >
-
-          </div>
-        </section>
-      </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background py-3">
-    <div class="container">
-      <div class="row align-items-center text-center text-lg-start gy-3">
-        <div class="col-12 col-lg-4">
-          <img src="assets/img/logo.png" alt="logo" style="height: 60px;">
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#background" class="mobile-toc-link">背景理念</a>
+            <a href="#design" class="mobile-toc-link">文創禮包</a>
+            <a href="#website" class="mobile-toc-link">網站製作</a>
+            <a href="#market" class="mobile-toc-link">市集參與</a>
+            <a href="#gallery" class="mobile-toc-link">剪影</a>
         </div>
-        <div class="col-12 col-lg-4">
-          <p class="mb-0">
-            © <strong class="px-1 sitename">AN JUI</strong> All Rights Reserved ._.   
-            Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          </p>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-nowrap">
-            <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px;"></i></a>
-            <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345 " target="_blank"><i class="bi bi-linkedin" style="font-size: 24px;"></i></a>
-            <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px;"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <div class="hero-media">
+            <img src="assets/img/hakkayoung/3.jpg" alt="文創大禮包全家福">
+        </div>
 
-  <!-- Main Required JS -->
-  
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  
+        <div class="content-wrapper">
+            
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">專案簡介</a>
+                <a href="#background" class="toc-link">背景與理念</a>
+                <a href="#design" class="toc-link">文創設計</a>
+                <a href="#website" class="toc-link">網站製作</a>
+                <a href="#market" class="toc-link">市集參與</a>
+                <a href="#gallery" class="toc-link">作品剪影</a>
+            </aside>
+
+            <article class="article-content">
+                
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">專案簡介</h2>
+                    <p>
+                        從參賽者到協作者，我與「藝起玩 HAKKA」的緣分延續了好幾年。這不只是一場競賽，更是一段用設計與文化對話的旅程。
+                        專案內容橫跨文創商品設計、角色 IP 開發、以及活動官方網站的建置。
+                    </p>
+                </section>
+
+                <section id="background" class="article-section">
+                    <h2 class="section-title">背景與理念</h2>
+                    <p>
+                        「藝起玩 HAKKA」是由客家委員會舉辦，鼓勵青年以設計、藝術與創意詮釋客家文化的系列活動。我最初以參賽者身分參加競賽，並獲選為得獎團隊之一。
+                    </p>
+                    <p>
+                        有感於許多文化在傳承上遭遇年代隔閡，造成美好傳統的遺失，我們希望藉由自身的力量，打破此困境。
+                        以<strong>流行元素</strong>結合<strong>親和力高的文具商品</strong>，將客家文化帶入年輕族群的生活日常中。
+                    </p>
+                    <blockquote>
+                        「客家味，也可以很酷、很文青，甚至非常時尚。」
+                    </blockquote>
+                    <p>
+                        我們希望大眾對於「客家文化」的印象不再只是花布、藍染等傳統符號，而是能透過幽默的插圖設計，看見文化的另一種可能性。
+                    </p>
+                </section>
+
+                <section id="design" class="article-section">
+                    <h2 class="section-title">文創大禮包設計</h2>
+                    <p>
+                        與「怪奇美少女」合作，透過她獨特的角色插畫風格，我們發展出一系列融合客家元素的文創禮包。
+                        每一項商品皆由我們自行發想繪製，並與印刷廠商合作製作。
+                    </p>
+                    <img src="assets/img/hakkayoung/01.jpg" alt="文創大禮包" class="article-img">
+                    
+                    <ul class="product-list">
+                        <li>
+                            <strong>明信片</strong><br>
+                            將客家小炒的食材與配料（豬肉、魷魚、豆干、芹菜、辣椒等）整齊排列，以清新雜誌風重新演繹經典料理，讓「食」成為視覺的藝術。
+                        </li>
+                        <li>
+                            <strong>帆布袋</strong><br>
+                            三位女子身穿傳統藍衫，戴上墨鏡、擺出浮誇模特兒姿勢，融合傳統與時尚。袋上搭配客語「派頭」一詞及音標（pai-teuˇ，意為時髦），創造出今昔交錯的趣味感。
+                        </li>
+                        <li>
+                            <strong>貼紙組</strong><br>
+                            將各種客家形象角色化，轉化為能貼在生活用品一隅的療癒小夥伴。
+                        </li>
+                        <li>
+                            <strong>徽章</strong><br>
+                            以新丁粄為設計靈感，發展出可愛的娃娃角色，並將其圓臉設計成活潑可愛的圓形徽章。
+                        </li>
+                        <li>
+                            <strong>資料夾</strong><br>
+                            將經典客語歌曲《客家本色》歌詞轉化為漫畫形式，搭配跳色構圖，讓老歌也能擁有青春活潑的新表情。
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="website" class="article-section">
+                    <h2 class="section-title">官方網站製作</h2>
+                    <p>
+                        除了參賽，我有幸承接了 2024與2025 年度藝起玩 HAKKA 官方網站的整體製作工作。
+                        網站採用 <strong>GitHub Pages</strong> 架設，以清爽風格與清楚分類，呈現活動成果與參賽作品，讓更多人能線上感受青年創作與客家文化之間的火花。
+                    </p>
+                    <p>
+                        網站連結：<a href="https://gf-tp-hakka.github.io/hakkayoung/index.html" target="_blank" style="color:var(--caramel); text-decoration: underline;">藝起玩 HAKKA 活動官網</a>
+                    </p>
+                </section>
+
+                <section id="market" class="article-section">
+                    <h2 class="section-title">市集與活動參與</h2>
+                    <p>
+                        活動結束後，我仍持續參與延伸活動，包含以學長姊身分回到活動現場協助「小禾埕市集」的攤位佈置與導覽。
+                        這段經驗不只是創作與設計，更是文化與連結的累積，讓我看見設計如何參與在地、延續記憶，也打開了我在未來創作上的更多想像。
+                    </p>
+                    <div class="row" style="margin-top:20px; display: flex; gap: 20px;">
+                        <div class="col-md-6" style="flex:1;">
+                            <img src="assets/img/hakkayoung/2.jpg" alt="市集現場" class="article-img" style="margin-top:0;">
+                        </div>
+                        <div class="col-md-6" style="flex:1;">
+                            <img src="assets/img/hakkayoung/1.png" alt="得獎合影" class="article-img" style="margin-top:0;">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">作品剪影</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/hakkayoung/01.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/01.jpg"></a>
+                        <a href="assets/img/hakkayoung/02.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/02.jpg"></a>
+                        <a href="assets/img/hakkayoung/03.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/03.jpg"></a>
+                        <a href="assets/img/hakkayoung/04.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/04.jpg"></a>
+                        <a href="assets/img/hakkayoung/05.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/05.jpg"></a>
+                        <a href="assets/img/hakkayoung/06.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/06.jpg"></a>
+                        <a href="assets/img/hakkayoung/07.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/07.jpg"></a>
+                        <a href="assets/img/hakkayoung/08.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/08.jpg"></a>
+                        <a href="assets/img/hakkayoung/09.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/09.jpg"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-social">
+                <a href="mailto:caramel.unit@gmail.com" class="social-link"><i class="bi bi-envelope"></i> Email</a>
+                <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank" class="social-link"><i class="bi bi-line"></i> Line</a>
+                <a href="https://www.linkedin.com/in/aj0920/" target="_blank" class="social-link hover-target"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </div>
+            <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+    <script>
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('open');
+            const toggle = document.querySelector('.mobile-toggle');
+            const bars = document.querySelectorAll('.bar');
+            
+            if (overlay.classList.contains('open')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        }
+
+        // --- IntersectionObserver Scroll Spy ---
+        let isManualScrolling = false;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -70% 0px', 
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (isManualScrolling) return;
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    updateActiveNav(id);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.article-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function updateActiveNav(id) {
+            // Desktop
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) link.classList.add('active');
+            });
+
+            // Mobile
+            document.querySelectorAll('.mobile-toc-link').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                    const container = document.getElementById('mobileToc');
+                    const scrollLeft = link.offsetLeft - (container.offsetWidth / 2) + (link.offsetWidth / 2);
+                    container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Click Lock Logic
+        document.querySelectorAll('.mobile-toc-link, .toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                isManualScrolling = true;
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                updateActiveNav(targetId);
+
+                const offset = 140; 
+                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                setTimeout(() => {
+                    isManualScrolling = false;
+                }, 800);
+            });
+        });
+        
+        window.addEventListener('scroll', () => {
+            if (!isManualScrolling && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                const lastId = document.querySelector('.article-section:last-of-type').getAttribute('id');
+                updateActiveNav(lastId);
+            }
+        });
+    </script>
 </body>
-
 </html>

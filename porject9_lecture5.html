@@ -1,168 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-6QKWZMKZ0W');
-</script>
+    gtag('config', 'G-6QKWZMKZ0W');
+  </script>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>CARAMEL UNIT | 月亮燈教學</title>
-  <link href="assets/img/onlylogo.svg" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caramel Unit | 月亮燈教學</title>
+    
+    <link href="assets/img/s-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Main Required CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="og:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="og:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
 
-  <!-- AOS CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="twitter:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="twitter:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
+    <style>
+        /* 捲動優化 */
+        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+        body { overflow-y: visible; }
+        .main-stage { overflow: visible !important; }
+    </style>
 </head>
+<body>
 
-<body class="index-page">
+    <nav class="sidebar">
+        <a href="index.html">
+            <img src="assets/img/logo2.png" alt="Caramel Unit Logo" class="sidebar-logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">Home <span>首頁</span></a>
+            <a href="about.html" class="nav-item">About <span>關於</span></a>
+            <a href="project.html" class="nav-item active">Major Units <span>完整零件</span></a>
+            <a href="small_project.html" class="nav-item">Fragments <span>生活碎片</span></a>
+            <a href="contact.html" class="nav-item">Contact <span>訊號</span></a>
+        </div>
+    </nav>
 
-  <!-- Header -->
- <header id="header" class="header d-flex align-items-center dark-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logow.svg" alt="Caramel Unit Logo" style="height:80px;">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">關於這裡</a></li>
-          <li><a href="project.html" class="active">完整作品集</a></li>
-          <li><a href="small_project.html">小作品集</a></li>
-          <li><a href="contact.html">聯絡我</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345" target="_blank"><i class="bi bi-linkedin" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px; color:#faeacf;"></i></a>
-      </div>
-
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <a href="index.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Home</span><span class="zh">首頁</span></a>
+        <a href="about.html" class="mobile-link" onclick="toggleMenu()"><span class="en">About</span><span class="zh">關於</span></a>
+        <a href="project.html" class="mobile-link active" onclick="toggleMenu()"><span class="en">Major Units</span><span class="zh">完整零件</span></a>
+        <a href="small_project.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Fragments</span><span class="zh">生活碎片</span></a>
+        <a href="contact.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Contact</span><span class="zh">聯絡</span></a>
     </div>
-  </header>
 
-  <main class="main">
-  <div id="my-tab-test">
-    <section style="text-align: center; padding: 50px;">
-      <h2>八月半中秋活動-月亮燈教學</h2>
-
-          <!-- Portfolio Details Section -->
-      <section id="portfolio-details" class="portfolio-details section">
-
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-              <div class="col-lg-8">
-                <div class="portfolio-details-slider swiper init-swiper">
-
-                  <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      "autoplay": {
-                        "delay": 20000
-                      },
-                      "slidesPerView": "auto",
-                      "pagination": {
-                        "el": ".swiper-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                      }
-                    }
-                  </script>
-
-                  <div class="swiper-wrapper align-items-center">
-
-                  <!-- 第1張-->
-                    <div class="swiper-slide">
-                      <img src="assets/img/lecture/L5.png" alt="八月半中秋活動">
-                    </div>
-                  </div>
-                  <div class="swiper-pagination"></div>
+    <main class="main-stage">
+        
+        <article class="event-container">
+            <div class="event-header">
+                <span class="event-tag">Online Workshop 線上教學</span>
+                <h1 class="page-title">八月半中秋活動-月亮燈教學</h1>
+                <div class="event-meta">
+                    <span><i class="bi bi-calendar3"></i> 2022.09</span>
+                    <span><i class="bi bi-geo-alt"></i> 台北市客家事務委員會</span>
+                    <span><i class="bi bi-person-badge"></i> DIY 講師</span>
                 </div>
-              </div>
-
-              <div class="col-lg-4">
-                  <div class="portfolio-description text-start" data-aos="fade-up" data-aos-delay="300">
-                  <h2>簡介</h2>
-                  <p>
-                    此活動為台北市客家事務委員會舉辦之八月半中秋活動，因應疫情考量，改為線上教學與材料發放，有幸被邀請作為DIY教學老師，與主委共同製作月亮燈。
-                  </p>
-                </div>
-                <br>
-                <div class="portfolio-info text-start" data-aos="fade-up" data-aos-delay="200">
-                  <h3>夥紅創客。藝起玩HAKKA</h3>
-                  <ul>
-                    <li><strong>專案類型</strong>: DIY線上直播教學</li>
-                    <li><strong>專案地點</strong>: 永康街</li>
-                    <li><strong>專案日期</strong>: 2022.09</li>
-                    <li><strong>關鍵技術</strong>: 手工藝</li>
-                  </ul>
-                </div>
-                
-              </div>
-
             </div>
 
-          </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/img/lecture/L5.png" alt="月亮燈線上教學直播畫面">
+                    </div>
+                    </div>
+                <div class="swiper-pagination"></div>
+            </div>
 
+            <div class="event-body">
+                <p>
+                    這是由台北市客家事務委員會主辦的「八月半中秋活動」。
+                    當時因應疫情考量，許多實體活動不得不暫停或轉型，因此這場活動特別改為「線上教學 + 材料包發放」的形式，讓民眾在家也能感受過節氣氛。
+                </p>
+                <p>
+                    我很榮幸受邀擔任本次活動的 DIY 教學老師。在直播中，我與客委會主委一同動手製作「月亮燈」。
+                    透過鏡頭，我們一步步示範如何將平面的材料組裝成溫暖的立體燈飾，並在過程中穿插中秋節與客家文化的典故分享。
+                </p>
 
-      </div>
+                <div class="highlight-box">
+                    <h3>🔍 活動亮點</h3>
+                    <ul>
+                        <li><strong>線上互動</strong>：突破空間限制，透過直播即時回答民眾製作上的問題。</li>
+                        <li><strong>手作溫度</strong>：在疫情疏離的時刻，用手作的光亮連結彼此的心。</li>
+                        <li><strong>文化傳承</strong>：結合節慶習俗，讓傳統文化透過新媒體形式走入家庭。</li>
+                    </ul>
+                </div>
 
-  </main>
+                <p>
+                    雖然隔著螢幕，但看到許多家庭全家大小一起動手做的照片回饋，那份溫馨感絲毫不減。
+                    這次經驗也讓我學習到，面對環境的變化，只要轉換形式，教育與文化的傳遞依然充滿力量。
+                </p>
+            </div>
 
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background py-3">
-    <div class="container">
-      <div class="row align-items-center text-center text-lg-start gy-3">
-        <div class="col-12 col-lg-4">
-          <img src="assets/img/logo.png" alt="logo" style="height: 60px;">
-        </div>
-        <div class="col-12 col-lg-4">
-          <p class="mb-0">
-            © <strong class="px-1 sitename">AN JUI</strong> All Rights Reserved ._.   
-            Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          </p>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-nowrap">
-            <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px;"></i></a>
-            <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345 " target="_blank"><i class="bi bi-linkedin" style="font-size: 24px;"></i></a>
-            <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px;"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+            <div class="back-btn-container">
+                <a href="project.html" class="back-btn">← 返回完整零件</a>
+            </div>
+        </article>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <footer class="site-footer">
+            <div class="footer-social">
+                <a href="mailto:caramel.unit@gmail.com" class="social-link"><i class="bi bi-envelope"></i> Email</a>
+                <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank" class="social-link"><i class="bi bi-line"></i> Line</a>
+                <a href="https://www.linkedin.com/in/aj0920/" target="_blank" class="social-link hover-target"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </div>
+            <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
+        </footer>
 
-  <!-- Main Required JS -->
-  
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        // 1. 自動點亮 Major Units
+        $(document).ready(function() {
+            var path = window.location.pathname.split("/").pop();
+            if (path === 'porject13_lecture.html') {
+                $('.nav-item[href="project.html"]').addClass('active');
+                $('.mobile-link[href="project.html"]').addClass('active');
+            }
+        });
+
+        // 2. 手機版選單
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('open');
+            const toggle = document.querySelector('.mobile-toggle');
+            const bars = document.querySelectorAll('.bar');
+            
+            if (overlay.classList.contains('open')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        }
+
+        // 3. Swiper Init
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
-
 </html>

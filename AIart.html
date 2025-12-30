@@ -1,277 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-6QKWZMKZ0W');
-</script>
+    gtag('config', 'G-6QKWZMKZ0W');
+  </script>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>CARAMEL UNIT | aiart</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caramel Unit | AI Art</title>
+    
+    <link href="assets/img/s-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Favicons -->
-  <link href="assets/img/onlylogo.svg" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="og:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="og:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="twitter:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="twitter:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">    
 </head>
+<body>
 
-<body class="index-page">
+    <nav class="sidebar">
+        <a href="index.html">
+            <img src="assets/img/logo2.png" alt="Caramel Unit Logo" class="sidebar-logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">Home <span>首頁</span></a>
+            <a href="about.html" class="nav-item">About <span>關於</span></a>
+            <a href="project.html" class="nav-item">Major Units <span>完整零件</span></a>
+            <a href="small_project.html" class="nav-item">Fragments <span>生活碎片</span></a>
+            <a href="contact.html" class="nav-item">Contact <span>訊號</span></a>
+        </div>
+    </nav>
 
-  <!-- Header -->
- <header id="header" class="header d-flex align-items-center dark-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logow.svg" alt="Caramel Unit Logo" style="height:80px;">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">關於這裡</a></li>
-          <li><a href="project.html">完整作品集</a></li>
-          <li><a href="small_project.html" class="active">小作品集</a></li>
-          <li><a href="contact.html">聯絡我</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345" target="_blank"><i class="bi bi-linkedin" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px; color:#faeacf;"></i></a>
-      </div>
-
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <a href="index.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Home</span><span class="zh">首頁</span></a>
+        <a href="about.html" class="mobile-link" onclick="toggleMenu()"><span class="en">About</span><span class="zh">關於</span></a>
+        <a href="project.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Major Units</span><span class="zh">完整零件</span></a>
+        <a href="small_project.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Fragments</span><span class="zh">生活碎片</span></a>
+        <a href="contact.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Contact</span><span class="zh">聯絡</span></a>
     </div>
-  </header>
 
-  <main class="main">
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>AI藝術</h2>
-        <p>以下是由文字生成圖片的一些創作，可以點選查看不同分類</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter=".filter-real" data-layout="masonry" data-sort="original-order">
-
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter=".filter-real" class="filter-active">實景</li>
-          <li data-filter=".filter-draw">插圖</li>
-          <!-- <li data-filter=".filter-branding">Web</li> -->
-          <li data-filter="*">全部</li>
-        </ul>
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-real">
-              <img src="assets/img/aiart/img-1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>This is a minimalist, bright space: large floor-to-ceiling windows bring in ample sunlight, 
-                  while white walls and light wood floors make the room feel clean and airy. At the center sits a 
-                  sleek gray sofa paired with a small wooden coffee table, holding just a book and a small potted plant. 
-                  By the window, a single chair and a standing lamp add a touch of reading ambiance. 
-                  The overall design is fresh and comfortable, presenting a relaxed, modern minimalist style.</p>
-                <!-- <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-draw">
-              <img src="assets/img/aiart/img-7.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  Stuff
+    <main class="main-stage">
+        
+        <div class="gallery-container">
+            <div class="page-header">
+                <h1 class="page-title">AI ART 生成式藝術</h1>
+                <p class="page-desc">
+                    以下是由文字生成圖片的一些創作。<br>
+                    透過詠唱咒語 (Prompts)，將腦中的想像轉化為數位訊號。
                 </p>
-              </div>
-            </div><!-- End Portfolio Item -->   
+            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-real">
-              <img src="assets/img/aiart/img-2.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  On a smooth white table, a cup of coffee sits neatly, emanating steam. The tabletop holds only a sleek laptop with sharp edges, displaying clear content on its screen. Next to the table is a minimally designed chair, with a color palette dominated by white and light wood, creating a tidy and fresh feeling. The background features a light-colored wall, completely devoid of decoration, emphasizing the tranquility and focus of the space.
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">全部 All</button>
+                <button class="filter-btn" data-filter="real">實景 Realistic</button>
+                <button class="filter-btn" data-filter="draw">插圖 Illustration</button>
+            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-draw">
-              <img src="assets/img/aiart/img-8.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  Geometric shapes
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->  
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <div class="gallery-item real">
+                    <a href="assets/img/aiart/img-1.png" data-lightbox="ai-art" data-title="Minimalist Space: large floor-to-ceiling windows, white walls, light wood floors, sleek gray sofa.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-1.png" alt="Minimalist Space"></div>
+                            <span class="item-tag">#Realistic</span>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-real">
-              <img src="assets/img/aiart/img-3.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  This is a minimalist scene: a green indoor plant sits on a white balcony, with sunlight streaming in through large windows, creating a soft interplay of light and shadow. The plant's leaves appear vibrant in the light, contrasting sharply with the clean white wall. The background remains simple, free of unnecessary decorations, giving the whole scene a fresh and tranquil feel, conveying a sense of relaxation and peace.And this is a photo.
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->
+                <div class="gallery-item real">
+                    <a href="assets/img/aiart/img-2.png" data-lightbox="ai-art" data-title="Work Space: Smooth white table, cup of coffee, sleek laptop, minimalist design.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-2.png" alt="Coffee Laptop"></div>
+                            <span class="item-tag">#Workspace</span>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-draw">
-              <img src="assets/img/aiart/img-9.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  Marble
-                </p>
-              </div>
-            </div><!-- End Portfolio Item --> 
+                <div class="gallery-item real">
+                    <a href="assets/img/aiart/img-3.png" data-lightbox="ai-art" data-title="Green Corner: Indoor plant on a white balcony, sunlight streaming through large windows.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-3.png" alt="Balcony Plant"></div>
+                            <span class="item-tag">#Greenery</span>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-real">
-              <img src="assets/img/aiart/img-4.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  This is a minimalist photograph of a staircase: the spacious stairs are made of smooth light wood, showcasing a simple and modern design. The handrail is made of metal, with clean lines that harmoniously contrast with the wood grain of the stair treads. The background wall is pure white, devoid of any decorations, making the entire space feel bright and airy. Soft light filters in through the window, gently illuminating every corner of the staircase, creating a comfortable and serene atmosphere.
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->    
+                <div class="gallery-item real">
+                    <a href="assets/img/aiart/img-4.png" data-lightbox="ai-art" data-title="Modern Stairs: Spacious stairs made of smooth light wood, simple and modern design.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-4.png" alt="Staircase"></div>
+                            <span class="item-tag">#Architecture</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item real">
+                    <a href="assets/img/aiart/img-5.png" data-lightbox="ai-art" data-title="Sunlight & Glass: Transparent glass water bottle on a white dining table, reflecting soft sunlight.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-5.png" alt="Glass Bottle"></div>
+                            <span class="item-tag">#Light</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item real">
+                    <a href="assets/img/aiart/img-6.png" data-lightbox="ai-art" data-title="Art Corner: Light gray walls, abstract painting with geometric shapes, modern feel.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-6.png" alt="Abstract Painting"></div>
+                            <span class="item-tag">#Interior</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item draw">
+                    <a href="assets/img/aiart/img-7.png" data-lightbox="ai-art" data-title="Stuff: A collection of miscellaneous items illustration.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-7.png" alt="Stuff"></div>
+                            <span class="item-tag">#Illustration</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item draw">
+                    <a href="assets/img/aiart/img-8.png" data-lightbox="ai-art" data-title="Geometric Shapes: Colorful and abstract geometric composition.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-8.png" alt="Geometric"></div>
+                            <span class="item-tag">#Abstract</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item draw">
+                    <a href="assets/img/aiart/img-9.png" data-lightbox="ai-art" data-title="Marble Texture: Fluid marble art pattern.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-9.png" alt="Marble"></div>
+                            <span class="item-tag">#Texture</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item draw">
+                    <a href="assets/img/aiart/img-10.png" data-lightbox="ai-art" data-title="Girl with Leopard Cat: Digital illustration character design.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-10.png" alt="Girl with Cat"></div>
+                            <span class="item-tag">#Character</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item draw">
+                    <a href="assets/img/aiart/img-11.png" data-lightbox="ai-art" data-title="Raccoon: Cute raccoon illustration.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-11.png" alt="Raccoon"></div>
+                            <span class="item-tag">#Animal</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item draw">
+                    <a href="assets/img/aiart/img-12.png" data-lightbox="ai-art" data-title="Van surrounded by flowers: Dreamy illustration style.">
+                        <div class="polaroid-frame">
+                            <div class="img-wrap"><img src="assets/img/aiart/img-12.png" alt="Van"></div>
+                            <span class="item-tag">#Dreamy</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="small_project.html" class="back-btn">← 返回小作品集</a>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-social">
+                <a href="mailto:caramel.unit@gmail.com" class="social-link"><i class="bi bi-envelope"></i> Email</a>
+                <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank" class="social-link"><i class="bi bi-line"></i> Line</a>
+                <a href="https://www.linkedin.com/in/aj0920/" target="_blank" class="social-link hover-target"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </div>
+            <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+    <script>
+        // 1. 自動判斷頁面並點亮 "Fragments" 選單
+        $(document).ready(function() {
+            var path = window.location.pathname.split("/").pop();
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-draw">
-              <img src="assets/img/aiart/img-10.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  Girl with Leopard cat
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->             
+            if (path === 'AIart.html') {
+                $('.nav-item[href="small_project.html"]').addClass('active');
+                $('.mobile-link[href="small_project.html"]').addClass('active');
+            } else {
+                $('.nav-item[href="' + path + '"]').addClass('active');
+                $('.mobile-link[href="' + path + '"]').addClass('active');
+            }
+        });
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-real">
-              <img src="assets/img/aiart/img-5.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  A transparent glass water bottle sits quietly on a white dining table, with the water inside crystal clear, reflecting the soft sunlight in the room. Sunlight streams in through the window, creating bright patches of light that enhance the clarity of the bottle's outline. The background features light-colored walls and minimal decor, keeping the space tidy and free of clutter, evoking a sense of tranquility and comfort. This scene conveys a simple yet elegant atmosphere that brings joy to the viewer.
-                </p>
-              </div>
-            </div><!-- End Portfolio Item --> 
+        // 2. 手機版選單開關
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('open');
+            const toggle = document.querySelector('.mobile-toggle');
+            const bars = document.querySelectorAll('.bar');
+            
+            if (overlay.classList.contains('open')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        }
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-draw">
-              <img src="assets/img/aiart/img-11.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  Raccoon
-                </p>
-              </div>
-            </div><!-- End Portfolio Item --> 
+        // 3. Filter Logic (篩選功能)
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.gallery-item');
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-real">
-              <img src="assets/img/aiart/img-6.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  A minimalist photograph: the overall space features light gray walls, creating a serene and comfortable feel. On the wall, there is an abstract painting with geometric shapes, predominantly in black and white, with casual forms and lines that add a touch of modernity. The edges of the artwork create a gentle contrast with the wall, drawing the eye. The floor is light wood, and the simple design makes the entire scene appear fresh and bright, conveying an atmosphere of simplicity and artistic flair.
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->   
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-draw">
-              <img src="assets/img/aiart/img-12.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MIDJOURNEY</h4>
-                <p>
-                  Van surrounded by flower
-                </p>
-              </div>
-            </div><!-- End Portfolio Item -->           
+                const filterValue = btn.getAttribute('data-filter');
 
-          </div><!-- End Portfolio Container -->
+                items.forEach(item => {
+                    // 為了確保篩選切換順暢，這裡重新控制顯示
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                        // 短暫延遲讓 display 生效後再設定 opacity
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 400); // 等待淡出動畫結束再隱藏
+                    }
+                });
+            });
+        });
 
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background py-3">
-    <div class="container">
-      <div class="row align-items-center text-center text-lg-start gy-3">
-        <div class="col-12 col-lg-4">
-          <img src="assets/img/logo.png" alt="logo" style="height: 60px;">
-        </div>
-        <div class="col-12 col-lg-4">
-          <p class="mb-0">
-            © <strong class="px-1 sitename">AN JUI</strong> All Rights Reserved ._.   
-            Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          </p>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-nowrap">
-            <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px;"></i></a>
-            <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345 " target="_blank"><i class="bi bi-linkedin" style="font-size: 24px;"></i></a>
-            <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px;"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
-  <script>initHeroTitle("首頁", "Home");</script>
-
+        // 4. Lightbox 設定
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'albumLabel': "AI Art %1 / %2"
+        })
+    </script>
 </body>
-
 </html>

@@ -1,291 +1,361 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-6QKWZMKZ0W');
-</script>
+    gtag('config', 'G-6QKWZMKZ0W');
+  </script>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>CARAMEL UNIT | 照服員UIUX</title>
-  <link href="assets/img/onlylogo.svg" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caramel Unit | 照服員工作支援 App</title>
+    
+    <link href="assets/img/s-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Main Required CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="og:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="og:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
 
-  <!-- AOS CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="twitter:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="twitter:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
+
+    <style>
+        /* 捲動優化 (針對專案內頁) */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 140px; 
+        }
+        body { 
+            overflow-y: visible; 
+        }
+        .main-stage { overflow: visible !important; }
+
+        /* Figma Embed RWD (本頁專屬) */
+        .figma-embed {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            background: #f5f5f5;
+        }
+        .figma-embed iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+    </style>
 </head>
+<body>
 
-<body class="index-page">
+    <nav class="sidebar">
+        <a href="index.html">
+            <img src="assets/img/logo2.png" alt="Caramel Unit Logo" class="sidebar-logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">Home <span>首頁</span></a>
+            <a href="about.html" class="nav-item">About <span>關於</span></a>
+            <a href="project.html" class="nav-item active">Major Units <span>完整零件</span></a>
+            <a href="small_project.html" class="nav-item">Fragments <span>生活碎片</span></a>
+            <a href="contact.html" class="nav-item">Contact <span>訊號</span></a>
+        </div>
+    </nav>
 
-  <!-- Header -->
- <header id="header" class="header d-flex align-items-center dark-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logow.svg" alt="Caramel Unit Logo" style="height:80px;">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">關於這裡</a></li>
-          <li><a href="project.html" class="active">完整作品集</a></li>
-          <li><a href="small_project.html">小作品集</a></li>
-          <li><a href="contact.html">聯絡我</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345" target="_blank"><i class="bi bi-linkedin" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px; color:#faeacf;"></i></a>
-      </div>
-
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <a href="index.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Home</span><span class="zh">首頁</span></a>
+        <a href="about.html" class="mobile-link" onclick="toggleMenu()"><span class="en">About</span><span class="zh">關於</span></a>
+        <a href="project.html" class="mobile-link active" onclick="toggleMenu()"><span class="en">Major Units</span><span class="zh">完整零件</span></a>
+        <a href="small_project.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Fragments</span><span class="zh">生活碎片</span></a>
+        <a href="contact.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Contact</span><span class="zh">聯絡</span></a>
     </div>
-  </header>
 
-  <main class="main">
-  <div id="my-tab-test">
-    <section style="text-align: center; padding: 50px;">
-      <h2>照顧服務員行動應用程式 UI/UX 設計</h2>
-      <!-- <p style="color: #444;">選擇下方標籤，查看不同的專案說明內容</p> -->
-
-      <!-- 按鈕列 -->
-      <div class="tab-buttons" style="margin-top: 30px;">
-        <button class="tab-btn" data-tab="overview">最終成果</button>
-        <button class="tab-btn" data-tab="background">創作背景</button>
-        <button class="tab-btn" data-tab="content">設計過程</button>
-      </div>
-
-      <!-- 最終成果 -->
-      <div class="tab-content">
-        <div class="tab-panel" id="overview">
-
-          <!-- Portfolio Details Section -->
-<section id="portfolio-details" class="portfolio-details section">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
-
-      <!-- 左側：Figma Prototype -->
-      <div class="col-lg-8">
-        <div class="figma-embed rounded shadow-sm">
-          <iframe
-            style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 450px;"
-            src="https://embed.figma.com/proto/vTCxXF2KatJkCZD1N9CTpn/%E7%85%A7%E6%9C%8D%E5%93%A1UIUX?page-id=0%3A1&node-id=66-707&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A32&embed-host=share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-      <!-- 右側：專案資訊 -->
-      <div class="col-lg-4">
-        <div class="portfolio-info text-start" data-aos="fade-up" data-aos-delay="200">
-          <h3>照服員工作支援 App UIUX 設計</h3>
-          <ul>
-            <li><strong>專案類型</strong>: 行動應用程式 UI/UX 設計</li>
-            <li><strong>專案地點</strong>: 公司內部系統</li>
-            <li><strong>專案日期</strong>: 2025</li>
-            <li><strong>關鍵技術</strong>: Figma、流程設計</li>
-          </ul>
-        </div>
-
-        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-          <h2>專案簡介</h2>
-          <p>
-            本專案為一款設計給照顧服務員使用的手機 App，主要功能包含上下班打卡、工作任務清單、緊急任務通知與請假申請等。
-            使用者多為年長工作者，因此介面設計需清晰易讀、操作直覺，並能應對緊急狀況下的快速操作需求。
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-        </div>
-
-    <!-- 創作背景 -->
-        <div class="tab-panel text-start" id="background">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-              <div class="row gy-4 align-items-center">
-
-                <!-- 左側圖片 -->
-                  <div class="col-md-6">
-                    <img src="assets/img/care/logo.svg"
-                        class="img-fluid rounded shadow-sm mx-auto d-block"
-                        alt="混沌概念圖"
-                        style="max-width: 80%; height: auto;">
-                  </div>
-
-                  <!-- 右側文字 -->
-                  <div class="col-md-6 text-start" style="line-height: 1.8; font-size: 1.05rem;">
-                    <h3>需求與背景</h3>
-                    <br>
-                      <p>
-                        這次的專案是我少數純粹接 UIUX 設計的合作案，也很高興能有這樣的機會與實際需求方直接對接。
-                        左側為app的logo，vu 配合機構本身的logo與親切的小熊結合，也因為會放在救護站讓照服員們上下班掃描打卡，所以做成了護理師的樣子。
-                      </p>
-                      <p>
-                        前期的討論十分密集，包含使用情境釐清、功能優先順序、裝置限制與照服員使用習慣。
-                        比較不同的是這次找我的並非機構本身，而是開發APP的工程師直接與我對接，
-                        對方希望整體介面以「簡單、好操作」為主，只提了幾個功能方向後，其餘視覺與流程設計部分幾乎完全交給我自由發揮，
-                        這也讓我能真正用設計思維來思考每個頁面的使用目的與節奏安排。
-                      </p>
-                      <p>
-                        該 App 為其公司內部系統，並非公開應用，因此更強調實用性與內部流程整合；這也讓我在設計時能更貼近「設計該為誰而設」這個核心。
-                      </p>
-                  </div>
-
-              </div>
-          </div>
-</div>
-
-          <!-- 設計過程 -->
-          <!-- Sticky 導覽列包裝 -->
-              <div id="sticky-nav-trigger"></div> <!-- 用來偵測位置 -->
-              <div class="sticky-nav-wrapper" id="sticky-nav">
-                <div class="sub-nav text-center">
-                  <button class="sub-nav-btn" data-target="#section-idea">內容發想</button>
-                  <button class="sub-nav-btn" data-target="#section-feedback">資訊架構</button>
-                  <button class="sub-nav-btn" data-target="#section-tech">技術與規劃</button>
-                  <button class="sub-nav-btn" data-target="#section-challenge">挑戰與解法</button>
-                  <button class="sub-nav-btn" data-target="#section-reflection">我的收穫</button>
+    <main class="main-stage">
+        
+        <div class="case-header">
+            <h1 class="case-title">照服員工作支援 App</h1>
+            <p class="case-subtitle">Caregiver Job Support Mobile App UI/UX Design</p>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>App UI/UX 設計</p>
                 </div>
-              </div>
-          
-          <div class="tab-panel text-start" id="content">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-              <!-- 加入白底卡片樣式 -->
-              <div class="bg-white p-4 rounded shadow-sm  mx-auto custom-max-width" >
-                <!-- <h3>設計過程與創作挑戰</h3> -->
-
-                <!-- 內容發想 -->
-                  <div class="sub-section-title" id="section-idea" data-aos="fade-up">
-                    <span>內容發想</span>
-                  </div>
-                    <p>
-                      為了確保功能對照服員實際需求，我在專案初期與對方進行多次溝通，確保實際設計與使用情境相符合。
-                      我們聚焦在 5 大功能：打卡、任務清單、緊急通知、請假申請與首頁提醒，並依據日常使用頻率安排首頁模組順序。
-                    </p>
-                    <p>
-                      下圖為 persona，為了模擬真實使用者的需求與困境，我整理了受訪者的背景、工作習慣與痛點，作為後續流程設計的重要依據。
-                    </p>
-                 <img src="assets/img/care/persona.svg" class="img-fluid rounded shadow mb-4" alt="persona" >
-
-                <!-- 資訊架構與使用流程 -->
-                  <div class="sub-section-title" id="section-feedback" data-aos="fade-up">
-                    <span>資訊架構與使用流程</span>
-                  </div>
-                    <p>
-                    為了讓整體操作流程更貼近照服員實際工作節奏，我根據使用場景與任務邏輯設計出完整的資訊架構，並簡化為「首頁聚合狀態提醒＋四大模組導向」的主流程設計，降低導航層級與操作時間。
-                    </p>
-                <img src="assets/img/care/IA.jpeg" class="img-fluid rounded shadow mb-4" alt="觀眾參與照片">
-
-                <!-- 使用技術與設計規劃 -->
-                  <div class="sub-section-title" id="section-tech" data-aos="fade-up">
-                    <span>技術與規劃</span>
-                  </div>
-                    <p> 本專案使用 Figma 進行 UI 設計與元件管理，所有介面皆採用模組化設計，並搭配 Variants 元件變體以方便後續維護與開發交付。 </p> 
-                    <p> 由於使用者多為中高齡族群，我主動提出設計建議，包含：提升字級（文字大小至少 18px）、操作區域最小為 48px 以上、
-                      色彩搭配使用高對比的深紫與米白底組合，並設計專屬圖示提升操作辨識度。 </p> 
-                    <p> 此外，我也考量到該族群對層級過多的操作流程較難適應，因此在首頁設計中，將打卡時間直接呈現於主畫面上方，並以「上班／下班是否已打卡」
-                      、「今日任務完成與否」為主要視覺焦點，讓使用者一打開 App 即可掌握目前狀態，減少跳轉與認知負擔。 </p> 
-                    <p> 帳號機制部分，原方僅提供需要實作的功能列表，我主動建議使用者帳號改為工號或手機號碼，以降低記憶負擔。
-                      此提議獲得開發與單位端認同，最終由機構端統一建立帳號，使用者僅需輸入工號即可登入，並可依需求修改密碼，簡化整體 onboarding 流程。 </p> 
-                      <p> 設計初期我同步繪製 Wireframe 並進行兩輪快速迭代與測試，最終確認操作流程與模組邏輯後進入高保真視覺設計階段。下圖為部分高保真畫面截圖。 </p>
-                <img src="assets/img/care/1.png" class="img-fluid rounded shadow mb-4" alt="TouchDesigner 畫面">
-
-                <!-- 挑戰與解法 -->
-                  <div class="sub-section-title" id="section-challenge" data-aos="fade-up">
-                    <span>挑戰與解法</span>
-                  </div>
-                    <p><strong>使用者年齡層偏高，對於 App 操作不熟悉</strong><br> 
-                    本案使用者多為中高齡照服員，對於智慧型手機的熟悉度有限。
-                    我刻意設計了對比明顯的顏色系統與大尺寸按鈕（至少 48px），
-                    並在首頁設計上強化視覺動線：包含上下班打卡狀態、是否有緊急任務、
-                    今日任務完成進度，確保他們能在第一眼就「看懂現在該做什麼」。此外，
-                    錯誤訊息與操作說明也都使用白話簡潔語句，降低理解門檻。</p> 
-                    <p><strong>緊急任務資訊需即時傳達且不被忽略</strong><br> 照服員常需臨時處理突發任務，
-                    因此我設計了「緊急任務推播」，無論在哪個頁面，緊急任務都會優先推播；首頁同時以文字提示「今日有緊急任務」，
-                    讓使用者即使只打開首頁，也能立刻注意到關鍵事項。</p> 
-                    <p><strong>如何在有限的畫面中兼顧資訊完整與操作簡單？</strong><br> 為了避免畫面資訊過於壅擠，
-                    我採用「模組化 + 分區配色」的方式，讓每一區塊擁有清晰的任務邏輯，
-                    例如：請假申請、打卡紀錄查詢等功能被拆分成獨立分頁(也讓業主有彈性空間看是否需要此項功能)，
-                    避免資訊混淆。同時也讓開發上更容易後續擴充維護。</p>
-                <!-- <img src="assets/img/chaos/map.jpg" class="img-fluid rounded shadow mb-4" alt="展場配置圖"> -->
-
-                <!-- 個人收穫 -->
-                  <div class="sub-section-title" id="section-reflection" data-aos="fade-up"> 
-                    <span>我的收穫</span> 
-                  </div>
-                    <p>
-                      這次專案讓我第一次完整接觸到面向年長工作者的應用設計，過程中學到的不只是視覺上的調整技巧，更是如何真正站在使用者角度思考流程與操作邏輯。
-                    </p>
-                    <p>
-                      也因為整體需求清楚、合作對象信任度高，讓我能以設計師的角度主動提出模組優化與流程簡化的建議，累積了寶貴的設計主導經驗。
-                    </p>
-                <!-- <img src="assets/img/chaos/self-reflection.jpg" class="img-fluid rounded shadow mb-4" alt="創作者的明信片照片"> -->
-              </div>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2025</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>Figma, FigJam</p>
+                </div>
             </div>
-          </div>
-
-    
-    
-          </div>
-        </section>
-      </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background py-3">
-    <div class="container">
-      <div class="row align-items-center text-center text-lg-start gy-3">
-        <div class="col-12 col-lg-4">
-          <img src="assets/img/logo.png" alt="logo" style="height: 60px;">
         </div>
-        <div class="col-12 col-lg-4">
-          <p class="mb-0">
-            © <strong class="px-1 sitename">AN JUI</strong> All Rights Reserved ._.   
-            Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          </p>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-nowrap">
-            <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px;"></i></a>
-            <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345 " target="_blank"><i class="bi bi-linkedin" style="font-size: 24px;"></i></a>
-            <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px;"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#background" class="mobile-toc-link">背景需求</a>
+            <a href="#idea" class="mobile-toc-link">內容發想</a>
+            <a href="#structure" class="mobile-toc-link">資訊架構</a>
+            <a href="#tech" class="mobile-toc-link">技術規劃</a>
+            <a href="#challenge" class="mobile-toc-link">挑戰解法</a>
+            <a href="#reflection" class="mobile-toc-link">收穫</a>
+            <a href="#gallery" class="mobile-toc-link">剪影</a>
+        </div>
 
-  <!-- Main Required JS -->
-  
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  
+        <div class="hero-media">
+            <img src="assets/img/care/1.png" alt="App高保真畫面">
+        </div>
+
+        <div class="content-wrapper">
+            
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">專案簡介</a>
+                <a href="#background" class="toc-link">背景與需求</a>
+                <a href="#idea" class="toc-link">內容發想</a>
+                <a href="#structure" class="toc-link">資訊架構</a>
+                <a href="#tech" class="toc-link">技術與規劃</a>
+                <a href="#challenge" class="toc-link">挑戰與解法</a>
+                <a href="#reflection" class="toc-link">我的收穫</a>
+                <a href="#gallery" class="toc-link">設計剪影</a>
+            </aside>
+
+            <article class="article-content">
+                
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">專案簡介</h2>
+                    <p>
+                        本專案為一款設計給照顧服務員使用的手機 App，主要功能包含上下班打卡、工作任務清單、緊急任務通知與請假申請等。
+                        使用者多為年長工作者，因此介面設計需清晰易讀、操作直覺，並能應對緊急狀況下的快速操作需求。
+                    </p>
+                </section>
+
+                <section id="background" class="article-section">
+                    <h2 class="section-title">背景與需求</h2>
+                    <p>
+                        這次的專案是少數純粹接 UI/UX 設計的合作案。對接方為開發 App 的工程師，對方希望整體介面以「簡單、好操作」為主。
+                        該 App 為其公司內部系統，並非公開應用，因此更強調實用性與內部流程整合；這也讓我在設計時能更貼近「設計該為誰而設」這個核心。
+                    </p>
+                    <img src="assets/img/care/logo.svg" alt="App Logo" class="article-img" style="width: 200px; margin: 0 auto; display: block;">
+                    <p class="caption">親切的小熊護理師 Logo 設計</p>
+                </section>
+
+                <section id="idea" class="article-section">
+                    <h2 class="section-title">內容發想與 Persona</h2>
+                    <p>
+                        為了確保功能對照服員實際需求，我在專案初期與對方進行多次溝通，確保實際設計與使用情境相符合。
+                        我們聚焦在 5 大功能：打卡、任務清單、緊急通知、請假申請與首頁提醒，並依據日常使用頻率安排首頁模組順序。
+                    </p>
+                    <img src="assets/img/care/persona.svg" alt="Persona" class="article-img">
+                    <p class="caption">針對目標使用者建立的 Persona</p>
+                </section>
+
+                <section id="structure" class="article-section">
+                    <h2 class="section-title">資訊架構 (IA)</h2>
+                    <p>
+                        為了讓整體操作流程更貼近照服員實際工作節奏，我根據使用場景與任務邏輯設計出完整的資訊架構，
+                        並簡化為「首頁聚合狀態提醒＋四大模組導向」的主流程設計，降低導航層級與操作時間。
+                    </p>
+                    <img src="assets/img/care/IA.jpeg" alt="Information Architecture" class="article-img">
+                </section>
+
+                <section id="tech" class="article-section">
+                    <h2 class="section-title">技術與規劃</h2>
+                    <p>
+                        本專案使用 <strong>Figma</strong> 進行 UI 設計與元件管理。由於使用者多為中高齡族群，我主動提出設計建議，
+                        包含：提升字級（至少 18px）、操作區域最小為 48px 以上、色彩搭配使用高對比的深紫與米白底組合。
+                    </p>
+                    
+                    <div class="figma-embed">
+                        <iframe 
+                            src="https://embed.figma.com/proto/vTCxXF2KatJkCZD1N9CTpn/%E7%85%A7%E6%9C%8D%E5%93%A1UIUX?page-id=0%3A1&node-id=66-707&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A32&embed-host=share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="caption">Figma 互動原型展示 (可直接操作)</p>
+
+                    <p>
+                        此外，我也考量到該族群對層級過多的操作流程較難適應，因此在首頁設計中，
+                        將打卡時間直接呈現於主畫面上方，並以「上班／下班是否已打卡」為主要視覺焦點，讓使用者一打開 App 即可掌握目前狀態。
+                    </p>
+                </section>
+
+                <section id="challenge" class="article-section">
+                    <h2 class="section-title">挑戰與解法</h2>
+                    <blockquote>
+                        「讓科技不再是長輩的障礙，而是工作的幫手。」
+                    </blockquote>
+                    <p>
+                        <strong>1. 使用者年齡層偏高</strong><br>
+                        我刻意設計了對比明顯的顏色系統與大尺寸按鈕，並在首頁設計上強化視覺動線，確保他們能在第一眼就「看懂現在該做什麼」。
+                    </p>
+                    <p>
+                        <strong>2. 緊急任務資訊需即時傳達</strong><br>
+                        設計了全域的「緊急任務推播」，無論在哪個頁面，緊急任務都會優先顯示；首頁同時以文字提示，避免遺漏。
+                    </p>
+                    <p>
+                        <strong>3. 畫面資訊取捨</strong><br>
+                        採用「模組化 + 分區配色」的方式，讓每一區塊擁有清晰的任務邏輯。例如將請假申請、紀錄查詢拆分為獨立入口，避免資訊混淆。
+                    </p>
+                </section>
+
+                <section id="reflection" class="article-section">
+                    <h2 class="section-title">我的收穫</h2>
+                    <p>
+                        這次專案讓我第一次完整接觸到面向年長工作者的應用設計，過程中學到的不只是視覺上的調整技巧，更是如何真正站在使用者角度思考流程與操作邏輯。
+                        也因為整體需求清楚、合作對象信任度高，讓我能以設計師的角度主動提出模組優化與流程簡化的建議，累積了寶貴的設計主導經驗。
+                    </p>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">設計剪影</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/care/1.png" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/1.png"></a>
+                        <a href="assets/img/care/logo.svg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/logo.svg"></a>
+                        <a href="assets/img/care/persona.svg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/persona.svg"></a>
+                        <a href="assets/img/care/IA.jpeg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/IA.jpeg"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-social">
+                <a href="mailto:caramel.unit@gmail.com" class="social-link"><i class="bi bi-envelope"></i> Email</a>
+                <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank" class="social-link"><i class="bi bi-line"></i> Line</a>
+                <a href="https://www.linkedin.com/in/aj0920/" target="_blank" class="social-link hover-target"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </div>
+            <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+    <script>
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('open');
+            const toggle = document.querySelector('.mobile-toggle');
+            const bars = document.querySelectorAll('.bar');
+            
+            if (overlay.classList.contains('open')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        }
+
+        // --- IntersectionObserver Scroll Spy ---
+        let isManualScrolling = false;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -70% 0px', 
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (isManualScrolling) return;
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    updateActiveNav(id);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.article-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function updateActiveNav(id) {
+            // Desktop
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) link.classList.add('active');
+            });
+
+            // Mobile
+            document.querySelectorAll('.mobile-toc-link').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                    const container = document.getElementById('mobileToc');
+                    const scrollLeft = link.offsetLeft - (container.offsetWidth / 2) + (link.offsetWidth / 2);
+                    container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Click Lock Logic
+        document.querySelectorAll('.mobile-toc-link, .toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                isManualScrolling = true;
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                updateActiveNav(targetId);
+
+                const offset = 140; 
+                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                setTimeout(() => {
+                    isManualScrolling = false;
+                }, 800);
+            });
+        });
+        
+        window.addEventListener('scroll', () => {
+            if (!isManualScrolling && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                const lastId = document.querySelector('.article-section:last-of-type').getAttribute('id');
+                updateActiveNav(lastId);
+            }
+        });
+    </script>
 </body>
-
 </html>

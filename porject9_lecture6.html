@@ -1,339 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-6QKWZMKZ0W');
-</script>
+    gtag('config', 'G-6QKWZMKZ0W');
+  </script>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>CARAMEL UNIT | 母校演講</title>
-  <link href="assets/img/onlylogo.svg" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caramel Unit | 母校演講</title>
+    
+    <link href="assets/img/s-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Main Required CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="og:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="og:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
 
-  <!-- AOS CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anjui2025.github.io/caramel.unit/">
+    <meta property="twitter:title" content="Caramel Unit | 安睿的作品集">
+    <meta property="twitter:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
+    <meta property="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
+    <style>
+        /* 捲動優化 */
+        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+        body { overflow-y: visible; }
+        .main-stage { overflow: visible !important; }
+    </style>
 </head>
+<body>
 
-<body class="index-page">
+    <nav class="sidebar">
+        <a href="index.html">
+            <img src="assets/img/logo2.png" alt="Caramel Unit Logo" class="sidebar-logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">Home <span>首頁</span></a>
+            <a href="about.html" class="nav-item">About <span>關於</span></a>
+            <a href="project.html" class="nav-item active">Major Units <span>完整零件</span></a>
+            <a href="small_project.html" class="nav-item">Fragments <span>生活碎片</span></a>
+            <a href="contact.html" class="nav-item">Contact <span>訊號</span></a>
+        </div>
+    </nav>
 
-  <!-- Header -->
- <header id="header" class="header d-flex align-items-center dark-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logow.svg" alt="Caramel Unit Logo" style="height:80px;">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">關於這裡</a></li>
-          <li><a href="project.html" class="active">完整作品集</a></li>
-          <li><a href="small_project.html">小作品集</a></li>
-          <li><a href="contact.html">聯絡我</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345" target="_blank"><i class="bi bi-linkedin" style="font-size: 24px; color:#faeacf;"></i></a>
-        <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px; color:#faeacf;"></i></a>
-      </div>
-
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <a href="index.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Home</span><span class="zh">首頁</span></a>
+        <a href="about.html" class="mobile-link" onclick="toggleMenu()"><span class="en">About</span><span class="zh">關於</span></a>
+        <a href="project.html" class="mobile-link active" onclick="toggleMenu()"><span class="en">Major Units</span><span class="zh">完整零件</span></a>
+        <a href="small_project.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Fragments</span><span class="zh">生活碎片</span></a>
+        <a href="contact.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Contact</span><span class="zh">聯絡</span></a>
     </div>
-  </header>
 
-  <main class="main">
-  <div id="my-tab-test">
-    <section style="text-align: center; padding: 50px;">
-      <h2>想太多這件事，剛好可以拿來做UX-回母校演講</h2>
-      <!-- <p style="color: #444;">選擇下方標籤，查看不同的專案說明內容</p> -->
-
-      <!-- 按鈕列 -->
-      <div class="tab-buttons" style="margin-top: 30px;">
-        <button class="tab-btn" data-tab="overview">講座簡介</button>
-        <button class="tab-btn" data-tab="background">講座內容</button>
-        <button class="tab-btn" data-tab="content">回饋反思</button>
-      </div>
-
-      <!-- 最終成果 -->
-      <div class="tab-content">
-        <div class="tab-panel" id="overview">
-
-          <!-- Portfolio Details Section -->
-      <section id="portfolio-details" class="portfolio-details section">
-
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-              <div class="col-lg-8">
-                <div class="portfolio-details-slider swiper init-swiper">
-
-                  <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      "autoplay": {
-                        "delay": 20000
-                      },
-                      "slidesPerView": "auto",
-                      "pagination": {
-                        "el": ".swiper-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                      }
-                    }
-                  </script>
-
-                  <div class="swiper-wrapper align-items-center">
-
-                  <!-- 第1張-->
-                    <div class="swiper-slide">
-                      <img src="assets/img/lecture/L6.jpg" alt="演講現場">
-                    </div>
-                  <!-- 第2張-->
-                    <div class="swiper-slide">
-                      <img src="assets/img/lecture/L6-2.jpg" alt="演講現場">
-                    </div>
-                    </div>
-                  <div class="swiper-pagination"></div>
+    <main class="main-stage">
+        
+        <article class="event-container">
+            <div class="event-header">
+                <span class="event-tag">Guest Lecture 講座分享</span>
+                <h1 class="page-title">想太多這件事，<br>剛好可以拿來做 UX</h1>
+                <div class="event-meta">
+                    <span><i class="bi bi-calendar3"></i> 2025.06</span>
+                    <span><i class="bi bi-geo-alt"></i> 東海大學哲學系</span>
+                    <span><i class="bi bi-person-badge"></i> 講者</span>
                 </div>
-              </div>
-
-              <!-- 右側：專案資訊 -->
-              <div class="col-lg-4">
-                <div class="portfolio-info text-start" data-aos="fade-up" data-aos-delay="200">
-                  <h3>想太多這件事，剛好可以拿來做UX</h3>
-                  <ul>
-                    <li><strong>專案類型</strong>: 演講分享</li>
-                    <li><strong>專案地點</strong>: 東海大學哲學系</li>
-                    <li><strong>專案日期</strong>: 2025.06</li>
-                    <li><strong>關鍵技術</strong>: UIUX、演講</li>
-                  </ul>
-                </div>
-
-                <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                  <h2>專案簡介</h2>
-                  <p>
-                    受東海大學哲學系邀請，擔任回校分享講者，以「UIUX在做甚麼」為主軸，分享我如何將「過度思考」這個常被視為缺點的性格，轉化為設計工作中的敏感度與優勢。
-講座涵蓋內容包含職涯探索、學習路徑、作品集製作、用戶觀察、設計邏輯，以及哲學思維如何潛移默化地影響我作為設計師的工作方式。
-                  </p>
-                </div>
-              </div>
-
             </div>
-          </div>
-        </section>
-        </div>
 
-    <!-- 創作背景 -->
-        <div class="tab-panel text-start" id="background">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-              <div class="row gy-4 align-items-center">
-
-                <!-- 左側圖片 -->
-                  <div class="col-md-12">
-                  <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;border-radius: 8px; will-change: transform;">
-                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                    src="https://www.canva.com/design/DAGn5VdA2SI/di5YeuamA89ouex5qurpxQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-                  </iframe>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/lecture/L6.jpg" alt="演講現場 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/lecture/L6-2.jpg" alt="演講現場 2"></div>
                 </div>
-          黃安睿 設計的 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGn5VdA2SI&#x2F;di5YeuamA89ouex5qurpxQ&#x2F;view?utm_content=DAGn5VdA2SI&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">想太多這件事，剛好可以拿來做 UX</a>
-                  </div>
-
-                  <!-- 右側文字 -->
-<section id="talk-content">
-  <h3>演講內容</h3>
-  <p class="section-intro">
-    這場講座以<strong>「想太多這件事，剛好可以拿來做 UX」</strong>為題，從自身非設計本科出身、哲學系畢業的背景出發，分享我如何將「想太多」這個時常出現在哲學系的特質轉化為 UX 設計中的優勢。
-  </p>
-
-  <div class="sub-section" data-aos="fade-up">
-    <h4>開場與自我介紹</h4>
-    <p>說明我的學經歷轉折，從哲學系進入數位創新研究所領域的契機。揭露「想太多」的內心狀態，也作為全場主題的引子。</p>
-  </div>
-
-  <div class="sub-section" data-aos="fade-up">
-    <h4>UI/UX 設計師的日常與任務</h4>
-    <ul>
-      <li>使用者研究與觀察（如 0.5 秒猶豫的判斷細節）</li>
-      <li>與 PM、工程師溝通的橋樑角色</li>
-      <li>設計工具（如 Figma）與產品設計實務範例</li>
-    </ul>
-    <p>讓學生了解 UX 並非單純畫畫，而是一種「為人設計」的工作。</p>
-  </div>
-
-  <div class="sub-section" data-aos="fade-up">
-    <h4>哲學訓練如何影響我</h4>
-    <p>說明哲學系養成的邏輯思辨、問題意識與洞察力，如何延伸到 UX 設計的核心。從自我焦慮出發，轉化為對使用者需求的敏感與洞察。</p>
-  </div>
-
-  <div class="sub-section" data-aos="fade-up">
-    <h4>我的學習歷程與轉職實踐</h4>
-    <ul>
-      <li>線上課程、自學、專案實作</li>
-      <li>建立作品集與接案經驗</li>
-      <li>在沒有明確方向的情況下，如何邊做邊調整、邊嘗試邊學習</li>
-    </ul>
-  </div>
-
-  <div class="sub-section" data-aos="fade-up">
-    <h4>從「想太多」到「我在哪」</h4>
-    <p>以經典哲學三問「我是誰、我在哪、我要去哪裡」作為結尾收束，翻轉「迷惘」這個詞，傳達 <strong>不完美也能行動，未知也能前進</strong> 的態度。</p>
-    <p>講座途中開放學生使用手機 Slido 即時提問，在最後回答大家問題，並分享這段設計也來自我「想太多」的糾結與調整。</p>
-  </div>
-</section>
-          </div>
-</div>
-</div>
-</div>
-
-          <!-- 設計過程 -->
-          <!-- Sticky 導覽列包裝 -->
-              <div id="sticky-nav-trigger"></div> <!-- 用來偵測位置 -->
-              <div class="sticky-nav-wrapper" id="sticky-nav">
-                <div class="sub-nav text-center">
-                  <button class="sub-nav-btn" data-target="#section-idea">我的反思</button>
-                  <button class="sub-nav-btn" data-target="#section-feedback">回饋精選</button>
-                  <button class="sub-nav-btn" data-target="#section-tech">完整回饋</button>
-                </div>
-              </div>
-          
-          <div class="tab-panel text-start" id="content">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-              <!-- 加入白底卡片樣式 -->
-              <div class="bg-white p-4 rounded shadow-sm  mx-auto custom-max-width" >
-                <!-- <h3>設計過程與創作挑戰</h3> -->
-
-                <!-- 講座後我學到的事 -->
-                  <div class="sub-section-title" id="section-idea" data-aos="fade-up">
-                    <span>講座後我學到的事</span>
-                    </div>
-                    <p>
-                      這是我第一次以在職身份回到母系演講，一開始非常緊張，甚至有點擔心：「想太多」這個主題會不會太抽象？
-                      學生們會不會不感興趣？整場演講前我反覆修改簡報內容，也不斷想像如果我是學生，會想聽什麼、會在意什麼。
-                      當天也聽到另一位講者以職場中打滾多年的身分回來分享，讓我不禁感到自己的經驗還不夠完整、表達也還有許多可以加強的地方。
-                      演講結束後，我其實陷入不少內耗，懷疑自己是不是講得不夠清楚、不夠精彩。
-                      但在收到學弟妹的 Slido 提問與課後心得之後，我才慢慢放下那些自我批評。他們的回饋比我預期中熱烈許多，
-                      還有不少人提到哲學系對他們帶來的影響，以及如何從我分享的故事中獲得共鳴與勇氣。我意識到，也許所謂「不完美的分享」，才是真實且能打動人的東西。
-                      這次講座不只是一次對外的公開演講，更像是一場跟自己過去對話的過程。我也因此更確信，
-                      講清楚「自己的故事」，就是 UX 最好的開場練習，也是我持續想要練習的事。
-                    </p>
-
-
-
-                <!-- 回饋精選 -->
-                  <div class="sub-section-title" id="section-feedback" data-aos="fade-up">
-                    <span>回饋精選</span>
-                  <section id="student-feedback">
-
-                    <div class="feedback-card">
-                      <p>「我第一次覺得『想太多』是一種優勢，而不是缺點。」</p>
-                      <p>「講者不是在賣夢，而是真的走出一條路。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「講者說過一句可愛的話：找工作就像談戀愛一樣，交往第一任就大概知道自己喜歡什麼不喜歡什麼。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「我從她的故事中學到，所有學到的東西都是為自己鋪路，不管是軟實力還是硬實力。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「天賦可能不是生來就有，而是喜好加上經驗塑造出來的。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「設計師像先知，要預測使用者會在哪裡跌倒，然後提前鋪好路。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「這場演講讓我意識到自己其實不是迷惘，而是還沒對自己負起責任。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「講者很有實踐力，也很真誠地分享了她走過的每一步，讓我學到行動才是關鍵。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「我很佩服她能在大學時期就不斷實驗、探索、修正，而不是只是想而已。」</p>
-                    </div>
-
-                    <div class="feedback-card">
-                      <p>「哲學不只是跳板，是平行的夥伴。」</p>
-                    </div>
-                  </section>
-
-                  <!-- 完整回饋 -->
-                  <div class="sub-section-title" id="section-tech" data-aos="fade-up">
-                    <span>完整回饋</span>
-                  </div>
-                  <p><a href="assets/img/lecture/lecture_feedback.pdf" download target="_blank">點此查看完整回饋！</a></p>
-              </div>
+                <div class="swiper-pagination"></div>
             </div>
-          </div>
 
+            <div class="event-body">
+                <p>
+                    這是一場關於「接納自我特質」的職涯分享。
+                    受母校東海大學哲學系邀請，我以學姊的身分回去分享：一個非設計本科、愛胡思亂想的哲學系畢業生，是如何走上 UI/UX 設計這條路的。
+                </p>
+                <p>
+                    我選擇以<strong>「想太多」</strong>作為切入點。這通常被視為一種內耗或缺點，但在使用者體驗設計（UX）的世界裡，
+                    這種對細節的過度敏感、對背後邏輯的追根究底，反而成為了洞察使用者需求的關鍵能力。
+                </p>
+
+                <div class="canva-frame">
+                    <iframe loading="lazy" src="https://www.canva.com/design/DAGn5VdA2SI/di5YeuamA89ouex5qurpxQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                </div>
+                <p class="caption" style="text-align: center; color: #888; font-size: 0.85rem; margin-top: -30px; margin-bottom: 40px;">講座簡報：想太多這件事，剛好可以拿來做 UX</p>
+
+                <div class="highlight-box">
+                    <h3>🔍 講座內容核心</h3>
+                    <ul>
+                        <li><strong>哲學與 UX 的連結</strong>：邏輯思辨與問題意識，如何應用於產品設計流程。</li>
+                        <li><strong>設計師的日常</strong>：除了畫圖，更多時間在觀察、溝通與解決問題。</li>
+                        <li><strong>轉職心路歷程</strong>：從零開始自學、建立作品集到接案的實戰經驗分享。</li>
+                    </ul>
+                </div>
+
+                <h3>學弟妹的回饋</h3>
+                <p>
+                    演講結束後，收到了許多學弟妹透過 Slido 傳來的回饋。
+                    有人說：「我第一次覺得『想太多』是一種優勢，而不是缺點。」這句話讓我非常感動。
+                    如果我的經驗能讓同樣迷惘的人少一點焦慮，多一點對自己的肯定，那這場演講就值得了。
+                </p>
+
+                <div class="feedback-grid">
+                    <div class="feedback-card">「講者不是在賣夢，而是真的走出一條路。」</div>
+                    <div class="feedback-card">「這場演講讓我意識到自己其實不是迷惘，而是還沒對自己負起責任。」</div>
+                    <div class="feedback-card">「我很佩服她能在大學時期就不斷實驗、探索、修正，而不是只是想而已。」</div>
+                    <div class="feedback-card">「哲學不只是跳板，是平行的夥伴。」</div>
+                    <div class="feedback-card">「天賦可能不是生來就有，而是喜好加上經驗塑造出來的。」</div>
+                    <div class="feedback-card">「設計師像先知，要預測使用者會在哪裡跌倒，然後提前鋪好路。」</div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 30px;">
+                    <a href="assets/img/lecture/lecture_feedback.pdf" target="_blank" style="color: var(--caramel); text-decoration: underline;">
+                        <i class="bi bi-file-earmark-pdf"></i> 查看完整回饋內容 (PDF)
+                    </a>
+                </p>
+            </div>
+
+            <div class="back-btn-container">
+                <a href="project.html" class="back-btn">← 返回完整零件</a>
+            </div>
+        </article>
+
+        <footer class="site-footer">
+            <div class="footer-social">
+                <a href="mailto:caramel.unit@gmail.com" class="social-link"><i class="bi bi-envelope"></i> Email</a>
+                <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank" class="social-link"><i class="bi bi-line"></i> Line</a>
+                <a href="https://www.linkedin.com/in/aj0920/" target="_blank" class="social-link hover-target"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </div>
+            <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    
-          </div>
-        </section>
-      </div>
+    <script>
+        // 1. 自動點亮 Major Units
+        $(document).ready(function() {
+            var path = window.location.pathname.split("/").pop();
+            if (path === 'porject14_lecture.html') {
+                $('.nav-item[href="project.html"]').addClass('active');
+                $('.mobile-link[href="project.html"]').addClass('active');
+            }
+        });
 
-  </main>
+        // 2. 手機版選單
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('open');
+            const toggle = document.querySelector('.mobile-toggle');
+            const bars = document.querySelectorAll('.bar');
+            
+            if (overlay.classList.contains('open')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        }
 
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background py-3">
-    <div class="container">
-      <div class="row align-items-center text-center text-lg-start gy-3">
-        <div class="col-12 col-lg-4">
-          <img src="assets/img/logo.png" alt="logo" style="height: 60px;">
-        </div>
-        <div class="col-12 col-lg-4">
-          <p class="mb-0">
-            © <strong class="px-1 sitename">AN JUI</strong> All Rights Reserved ._.   
-            Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          </p>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-nowrap">
-            <a href="https://line.me/R/ti/p/@095xzwqa" target="_blank"><i class="bi bi-line" style="font-size: 24px;"></i></a>
-            <a href="https://www.linkedin.com/in/%E5%AE%89%E7%9D%BF-%E9%BB%83-1b9920345 " target="_blank"><i class="bi bi-linkedin" style="font-size: 24px;"></i></a>
-            <a href="mailto:caramel.unit@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 24px;"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Main Required JS -->
-  
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  
+        // 3. Swiper Init
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
-
 </html>
