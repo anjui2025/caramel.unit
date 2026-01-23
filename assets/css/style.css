@@ -2038,13 +2038,13 @@ html { scroll-behavior: smooth; }
 
 /* 1. 預設隱藏 (電腦版看不到) */
 .mobile-hero-logo {
-    display: none; 
+    display: none !important;
 }
 
 /* 2. 手機版樣式 (螢幕寬度小於 768px 時顯示) */
 @media (max-width: 768px) {
     .mobile-hero-logo {
-        display: block;        /* 顯示圖片 */
+        display: block !important;        /* 顯示圖片 */
         width: 220px;          /* 設定寬度 (可依喜好調整) */
         height: auto;
         margin: 0 auto 20px;   /* 置中，並與下方標題保持 20px 距離 */
