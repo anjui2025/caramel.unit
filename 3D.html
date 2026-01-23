@@ -172,7 +172,7 @@
         <div class="gallery-container">
             
             <div class="page-header">
-                <h1 class="page-title">3D WORKS 立體作品</h1>
+                <h1 class="page-title">3D WORKS<br class="mobile-br">立體作品</h1>
                 <p class="page-desc">
                     這些是我過去製作的一些立體實驗。<br>
                     包含 3D 列印、雷射雕刻與切割，嘗試將數位的模型轉化為實體的溫度。
@@ -277,6 +277,12 @@
             <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
         </footer>
 
+        <button id="backToTop" class="back-to-top" title="回到頂端">
+            <div class="unit-icon">
+                <i class="bi bi-arrow-up-short"></i>
+                <span class="unit-ring"></span>
+            </div>
+        </button>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -315,6 +321,24 @@
           'wrapAround': true,
           'albumLabel': "作品 %1 / %2"
         })
+
+        // 回到頂端按鈕邏輯
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 絲滑滾動
+            });
+        });         
     </script>
 </body>
 </html>

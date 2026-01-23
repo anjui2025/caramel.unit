@@ -259,6 +259,12 @@
             <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
         </footer>
 
+        <button id="backToTop" class="back-to-top" title="回到頂端">
+            <div class="unit-icon">
+                <i class="bi bi-arrow-up-short"></i>
+                <span class="unit-ring"></span>
+            </div>
+        </button>        
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -356,6 +362,24 @@
                 updateActiveNav(lastId);
             }
         });
+
+        // 回到頂端按鈕邏輯
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 絲滑滾動
+            });
+        });         
     </script>
 </body>
 </html>

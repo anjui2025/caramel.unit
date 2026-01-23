@@ -67,9 +67,9 @@
         
         <div class="fragments-container">
             <div class="page-header">
-                <h1 class="page-title">FRAGMENTS 生活碎片</h1>
+                <h1 class="page-title">FRAGMENTS<br class="mobile-br">生活碎片</h1>
                 <p class="page-desc">
-                    這裡存放著一些實驗性專案、小工具與創作練習。<br>
+                    這裡是我的小天地，存放著一些實驗性專案、小工具與創作練習。
                     有些是為了解決自己的小問題，有些則是單純覺得有趣而生。
                 </p>
             </div>
@@ -289,6 +289,13 @@
             <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
         </footer>
 
+        <button id="backToTop" class="back-to-top" title="回到頂端">
+            <div class="unit-icon">
+                <i class="bi bi-arrow-up-short"></i>
+                <span class="unit-ring"></span>
+            </div>
+        </button>
+
     </main>
 
     <div class="custom-modal-overlay" id="customModalOverlay">
@@ -417,6 +424,24 @@
                 closeModal();
             }
         });
+
+        // 回到頂端按鈕邏輯
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 絲滑滾動
+            });
+        }); 
     </script>
 </body>
 </html>

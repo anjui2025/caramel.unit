@@ -112,9 +112,15 @@ body::after {
 .btn:hover { transform: translateY(-3px); }
 
 .blob {
-    position: absolute; background: var(--caramel); border-radius: 50%;
-    filter: blur(80px); opacity: 0.1; z-index: -1;
+    position: absolute;
+    background: var(--caramel);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.1;
+    z-index: -1;
     animation: float 20s ease-in-out infinite;
+    /* 關鍵修復：讓氣泡不攔截任何點擊事件 */
+    pointer-events: none; 
 }
 
 @keyframes float {
@@ -130,9 +136,19 @@ body::after {
 
 /* Footer */
 .site-footer {
-    width: 100%; padding: 30px 20px; font-size: 0.75rem; color: var(--text-light);
-    display: flex; flex-direction: column; align-items: center; gap: 15px;
-    margin-top: auto; font-family: 'Inter', sans-serif;
+    width: 100%;
+    padding: 30px 20px;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    /* 關鍵修復：提升層級並確保 z-index 生效 */
+    position: relative; 
+    z-index: 50; 
 }
 .footer-social { display: flex; gap: 20px; }
 .social-link { text-decoration: none; color: var(--text-light); transition: all 0.3s ease; display: flex; align-items: center; gap: 6px; }
@@ -470,6 +486,7 @@ section {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: var(--text-main);
+    white-space: nowrap;
 }
 
 .page-subtitle {
@@ -1299,7 +1316,7 @@ section {
 
 /* --- 6. 文章內容樣式 --- */
 .article-content { flex-grow: 1; font-size: 1.05rem; line-height: 1.9; color: #444; min-width: 0; }
-.article-section { padding-top: 20px; margin-bottom: 100px; }
+.article-section { padding-top: 20px; margin-bottom: -50px; }
 
 .section-title {
     font-family: 'Noto Serif TC', serif; font-size: 1.8rem;
@@ -1371,8 +1388,17 @@ blockquote {
 }
 
 @media (max-width: 768px) {
-    .case-header { padding: 40px 20px; }
+    .case-header { padding: 30px 20px; }
     .case-title { font-size: 2rem; }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .section-title::after {
+        height: 6px; /* 原本是 8px，縮小一點點視覺上比較精緻 */
+        bottom: 3px; /* 向上微調一點，確保貼合字體 */
+    }
 }
 
 /* =========================================
@@ -2008,3 +2034,179 @@ html { scroll-behavior: smooth; }
     .lightbox-close { top: -40px; right: 0; }
 }
 
+/* --- 手機版 Hero Logo 設定 --- */
+
+/* 1. 預設隱藏 (電腦版看不到) */
+.mobile-hero-logo {
+    display: none; 
+}
+
+/* 2. 手機版樣式 (螢幕寬度小於 768px 時顯示) */
+@media (max-width: 768px) {
+    .mobile-hero-logo {
+        display: block;        /* 顯示圖片 */
+        width: 220px;          /* 設定寬度 (可依喜好調整) */
+        height: auto;
+        margin: 0 auto 20px;   /* 置中，並與下方標題保持 20px 距離 */
+        opacity: 0.9;          /* 稍微調整透明度 */
+    }
+    
+    /* 微調手機版標題，讓它跟 Logo 的距離好看一點 */
+    .hero-title {
+        margin-top: 10px;
+    }
+}
+
+.brand-label {
+    font-family: 'Noto Serif TC', serif; /* 使用宋體增加氣質 */
+    font-size: 2rem;                   /* 較小的字體 */
+    color: var(--caramel);               /* 使用你的焦糖色變數 */
+    letter-spacing: 0.3em;               /* 增加字距讓它看起來更優雅 */
+    margin-bottom: 20px;                 /* 與下方主標題的距離 */
+    text-transform: uppercase;           /* 英文強制大寫 */
+    opacity: 0.8;                        /* 稍微透明一點，增加層次感 */
+    display: block;                      /* 確保它獨佔一行 */
+}
+
+/* 針對手機版的微調 */
+@media (max-width: 768px) {
+    .brand-label {
+        font-size: 1.2rem;               /* 手機版字體再縮小一點 */
+        letter-spacing: 0.2em;
+        margin-bottom: 15px;             /* 手機版距離縮減 */
+    }
+}
+
+/* --- 1. 修正手機版 Contact 頁面歪斜 --- */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 40px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .info-section, .form-section, .info-cards, .info-card {
+        width: 100% !important;
+    }
+    .info-card {
+        justify-content: flex-start !important;
+    }
+    .allies-grid {
+        flex-direction: column !important;
+    }
+}
+
+/* --- Back to Top 懸浮按鈕 --- */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(166, 123, 91, 0.3);
+    border-radius: 50%;
+    color: var(--caramel);
+    cursor: pointer;
+    z-index: 2000;
+    opacity: 0; /* 預設隱藏 */
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 顯示狀態 */
+.back-to-top.show {
+    opacity: 0.6; /* 不要太明顯，保持低調 */
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    background: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(166, 123, 91, 0.15);
+}
+
+/* 零件旋轉特效 */
+.unit-icon {
+    position: relative;
+    font-size: 1.5rem;
+    transition: transform 0.6s ease;
+}
+
+.back-to-top:hover .unit-icon {
+    transform: rotate(360deg); /* 懸浮時旋轉 */
+}
+
+.unit-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px; height: 35px;
+    border: 1px dashed var(--caramel);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .back-to-top { right: 20px; bottom: 20px; width: 45px; height: 45px; }
+}
+
+/* --- [緊急修復] 手機版面撐爆問題 --- */
+@media (max-width: 768px) {
+    /* 1. 解除標題的不換行限制，並縮小字體 */
+    .page-title {
+        white-space: normal !important; /* 允許換行 */
+        font-size: 1.8rem !important;   /* 字體縮小，避免單字過長 */
+        line-height: 1.4 !important;    /* 增加行距，換行後比較好看 */
+        word-break: break-word !important; /* 防止長單字撐開 */
+    }
+
+    /* 2. 確保整個網頁容器強制隱藏超出部分 */
+    html, body {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 3. 確保主要內容區不會被內部元件撐大 */
+    .main-stage, .event-container, .content-wrapper {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+}
+
+/* --- 懶人法：用 CSS 幫所有頁面加上中間標題 --- */
+@media (max-width: 768px) {
+    .sidebar::after {
+        content: "焦糖零件 | Caramel Unit"; /* 這裡就是你要的文字 */
+        
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); /* 完美置中 */
+        
+        font-family: 'Noto Serif TC', serif;
+        font-size: 0.9rem;       /* 字體大小 */
+        color: var(--caramel);   /* 你的品牌色 */
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        white-space: nowrap;     /* 強制不換行 */
+        pointer-events: none;    /* 讓點擊穿透，不會擋到別人 */
+        z-index: 1001;
+    }
+}

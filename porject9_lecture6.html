@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QKWZMKZ0W"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -34,13 +33,8 @@
     <meta property="twitter:title" content="Caramel Unit | 安睿的作品集">
     <meta property="twitter:description" content="創作是苦甜參半的焦糖，是在混亂中尋找契合的過程。UI/UX 設計、網頁開發與生活碎片。">
     <meta property="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
-    <style>
-        /* 捲動優化 */
-        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
-        body { overflow-y: visible; }
-        .main-stage { overflow: visible !important; }
-    </style>
-</head>
+    
+    </head>
 <body>
 
     <nav class="sidebar">
@@ -67,7 +61,7 @@
         <a href="contact.html" class="mobile-link" onclick="toggleMenu()"><span class="en">Contact</span><span class="zh">聯絡</span></a>
     </div>
 
-    <main class="main-stage">
+    <main class="main-stage scroll-layout">
         
         <article class="event-container">
             <div class="event-header">
@@ -101,7 +95,7 @@
                 <div class="canva-frame">
                     <iframe loading="lazy" src="https://www.canva.com/design/DAGn5VdA2SI/di5YeuamA89ouex5qurpxQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
                 </div>
-                <p class="caption" style="text-align: center; color: #888; font-size: 0.85rem; margin-top: -30px; margin-bottom: 40px;">講座簡報：想太多這件事，剛好可以拿來做 UX</p>
+                <p class="caption">講座簡報：想太多這件事，剛好可以拿來做 UX</p>
 
                 <div class="highlight-box">
                     <h3>🔍 講座內容核心</h3>
@@ -149,16 +143,23 @@
             <div class="copyright">© 2025 AN JUI / CARAMEL UNIT. All Rights Reserved.</div>
         </footer>
 
+        <button id="backToTop" class="back-to-top" title="回到頂端">
+            <div class="unit-icon">
+                <i class="bi bi-arrow-up-short"></i>
+                <span class="unit-ring"></span>
+            </div>
+        </button>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <script>
-        // 1. 自動點亮 Major Units
+        // 1. 自動點亮 Major Units (修正檔名判斷)
         $(document).ready(function() {
             var path = window.location.pathname.split("/").pop();
-            if (path === 'porject14_lecture.html') {
+            // 修正：原本寫 porject14_lecture.html，改成正確的 porject9_lecture6.html
+            if (path === 'porject9_lecture6.html' || path === '') {
                 $('.nav-item[href="project.html"]').addClass('active');
                 $('.mobile-link[href="project.html"]').addClass('active');
             }
@@ -194,6 +195,24 @@
                 clickable: true,
             },
         });
+
+         // 回到頂端按鈕邏輯
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        });        
     </script>
 </body>
 </html>
