@@ -1,0 +1,103 @@
+<!--meta
+title: 海報設計作品集
+description: 活動海報與宣傳視覺設計，使用 Illustrator 與 Canva 製作。
+nav: project.html
+cta: true
+-->
+
+<style>
+/* 捲動優化 */
+        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+        body { overflow-y: visible; }
+        .main-stage { overflow: visible !important; }
+</style>
+
+<div class="gallery-container">
+            <div class="page-header">
+                <h1 class="page-title">POSTER DESIGN 海報設計</h1>
+                <p class="page-desc">
+                    透過視覺語言傳遞訊息，結合排版與圖像，<br>
+                    讓觀者在第一眼就能抓住活動的核心精神。
+                </p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <div class="gallery-item" style="animation-delay: 0.1s;">
+                    <div class="polaroid-frame">
+                        <div class="img-wrap">
+                            <img src="assets/img/poster/1.png" alt="數位創新碩士招生海報">
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">數位創新碩士招生海報</h3>
+                            <span class="item-tag">#Recruitment</span>
+                            <span class="item-tag">#Master</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" style="animation-delay: 0.2s;">
+                    <div class="polaroid-frame">
+                        <div class="img-wrap">
+                            <img src="assets/img/poster/2.png" alt="數位創新演講海報">
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">數位創新演講海報</h3>
+                            <span class="item-tag">#Lecture</span>
+                            <span class="item-tag">#Digital</span>
+                            <span class="item-tag">#Innovation</span>
+                        </div>
+                    </div>
+                </div> 
+                
+                <div class="gallery-item" style="animation-delay: 0.3s;">
+                    <div class="polaroid-frame">
+                        <div class="img-wrap">
+                            <img src="assets/img/poster/3.png" alt="工業工程學系講座海報">
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">工業工程學系講座海報</h3>
+                            <span class="item-tag">#Seminar</span>
+                            <span class="item-tag">#Industrial</span>
+                        </div>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="small_project.html" class="back-btn">← 返回小作品集</a>
+        </div>
+
+<!--body-suffix-->
+<div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()"><i class="bi bi-x-lg"></i></button>
+            <img id="lightboxImg" src="" alt="Full View">
+        </div>
+    </div>
+<!--/body-suffix-->
+
+<script>
+const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+</script>

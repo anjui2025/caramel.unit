@@ -2193,7 +2193,7 @@ html { scroll-behavior: smooth; }
 /* --- 懶人法：用 CSS 幫所有頁面加上中間標題 --- */
 @media (max-width: 768px) {
     .sidebar::after {
-        content: "焦糖零件 | Caramel Unit"; /* 這裡就是你要的文字 */
+        content: "黃安睿 AN JUI"; /* 手機版頂端的站名 */
         
         position: absolute;
         left: 50%;
@@ -2209,4 +2209,224 @@ html { scroll-behavior: smooth; }
         pointer-events: none;    /* 讓點擊穿透，不會擋到別人 */
         z-index: 1001;
     }
+}
+
+/* =========================================
+   作品卡片的年份與角色
+   ========================================= */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: #9a9a9a;
+    margin: -2px 0 12px;
+}
+
+.card-meta .meta-sep { color: #d0d0d0; }
+.card-meta .meta-role { color: var(--caramel); }
+
+/* 頁首說明段落與操作提示的間距 */
+.project-header .page-desc { max-width: 720px; margin-bottom: 16px; }
+.project-header .page-subtitle { font-size: 0.85rem; color: #aaa; }
+
+/* =========================================
+   完整零件 ←→ 生活碎片 互相導流
+   ========================================= */
+.section-crosslink {
+    text-align: center;
+    padding: 70px 20px 90px;
+    font-size: 0.95rem;
+    color: #888;
+    letter-spacing: 0.02em;
+}
+
+.section-crosslink a {
+    color: var(--caramel);
+    text-decoration: none;
+    margin-left: 6px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(166, 123, 91, 0.35);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.section-crosslink a:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    .section-crosslink { padding: 50px 24px 70px; line-height: 1.9; }
+    .section-crosslink a { display: inline-block; margin-left: 0; }
+}
+
+/* =========================================
+   案例頁結尾的行動呼籲
+   ========================================= */
+.case-cta {
+    max-width: 780px;
+    margin: 90px auto 0;
+    padding: 48px 32px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(166, 123, 91, 0.18);
+}
+
+.case-cta-lead {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+.case-cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.case-cta-btn {
+    display: inline-block;
+    padding: 13px 30px;
+    border-radius: 40px;
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border: 1px solid var(--caramel);
+    color: var(--caramel);
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.case-cta-btn:hover {
+    background: rgba(166, 123, 91, 0.1);
+    transform: translateY(-2px);
+}
+
+.case-cta-btn.primary {
+    background: var(--text-main);
+    border-color: var(--text-main);
+    color: #f7f5f2;
+}
+
+.case-cta-btn.primary:hover {
+    background: var(--caramel);
+    border-color: var(--caramel);
+    color: #fff;
+}
+
+.case-cta-next {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.case-cta-next a {
+    color: var(--caramel);
+    text-decoration: none;
+    margin-left: 6px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(166, 123, 91, 0.35);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.case-cta-next a:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    .case-cta { margin-top: 60px; padding: 36px 24px 30px; }
+    .case-cta-lead { font-size: 1.1rem; }
+    .case-cta-actions { flex-direction: column; align-items: stretch; }
+    .case-cta-btn { text-align: center; }
+    .case-cta-next { line-height: 1.9; }
+    .case-cta-next a { display: inline-block; margin-left: 0; }
+}
+
+/* =========================================
+   首頁：職稱、背景事實與數字
+   ========================================= */
+.hero-role {
+    font-size: 1.02rem;
+    color: var(--text-main);
+    letter-spacing: 0.06em;
+    margin: -22px 0 14px;
+}
+
+.hero-facts {
+    font-size: 0.9rem;
+    color: #7d7369;
+    line-height: 2;
+    margin-bottom: 34px;
+}
+
+.hero-facts .fact-sep {
+    color: #c9bfb4;
+    margin: 0 4px;
+}
+
+.hero-facts strong {
+    color: var(--caramel);
+    font-weight: 500;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px;
+    max-width: 560px;
+}
+
+.hero-stats li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 14px;
+    border-left: 1px solid rgba(166, 123, 91, 0.22);
+}
+
+.hero-stats li:first-child { border-left: none; }
+
+.hero-stats strong {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--caramel);
+}
+
+.hero-stats span {
+    font-size: 0.78rem;
+    color: #8b8178;
+    letter-spacing: 0.02em;
+}
+
+/* 首頁按鈕變成三顆，縮短間距避免換行 */
+.cta-group { flex-wrap: wrap; gap: 16px; }
+.cta-group .btn { padding: 13px 26px; font-size: 0.94rem; }
+
+@media (max-width: 768px) {
+    .hero-role { font-size: 0.95rem; margin: -10px 0 12px; }
+    .hero-facts { font-size: 0.84rem; line-height: 1.9; margin-bottom: 28px; }
+    .hero-facts .fact-sep { display: block; height: 0; overflow: hidden; margin: 0; }
+
+    .hero-stats {
+        max-width: 340px;
+        margin-bottom: 32px;
+    }
+    .hero-stats li { padding: 0 6px; }
+    .hero-stats strong { font-size: 1.5rem; }
+    .hero-stats span { font-size: 0.7rem; line-height: 1.4; }
+
+    .cta-group { flex-direction: column; align-items: stretch; gap: 12px; }
+    .cta-group .btn { text-align: center; }
 }

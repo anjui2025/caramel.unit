@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="author" content="{{SITE_NAME}}">
+    <link rel="canonical" href="{{PAGE_URL}}">
+    {{ROBOTS}}
+    {{VERIFICATION}}
+
+    <link rel="icon" type="image/png" href="assets/img/s-logo.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{SITE_NAME}}">
+    <meta property="og:url" content="{{PAGE_URL}}">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{PAGE_URL}}">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    {{LIB_CSS}}
+    {{PAGE_STYLE}}
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{GA_ID}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{GA_ID}}');
+    </script>
+</head>

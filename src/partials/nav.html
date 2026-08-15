@@ -1,0 +1,18 @@
+<nav class="sidebar">
+    <a href="index.html" class="hover-target" aria-label="回首頁">
+        <img src="assets/img/logo2.png" alt="{{SITE_NAME}}" class="sidebar-logo">
+    </a>
+
+    <div class="mobile-toggle hover-target" id="menuToggle" role="button" tabindex="0"
+         aria-label="開啟選單" aria-expanded="false" aria-controls="mobileOverlay">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+
+    <div class="nav-menu">
+        {{NAV_ITEMS}}
+    </div>
+</nav>
+
+<div class="mobile-menu-overlay" id="mobileOverlay">
+    {{MOBILE_ITEMS}}
+</div>

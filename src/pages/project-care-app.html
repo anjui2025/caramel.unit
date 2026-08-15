@@ -1,0 +1,195 @@
+<!--meta
+title: 照顧服務員行動應用程式
+description: 針對高齡工作者設計的任務管理 App。從使用者研究出發，做出清晰易讀、操作直覺的介面。
+nav: project.html
+cta: true
+libs: lightbox
+include: scrollspy
+-->
+
+<style>
+/* 捲動優化 (針對專案內頁) */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 140px; 
+        }
+        body { 
+            overflow-y: visible; 
+        }
+        .main-stage { overflow: visible !important; }
+
+        /* Figma Embed RWD (本頁專屬) */
+        .figma-embed {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            background: #f5f5f5;
+        }
+        .figma-embed iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+</style>
+
+<div class="case-header">
+            <h1 class="case-title">照服員工作支援 App</h1>
+            <p class="case-subtitle">Caregiver Job Support Mobile App UI/UX Design</p>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>App UI/UX 設計</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2025</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>Figma, FigJam</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#background" class="mobile-toc-link">背景需求</a>
+            <a href="#idea" class="mobile-toc-link">內容發想</a>
+            <a href="#structure" class="mobile-toc-link">資訊架構</a>
+            <a href="#tech" class="mobile-toc-link">技術規劃</a>
+            <a href="#challenge" class="mobile-toc-link">挑戰解法</a>
+            <a href="#reflection" class="mobile-toc-link">收穫</a>
+            <a href="#gallery" class="mobile-toc-link">剪影</a>
+        </div>
+
+        <div class="hero-media">
+            <img src="assets/img/care/1.png" alt="App高保真畫面">
+        </div>
+
+        <div class="content-wrapper">
+            
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">專案簡介</a>
+                <a href="#background" class="toc-link">背景與需求</a>
+                <a href="#idea" class="toc-link">內容發想</a>
+                <a href="#structure" class="toc-link">資訊架構</a>
+                <a href="#tech" class="toc-link">技術與規劃</a>
+                <a href="#challenge" class="toc-link">挑戰與解法</a>
+                <a href="#reflection" class="toc-link">我的收穫</a>
+                <a href="#gallery" class="toc-link">設計剪影</a>
+            </aside>
+
+            <article class="article-content">
+                
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">專案簡介</h2>
+                    <p>
+                        本專案為一款設計給照顧服務員使用的手機 App，主要功能包含上下班打卡、工作任務清單、緊急任務通知與請假申請等。
+                        使用者多為年長工作者，因此介面設計需清晰易讀、操作直覺，並能應對緊急狀況下的快速操作需求。
+                    </p>
+                </section>
+
+                <section id="background" class="article-section">
+                    <h2 class="section-title">背景與需求</h2>
+                    <p>
+                        這次的專案是少數純粹接 UI/UX 設計的合作案。對接方為開發 App 的工程師，對方希望整體介面以「簡單、好操作」為主。
+                        該 App 為其公司內部系統，並非公開應用，因此更強調實用性與內部流程整合；這也讓我在設計時能更貼近「設計該為誰而設」這個核心。
+                    </p>
+                    <img src="assets/img/care/logo.svg" alt="App Logo" class="article-img" style="width: 200px; margin: 0 auto; display: block;">
+                    <p class="caption">親切的小熊護理師 Logo 設計</p>
+                </section>
+
+                <section id="idea" class="article-section">
+                    <h2 class="section-title">內容發想與 Persona</h2>
+                    <p>
+                        為了確保功能對照服員實際需求，我在專案初期與對方進行多次溝通，確保實際設計與使用情境相符合。
+                        我們聚焦在 5 大功能：打卡、任務清單、緊急通知、請假申請與首頁提醒，並依據日常使用頻率安排首頁模組順序。
+                    </p>
+                    <img src="assets/img/care/persona.svg" alt="Persona" class="article-img">
+                    <p class="caption">針對目標使用者建立的 Persona</p>
+                </section>
+
+                <section id="structure" class="article-section">
+                    <h2 class="section-title">資訊架構 (IA)</h2>
+                    <p>
+                        為了讓整體操作流程更貼近照服員實際工作節奏，我根據使用場景與任務邏輯設計出完整的資訊架構，
+                        並簡化為「首頁聚合狀態提醒＋四大模組導向」的主流程設計，降低導航層級與操作時間。
+                    </p>
+                    <img src="assets/img/care/IA.jpeg" alt="Information Architecture" class="article-img">
+                </section>
+
+                <section id="tech" class="article-section">
+                    <h2 class="section-title">技術與規劃</h2>
+                    <p>
+                        本專案使用 <strong>Figma</strong> 進行 UI 設計與元件管理。由於使用者多為中高齡族群，我主動提出設計建議，
+                        包含：提升字級（至少 18px）、操作區域最小為 48px 以上、色彩搭配使用高對比的深紫與米白底組合。
+                    </p>
+                    
+                    <div class="figma-embed">
+                        <iframe 
+                            src="https://embed.figma.com/proto/vTCxXF2KatJkCZD1N9CTpn/%E7%85%A7%E6%9C%8D%E5%93%A1UIUX?page-id=0%3A1&node-id=66-707&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A32&embed-host=share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="caption">Figma 互動原型展示 (可直接操作)</p>
+
+                    <p>
+                        此外，我也考量到該族群對層級過多的操作流程較難適應，因此在首頁設計中，
+                        將打卡時間直接呈現於主畫面上方，並以「上班／下班是否已打卡」為主要視覺焦點，讓使用者一打開 App 即可掌握目前狀態。
+                    </p>
+                </section>
+
+                <section id="challenge" class="article-section">
+                    <h2 class="section-title">挑戰與解法</h2>
+                    <blockquote>
+                        「讓科技不再是長輩的障礙，而是工作的幫手。」
+                    </blockquote>
+                    <p>
+                        <strong>1. 使用者年齡層偏高</strong><br>
+                        我刻意設計了對比明顯的顏色系統與大尺寸按鈕，並在首頁設計上強化視覺動線，確保他們能在第一眼就「看懂現在該做什麼」。
+                    </p>
+                    <p>
+                        <strong>2. 緊急任務資訊需即時傳達</strong><br>
+                        設計了全域的「緊急任務推播」，無論在哪個頁面，緊急任務都會優先顯示；首頁同時以文字提示，避免遺漏。
+                    </p>
+                    <p>
+                        <strong>3. 畫面資訊取捨</strong><br>
+                        採用「模組化 + 分區配色」的方式，讓每一區塊擁有清晰的任務邏輯。例如將請假申請、紀錄查詢拆分為獨立入口，避免資訊混淆。
+                    </p>
+                </section>
+
+                <section id="reflection" class="article-section">
+                    <h2 class="section-title">我的收穫</h2>
+                    <p>
+                        這次專案讓我第一次完整接觸到面向年長工作者的應用設計，過程中學到的不只是視覺上的調整技巧，更是如何真正站在使用者角度思考流程與操作邏輯。
+                        也因為整體需求清楚、合作對象信任度高，讓我能以設計師的角度主動提出模組優化與流程簡化的建議，累積了寶貴的設計主導經驗。
+                    </p>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">設計剪影</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/care/1.png" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/1.png"></a>
+                        <a href="assets/img/care/logo.svg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/logo.svg"></a>
+                        <a href="assets/img/care/persona.svg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/persona.svg"></a>
+                        <a href="assets/img/care/IA.jpeg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/care/IA.jpeg"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>

@@ -1,0 +1,191 @@
+<!--meta
+title: 夥紅創客・藝起玩 HAKKA
+description: 客家文創比賽活動官網的設計與前端開發，含 RWD 響應式版型。
+nav: project.html
+cta: true
+libs: lightbox
+include: scrollspy
+-->
+
+<style>
+/* 捲動優化 (針對專案內頁) */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 140px; 
+        }
+        body { 
+            overflow-y: visible; 
+        }
+        .main-stage { overflow: visible !important; }
+        
+        /* 產品清單樣式 (本頁專屬) */
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        .product-list li {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #eee;
+            transition: border-color 0.3s;
+        }
+        .product-list li:hover { border-left-color: var(--caramel); }
+        .product-list strong { color: var(--text-main); font-size: 1.1rem; }
+</style>
+
+<div class="case-header">
+            <h1 class="case-title">夥紅創客。藝起玩HAKKA</h1>
+            <p class="case-subtitle">Hakka Culture Creative Design Project</p>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>文創商品 / 網站設計</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>設計師 / 網站開發</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2024</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>Illustrator, HTML/CSS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#background" class="mobile-toc-link">背景理念</a>
+            <a href="#design" class="mobile-toc-link">文創禮包</a>
+            <a href="#website" class="mobile-toc-link">網站製作</a>
+            <a href="#market" class="mobile-toc-link">市集參與</a>
+            <a href="#gallery" class="mobile-toc-link">剪影</a>
+        </div>
+
+        <div class="hero-media">
+            <img src="assets/img/hakkayoung/3.jpg" alt="文創大禮包全家福">
+        </div>
+
+        <div class="content-wrapper">
+            
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">專案簡介</a>
+                <a href="#background" class="toc-link">背景與理念</a>
+                <a href="#design" class="toc-link">文創設計</a>
+                <a href="#website" class="toc-link">網站製作</a>
+                <a href="#market" class="toc-link">市集參與</a>
+                <a href="#gallery" class="toc-link">作品剪影</a>
+            </aside>
+
+            <article class="article-content">
+                
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">專案簡介</h2>
+                    <p>
+                        從參賽者到協作者，我與「藝起玩 HAKKA」的緣分延續了好幾年。這不只是一場競賽，更是一段用設計與文化對話的旅程。
+                        專案內容橫跨文創商品設計、角色 IP 開發、以及活動官方網站的建置。
+                    </p>
+                </section>
+
+                <section id="background" class="article-section">
+                    <h2 class="section-title">背景與理念</h2>
+                    <p>
+                        「藝起玩 HAKKA」是由客家委員會舉辦，鼓勵青年以設計、藝術與創意詮釋客家文化的系列活動。我最初以參賽者身分參加競賽，並獲選為得獎團隊之一。
+                    </p>
+                    <p>
+                        有感於許多文化在傳承上遭遇年代隔閡，造成美好傳統的遺失，我們希望藉由自身的力量，打破此困境。
+                        以<strong>流行元素</strong>結合<strong>親和力高的文具商品</strong>，將客家文化帶入年輕族群的生活日常中。
+                    </p>
+                    <blockquote>
+                        「客家味，也可以很酷、很文青，甚至非常時尚。」
+                    </blockquote>
+                    <p>
+                        我們希望大眾對於「客家文化」的印象不再只是花布、藍染等傳統符號，而是能透過幽默的插圖設計，看見文化的另一種可能性。
+                    </p>
+                </section>
+
+                <section id="design" class="article-section">
+                    <h2 class="section-title">文創大禮包設計</h2>
+                    <p>
+                        與「怪奇美少女」合作，透過她獨特的角色插畫風格，我們發展出一系列融合客家元素的文創禮包。
+                        每一項商品皆由我們自行發想繪製，並與印刷廠商合作製作。
+                    </p>
+                    <img src="assets/img/hakkayoung/01.jpg" alt="文創大禮包" class="article-img">
+                    
+                    <ul class="product-list">
+                        <li>
+                            <strong>明信片</strong><br>
+                            將客家小炒的食材與配料（豬肉、魷魚、豆干、芹菜、辣椒等）整齊排列，以清新雜誌風重新演繹經典料理，讓「食」成為視覺的藝術。
+                        </li>
+                        <li>
+                            <strong>帆布袋</strong><br>
+                            三位女子身穿傳統藍衫，戴上墨鏡、擺出浮誇模特兒姿勢，融合傳統與時尚。袋上搭配客語「派頭」一詞及音標（pai-teuˇ，意為時髦），創造出今昔交錯的趣味感。
+                        </li>
+                        <li>
+                            <strong>貼紙組</strong><br>
+                            將各種客家形象角色化，轉化為能貼在生活用品一隅的療癒小夥伴。
+                        </li>
+                        <li>
+                            <strong>徽章</strong><br>
+                            以新丁粄為設計靈感，發展出可愛的娃娃角色，並將其圓臉設計成活潑可愛的圓形徽章。
+                        </li>
+                        <li>
+                            <strong>資料夾</strong><br>
+                            將經典客語歌曲《客家本色》歌詞轉化為漫畫形式，搭配跳色構圖，讓老歌也能擁有青春活潑的新表情。
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="website" class="article-section">
+                    <h2 class="section-title">官方網站製作</h2>
+                    <p>
+                        除了參賽，我有幸承接了 2024與2025 年度藝起玩 HAKKA 官方網站的整體製作工作。
+                        網站採用 <strong>GitHub Pages</strong> 架設，以清爽風格與清楚分類，呈現活動成果與參賽作品，讓更多人能線上感受青年創作與客家文化之間的火花。
+                    </p>
+                    <p>
+                        網站連結：<a href="https://gf-tp-hakka.github.io/hakkayoung/index.html" target="_blank" style="color:var(--caramel); text-decoration: underline;">藝起玩 HAKKA 活動官網</a>
+                    </p>
+                </section>
+
+                <section id="market" class="article-section">
+                    <h2 class="section-title">市集與活動參與</h2>
+                    <p>
+                        活動結束後，我仍持續參與延伸活動，包含以學長姊身分回到活動現場協助「小禾埕市集」的攤位佈置與導覽。
+                        這段經驗不只是創作與設計，更是文化與連結的累積，讓我看見設計如何參與在地、延續記憶，也打開了我在未來創作上的更多想像。
+                    </p>
+                    <div class="row" style="margin-top:20px; display: flex; gap: 20px;">
+                        <div class="col-md-6" style="flex:1;">
+                            <img src="assets/img/hakkayoung/2.jpg" alt="市集現場" class="article-img" style="margin-top:0;">
+                        </div>
+                        <div class="col-md-6" style="flex:1;">
+                            <img src="assets/img/hakkayoung/1.png" alt="得獎合影" class="article-img" style="margin-top:0;">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">作品剪影</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/hakkayoung/01.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/01.jpg"></a>
+                        <a href="assets/img/hakkayoung/02.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/02.jpg"></a>
+                        <a href="assets/img/hakkayoung/03.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/03.jpg"></a>
+                        <a href="assets/img/hakkayoung/04.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/04.jpg"></a>
+                        <a href="assets/img/hakkayoung/05.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/05.jpg"></a>
+                        <a href="assets/img/hakkayoung/06.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/06.jpg"></a>
+                        <a href="assets/img/hakkayoung/07.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/07.jpg"></a>
+                        <a href="assets/img/hakkayoung/08.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/08.jpg"></a>
+                        <a href="assets/img/hakkayoung/09.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/hakkayoung/09.jpg"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>

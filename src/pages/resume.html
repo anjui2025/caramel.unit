@@ -1,0 +1,472 @@
+<!--meta
+title: 履歷
+description: 黃安睿 AN JUI 的履歷。UI/UX 設計師，作品橫跨產品介面、活動官網、互動展覽與品牌視覺。
+main_class: main-stage scroll-layout
+back_to_top: false
+-->
+
+<style>
+/* ============ 履歷頁專屬樣式 ============ */
+.cv {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 40px 90px;
+    text-align: left;
+    color: #3a3532;
+}
+
+.cv-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.cv-print-btn {
+    border: 1px solid var(--caramel);
+    background: transparent;
+    color: var(--caramel);
+    border-radius: 40px;
+    padding: 9px 22px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color .3s ease, color .3s ease;
+}
+.cv-print-btn:hover { background: var(--caramel); color: #fff; }
+
+/* --- 表頭 --- */
+.cv-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 34px;
+    padding-bottom: 26px;
+    border-bottom: 2px solid var(--caramel);
+}
+
+.cv-photo {
+    width: 130px;
+    height: 146px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.cv-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 4px;
+}
+.cv-name .en {
+    font-size: 1.05rem;
+    color: #8b8178;
+    letter-spacing: 0.08em;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.cv-role {
+    font-size: 1rem;
+    color: var(--caramel);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.cv-lede {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: #55504c;
+    margin-bottom: 14px;
+    max-width: 52em;
+}
+
+.cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 0.82rem;
+    color: #6b635c;
+}
+.cv-contact a { color: #6b635c; text-decoration: none; border-bottom: 1px solid rgba(166,123,91,.3); }
+.cv-contact a:hover { color: var(--caramel); }
+
+/* --- 區塊 ---
+   注意：style.css 有一條全域的 section { padding: 100px 10%; }，
+   履歷頁的區塊必須把它歸零，否則每兩塊之間會多出 200px 空白。 */
+.cv-section {
+    padding: 0;
+    margin-top: 34px;
+}
+
+.cv-section > h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.02rem;
+    letter-spacing: 0.1em;
+    color: var(--caramel);
+    padding-bottom: 7px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(166,123,91,.25);
+}
+
+.cv-item { margin-bottom: 20px; break-inside: avoid; }
+
+.cv-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.cv-item-title { font-size: 0.98rem; font-weight: 600; }
+.cv-item-title a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(166,123,91,.4); }
+.cv-item-title a:hover { color: var(--caramel); }
+
+.cv-item-meta {
+    font-size: 0.78rem;
+    color: #928980;
+    white-space: nowrap;
+    letter-spacing: .02em;
+}
+
+.cv-item-role {
+    font-size: 0.78rem;
+    color: var(--caramel);
+    margin-bottom: 6px;
+}
+
+.cv-item p, .cv-item ul { font-size: 0.86rem; line-height: 1.8; color: #55504c; margin: 0; }
+.cv-item ul { padding-left: 1.1em; }
+.cv-item li { margin-bottom: 3px; }
+
+/* --- 演講表 --- */
+.cv-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.cv-table td { padding: 7px 10px 7px 0; border-bottom: 1px solid rgba(0,0,0,.06); vertical-align: top; }
+.cv-table td:first-child { white-space: nowrap; color: #928980; width: 88px; font-size: .8rem; }
+.cv-table td:last-child { white-space: nowrap; color: var(--caramel); text-align: right; font-size: .8rem; }
+
+/* --- 技能 --- */
+.cv-skills { display: grid; grid-template-columns: 92px 1fr; gap: 10px 16px; font-size: 0.86rem; }
+.cv-skills dt { color: #928980; font-size: .8rem; padding-top: 2px; }
+.cv-skills dd { margin: 0; color: #55504c; line-height: 1.7; }
+
+.cv-cert-note { font-size: .78em; color: #928980; }
+
+/* --- 兩欄小區塊 --- */
+.cv-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 34px; }
+.cv-cols .cv-section { margin-top: 0; }
+
+@media (max-width: 768px) {
+    .cv { padding: 40px 22px 70px; }
+    .cv-head { flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+    .cv-contact { justify-content: center; }
+    .cv-cols { grid-template-columns: 1fr; gap: 0; }
+    .cv-item-meta { white-space: normal; }
+}
+
+/* ============ 列印：Chrome 按 Ctrl/Cmd+P → 另存 PDF ============ */
+@media print {
+    @page { size: A4; margin: 11mm 13mm; }
+
+    .sidebar, .mobile-menu-overlay, .site-footer,
+    .back-to-top, .cv-toolbar, .noise-overlay,
+    .cursor-dot, .cursor-outline { display: none !important; }
+
+    html, body { background: #fff !important; }
+    .main-stage { margin-left: 0 !important; width: 100% !important; min-height: 0 !important; }
+    .cv { max-width: 100%; padding: 0; }
+
+    /* A4 的可用寬度換算成 CSS px 會小於 768，
+       必須明確蓋掉手機版的置中排版，否則列印會變成單欄置中。 */
+    .cv-head {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 24px !important;
+        padding-bottom: 16px;
+    }
+    .cv-contact { justify-content: flex-start !important; }
+    .cv-cols { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+    .cv-item-meta { white-space: nowrap !important; }
+
+    /* 壓縮成兩頁 */
+    body { color: #000; }
+    .cv-photo { width: 104px; height: 117px; }
+    .cv-name { font-size: 1.65rem; }
+    .cv-name .en { font-size: .92rem; }
+    .cv-role { font-size: .88rem; margin-bottom: 8px; }
+    .cv-lede { font-size: .8rem; line-height: 1.75; margin-bottom: 10px; }
+    .cv-contact { font-size: .72rem; gap: 4px 14px; }
+
+    .cv-section { margin-top: 24px; }
+    .cv-section > h2 { font-size: .9rem; margin-bottom: 12px; padding-bottom: 6px; break-after: avoid; }
+    .cv-item { margin-bottom: 13px; }
+    .cv-item-title { font-size: .85rem; }
+    .cv-item-meta { font-size: .7rem; }
+    .cv-item-role { font-size: .7rem; margin-bottom: 3px; }
+    .cv-item p, .cv-item ul { font-size: .78rem; line-height: 1.7; }
+    .cv-item li { margin-bottom: 1px; }
+
+    .cv-table { break-inside: avoid; font-size: .76rem; }
+    .cv-table td { padding: 6px 8px 6px 0; }
+    .cv-table td:first-child, .cv-table td:last-child { font-size: .7rem; }
+
+    .cv-skills { font-size: .78rem; gap: 9px 14px; }
+    .cv-skills dt { font-size: .7rem; }
+
+    /* 這幾塊各自綁在一起，才不會出現只有兩行的孤兒頁 */
+    .cv-cols { break-inside: avoid; margin-top: 24px; }
+    .cv-cols .cv-section { margin-top: 0; }
+
+    .cv-lede, .cv-item p, .cv-item ul, .cv-skills dd { color: #2b2b2b; }
+    .cv-item-meta, .cv-table td:first-child, .cv-skills dt { color: #666; }
+
+    /* 連結在紙本上沒有作用，不要印出網址 */
+    a { text-decoration: none !important; }
+}
+</style>
+
+<div class="cv">
+
+    <div class="cv-toolbar">
+        <button type="button" class="cv-print-btn hover-target" id="cvPrint">列印 / 存成 PDF</button>
+    </div>
+
+    <header class="cv-head">
+        <img src="assets/img/ME.jpg" alt="黃安睿" class="cv-photo">
+        <div>
+            <h1 class="cv-name">黃安睿<span class="en">Huang An Jui</span></h1>
+            <p class="cv-role">UI/UX 設計　／　AI 應用規劃與導入　／　網頁前端</p>
+            <p class="cv-lede">
+                哲學系出身，研究所轉往數位創新。我最擅長的事情是：把一個還說不清楚的問題拆開，
+                判斷它該用什麼解決，再把合適的工具組起來。UI/UX 是我最熟的一段，但不是全部——
+                介面、前端、視覺，到生成式 AI 的實際導入與教學都做過。
+                現在的介面我直接寫成可運行的 HTML 交付，不再停在設計稿；
+                同一套方法也帶進教學現場，向圖書館館員、國中教師與國小學生講過課。
+            </p>
+            <div class="cv-contact">
+                <span>台中</span>
+                <span><a href="mailto:caramel.unit@gmail.com">caramel.unit@gmail.com</a></span>
+                <span><a href="index.html">anjui2025.github.io/caramel.unit</a></span>
+                <span><a href="https://www.linkedin.com/in/aj0920/" target="_blank" rel="noopener">linkedin.com/in/aj0920</a></span>
+                <!-- 想放電話的話，把下面這行的註解拿掉並填入號碼
+                <span>0900-000-000</span>
+                -->
+            </div>
+        </div>
+    </header>
+
+    <section class="cv-section">
+        <h2>工作經歷</h2>
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title">研發部　加值開發（UI/UX 設計）</span>
+                <span class="cv-item-meta">2024.07 – 現在</span>
+            </div>
+            <ul>
+                <li>負責產品介面設計與優化，以使用者需求為出發點調整資訊架構與操作流程。</li>
+                <li>直接以 HTML / CSS / JavaScript 產出可運行的介面交付，而非僅提供靜態設計稿；早期以 Figma 建立原型與規格標註。</li>
+                <li>評估並導入生成式 AI 工具於公司的影片與圖像素材產製，判斷各工具的適用場景與導入方式。</li>
+                <li>其他設計產出：平面視覺、網站設計與動態邀請卡等。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <h2>代表專案</h2>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-care-app.html">照顧服務員行動應用程式</a></span>
+                <span class="cv-item-meta">2025　合作方：踰翔雲端服務</span>
+            </div>
+            <p class="cv-item-role">UI/UX Designer（獨立負責設計）</p>
+            <p>
+                為高齡照顧服務員設計的任務管理 App。針對現場工作情境訂定字級、觸控區與色彩對比的設計規範，
+                建立資訊架構與高保真原型，交付可點擊原型與標註稿予開發團隊。
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-duanwu.html">2025 客家端午「粽夏个時節」活動網頁</a></span>
+                <span class="cv-item-meta">2025.05　臺北市政府客家事務委員會</span>
+            </div>
+            <p class="cv-item-role">網頁設計／前端開發</p>
+            <p>
+                配合 5 月 30 日於兒童新樂園舉辦的「客家五月節」活動，設計並開發現場掃碼參與的互動遊戲網頁。
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-bowling.html">雅環保齡球館「城市盃」主視覺與品牌識別</a></span>
+                <span class="cv-item-meta">2024.01</span>
+            </div>
+            <p class="cv-item-role">視覺設計師</p>
+            <p>
+                國際保齡球賽事主視覺、球館 LOGO 重新設計，以及識別證、掛繩、杯套等周邊延伸物件。
+                主牆面為寬約 51 公尺、高約 210 公分的超大型輸出。
+                <strong>原訂活動結束後撤下的帆布，因現場反應熱烈由球館決定永久保留，成為球館的識別牆面之一。</strong>
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-chaos.html">《混沌漫游》沉浸式互動展覽</a></span>
+                <span class="cv-item-meta">2024.05　研究所畢業個展</span>
+            </div>
+            <p class="cv-item-role">獨立製作（概念、技術整合、空間規劃）</p>
+            <p>
+                以 TouchDesigner 整合 Kinect 體感與聲音感測，建構可依觀眾動作即時反應的互動場域；
+                展場設置 8 台投影機，手動完成環形空間的畫面 mapping 與邊緣融合。
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-hakkayoung.html">夥紅創客「藝起玩 HAKKA」官方網站</a></span>
+                <span class="cv-item-meta">2024 – 2025（連續兩年）</span>
+            </div>
+            <p class="cv-item-role">設計師／網站開發</p>
+            <p>
+                客家文創競賽官方網站的設計與前端開發，並參與文創商品的設計發想。
+                首年以參賽者身分獲選為得獎團隊，隔年起改由我承接官網製作。
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-game.html">客語文化推廣遊戲</a></span>
+                <span class="cv-item-meta">2022 – 2024</span>
+            </div>
+            <p class="cv-item-role">企劃／視覺／開發</p>
+            <p>
+                以 Scratch 與 Unity 製作的系列小遊戲，將客語詞彙與文化習俗轉化為孩童可操作的互動體驗。
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="small_project.html">MyMediaTrek 觀影紀錄系統</a></span>
+                <span class="cv-item-meta">自主開發</span>
+            </div>
+            <p class="cv-item-role">獨立開發（前後端）</p>
+            <p>
+                以 Flask 與 PostgreSQL 建置的個人觀影紀錄系統，含 JWT 身分驗證與多使用者資料隔離、完整 CRUD 與 RWD 介面。
+                是我借助 AI 工具跨出設計本行、實際完成後端實作的一次驗證。
+            </p>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title">其他專案</span>
+            </div>
+            <p>
+                水利署雲林分處宣導短片製作　·　侯純純創作個展 技術支援　·　AI 工具應用一對一教學
+            </p>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <h2>演講與教學</h2>
+        <table class="cv-table">
+            <tr>
+                <td>2025.06</td>
+                <td><a href="lecture-tunghai.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(166,123,91,.4);">「想太多這件事，剛好可以拿來做 UX」</a>　東海大學哲學系</td>
+                <td>講者</td>
+            </tr>
+            <tr>
+                <td>2024.01</td>
+                <td>AI 生成式藝術工作坊　國中教師藝術領域研習</td>
+                <td>助教</td>
+            </tr>
+            <tr>
+                <td>2024.01</td>
+                <td>愛飛揚下鄉計畫　和平國小 AI 生成圖像體驗</td>
+                <td>帶領教學</td>
+            </tr>
+            <tr>
+                <td>2023.01</td>
+                <td>未來圖書館工作坊　臺中市立圖書館</td>
+                <td>助教</td>
+            </tr>
+            <tr>
+                <td>2022.11</td>
+                <td>「愛情中的哲學」　忠明高中</td>
+                <td>講者</td>
+            </tr>
+            <tr>
+                <td>2022.09</td>
+                <td>八月半中秋・月亮燈手作教學　臺北市政府客家事務委員會</td>
+                <td>講師</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="cv-section">
+        <h2>技能</h2>
+        <dl class="cv-skills">
+            <dt>規劃與研究</dt>
+            <dd>需求釐清　·　使用者研究　·　資訊架構　·　AI 應用場景評估與導入規劃</dd>
+            <dt>生成式 AI</dt>
+            <dd>Claude　·　Midjourney　·　影片與圖像生成　·　Prompt 設計與調校　·　工具選型與導入教學</dd>
+            <dt>設計</dt>
+            <dd>Figma　·　Illustrator　·　Canva　·　Procreate</dd>
+            <dt>開發</dt>
+            <dd>HTML / CSS / JavaScript（直接交付可運行介面）　·　Python（Flask）　·　PostgreSQL　·　Git / GitHub</dd>
+            <dt>互動與 3D</dt>
+            <dd>TouchDesigner　·　Unity　·　SolidWorks　·　3D 列印（Ultimaker）</dd>
+        </dl>
+    </section>
+
+    <div class="cv-cols">
+        <section class="cv-section">
+            <h2>學歷</h2>
+            <div class="cv-item">
+                <div class="cv-item-head">
+                    <span class="cv-item-title">東海大學　數位創新碩士學位學程</span>
+                    <span class="cv-item-meta">2022 – 2024</span>
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-head">
+                    <span class="cv-item-title">東海大學　哲學系</span>
+                    <span class="cv-item-meta">2018 – 2022</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>證照與其他經歷</h2>
+            <div class="cv-item">
+                <p>
+                    <strong>iPAS AI 應用規劃師（初級）</strong>　2026.03<br>
+                    <span class="cv-cert-note">經濟部產業人才能力鑑定</span><br>
+                    產業競爭力輔導團 種子培訓－中區第 8 期<br>
+                    <span class="cv-cert-note">經濟部辦理／工業技術研究院執行，6 小時，通過測評</span><br>
+                    CSWA 國際認證（SolidWorks）<br>
+                    ACU 國際認證（AutoCAD）
+                </p>
+            </div>
+            <div class="cv-item">
+                <p>
+                    運算思維程式設計 助教<br>
+                    數位創新工作坊 助教
+                </p>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<script>
+(function () {
+    var btn = document.getElementById('cvPrint');
+    if (btn) btn.addEventListener('click', function () { window.print(); });
+})();
+</script>

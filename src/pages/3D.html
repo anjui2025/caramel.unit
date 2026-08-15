@@ -1,0 +1,211 @@
+<!--meta
+title: 3D 作品
+description: 黃安睿的 3D 建模與立體視覺作品。
+nav: small_project.html
+libs: lightbox
+-->
+
+<style>
+/* 1. 外層容器：跟 2D 頁面一樣，限制最大寬度，讓標題對齊 */
+        .gallery-container {
+            padding: 80px 5%;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 2. 標題區域統一 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 1; 
+            animation: fadeInDown 1s ease forwards;
+        }
+        .page-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+        .page-desc {
+            color: #666;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 3. Grid 設定調整 (配合 gallery-container) */
+        .grid-3d-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 20px 0; /* 左右 padding 交給 container 控制 */
+            margin-bottom: 100px;
+        }
+
+        /* --- 以下是強制顯示圖片的修復代碼 (保留不動) --- */
+        .item-3d {
+            background: #fff;
+            padding: 15px 15px 25px 15px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.02);
+            position: relative;
+            
+            /* 強制顯示 */
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+            display: block !important;
+        }
+
+        .item-3d:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 30px rgba(166, 123, 91, 0.15);
+        }
+
+        .thumb-3d {
+            width: 100%;
+            aspect-ratio: 1/1;
+            min-height: 200px;
+            overflow: hidden;
+            border-radius: 2px;
+            margin-bottom: 15px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        .thumb-3d img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .item-3d:hover .thumb-3d img { transform: scale(1.08); }
+
+        .overlay-3d {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(166, 123, 91, 0.2);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; 
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        .item-3d:hover .overlay-3d { opacity: 1; }
+        .overlay-3d i { color: #fff; font-size: 2rem; }
+
+        .title-3d {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1rem; color: var(--text-main);
+            margin: 0; font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-3d-layout { grid-template-columns: 1fr; gap: 30px; }
+            .gallery-container { padding: 40px 20px; }
+        }
+</style>
+
+<div class="gallery-container">
+            
+            <div class="page-header">
+                <h1 class="page-title">3D WORKS<br class="mobile-br">立體作品</h1>
+                <p class="page-desc">
+                    這些是我過去製作的一些立體實驗。<br>
+                    包含 3D 列印、雷射雕刻與切割，嘗試將數位的模型轉化為實體的溫度。
+                </p>
+            </div>
+
+            <div class="grid-3d-layout">
+                
+                <div class="item-3d">
+                    <a href="assets/img/3D/1.jpg" data-lightbox="3d-works" data-title="3D列印籃子">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/1.jpg" alt="3D列印籃子">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">3D列印籃子</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/2.jpg" data-lightbox="3d-works" data-title="3D列印小盒子">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/2.jpg" alt="3D列印小盒子">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">3D列印小盒子</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/3.jpg" data-lightbox="3d-works" data-title="3D列印東海教堂模型">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/3.jpg" alt="3D列印東海教堂模型">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">3D列印東海教堂模型</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/4.jpg" data-lightbox="3d-works" data-title="3D列印鞋子裝飾">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/4.jpg" alt="3D列印鞋子裝飾">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">3D列印鞋子裝飾</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/5.jpg" data-lightbox="3d-works" data-title="Arduino+3D列印旋轉機構">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/5.jpg" alt="Arduino+3D列印旋轉機構">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">Arduino+3D列印旋轉機構</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/6.jpg" data-lightbox="3d-works" data-title="3D碳纖維南瓜燈飾">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/6.jpg" alt="3D碳纖維南瓜燈飾">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">3D碳纖維南瓜燈飾</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/7.jpg" data-lightbox="3d-works" data-title="教授頭像實驗室裝飾物">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/7.jpg" alt="教授頭像實驗室裝飾物">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">教授頭像實驗室裝飾物</h3>
+                </div>
+
+                <div class="item-3d">
+                    <a href="assets/img/3D/8.jpg" data-lightbox="3d-works" data-title="雷射雕刻擴香木">
+                        <div class="thumb-3d">
+                            <img src="assets/img/3D/8.jpg" alt="雷射雕刻擴香木">
+                            <div class="overlay-3d"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </a>
+                    <h3 class="title-3d">雷射雕刻擴香木</h3>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="small_project.html" class="back-btn">← 返回小作品集</a>
+        </div>

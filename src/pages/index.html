@@ -1,0 +1,188 @@
+<!--meta
+title: 首頁
+description: 黃安睿 AN JUI 的作品集。UI/UX 設計、AI 應用規劃與導入、網頁開發與演講教學，以及下班後的各種實驗。開放接案。
+back_to_top: false
+-->
+
+<style>
+/* --- 首頁專屬互動樣式 --- */
+
+        /* 1. 全局雜訊紋理 (Noise Texture) - 增加紙張質感 */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 900;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* 2. 背景流動動畫 (Floating Blobs) */
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -50px) rotate(10deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        .blob {
+            position: absolute;
+            background: radial-gradient(circle, rgba(166, 123, 91, 0.15) 0%, rgba(166, 123, 91, 0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        /* 3. 自訂游標 (Custom Cursor) - 電腦版限定
+              注意：只有在 JS 成功接管後才會加上 body.custom-cursor，
+              萬一 JS 沒跑起來，使用者仍然看得到原生游標。 */
+        @media (min-width: 992px) {
+            body.custom-cursor { cursor: none; }
+            body.custom-cursor a,
+            body.custom-cursor button,
+            body.custom-cursor .nav-item { cursor: none; }
+
+            .cursor-dot,
+            .cursor-outline {
+                position: fixed;
+                top: 0; left: 0;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                z-index: 9999;
+                pointer-events: none;
+                opacity: 0;
+            }
+
+            body.custom-cursor .cursor-dot,
+            body.custom-cursor .cursor-outline { opacity: 1; }
+
+            .cursor-dot {
+                width: 8px; height: 8px;
+                background-color: var(--text-main);
+            }
+
+            .cursor-outline {
+                width: 40px; height: 40px;
+                border: 1px solid rgba(166, 123, 91, 0.5);
+                transition: width 0.2s, height 0.2s, background-color 0.2s;
+            }
+
+            /* Hover 狀態：變大並變成焦糖色 */
+            body.hovering .cursor-outline {
+                width: 60px; height: 60px;
+                background-color: rgba(166, 123, 91, 0.1);
+                border-color: var(--caramel);
+                backdrop-filter: blur(2px);
+            }
+        }
+
+        /* 4. 害羞文字區塊優化 */
+        .hero-content {
+            position: relative; z-index: 10;
+            mix-blend-mode: multiply;
+        }
+
+        /* 5. 若使用者偏好減少動態，關掉飄動與位移 */
+        @media (prefers-reduced-motion: reduce) {
+            .blob { animation: none; }
+            .hero-title { transition: none; }
+        }
+</style>
+
+<!--body-prefix-->
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
+<div class="noise-overlay"></div>
+<!--/body-prefix-->
+
+<div class="blob" style="width: 600px; height: 600px; top: -10%; right: -10%; animation-duration: 20s;"></div>
+    <div class="blob" style="width: 500px; height: 500px; bottom: -10%; left: -10%; animation-delay: -5s; background: rgba(196, 164, 132, 0.2);"></div>
+    <div class="blob" style="width: 300px; height: 300px; top: 40%; left: 40%; animation-delay: -2s; background: rgba(166, 123, 91, 0.1);"></div>
+
+<div class="hero-content">
+    <img src="assets/img/logo2.png" alt="黃安睿 AN JUI" class="mobile-hero-logo">
+
+    <div class="brand-label">黃安睿 AN JUI</div>
+
+    <h1 class="hero-title hover-target" id="shy-text">
+        創作是苦甜參半的<span class="highlight">焦糖</span><br>
+        是在混亂中尋找契合的<span class="highlight">零件</span>
+    </h1>
+
+    <p class="hero-role">UI/UX 設計　／　AI 應用規劃與導入　／　網頁前端</p>
+
+    <p class="hero-facts">
+        東海大學 數位創新碩士・哲學系學士
+        <span class="fact-sep">｜</span> 台中
+        <span class="fact-sep">｜</span> <strong>開放接案，也開放被挖走</strong>
+    </p>
+
+    <ul class="hero-stats">
+        <li><strong>9</strong><span>件設計與開發案</span></li>
+        <li><strong>6</strong><span>場演講與工作坊</span></li>
+        <li><strong>7</strong><span>個自製小工具</span></li>
+    </ul>
+
+    <div class="cta-group">
+        <a href="project.html" class="btn btn-primary hover-target">看 15 件交付案例 →</a>
+        <a href="{{CV_URL}}" class="btn btn-outline hover-target">看完整履歷</a>
+        <a href="contact.html" class="btn btn-outline hover-target">聊聊合作</a>
+    </div>
+</div>
+
+<script>
+// 害羞文字：滑鼠靠近時輕微避開。位移刻意做得很小，
+// 才不會讓訪客想讀主標題時，字反而跑掉。
+(function () {
+    var shyText = document.getElementById('shy-text');
+    if (!shyText || window.innerWidth <= 768) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    document.addEventListener('mousemove', function (e) {
+        var rect = shyText.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var dist = Math.sqrt(Math.pow(e.clientX - cx, 2) + Math.pow(e.clientY - cy, 2));
+        if (dist < 400) {
+            shyText.style.transform = 'translate(' +
+                ((e.clientX - cx) * -0.02) + 'px,' + ((e.clientY - cy) * -0.02) + 'px)';
+        } else {
+            shyText.style.transform = 'translate(0px, 0px)';
+        }
+    });
+})();
+
+// 自訂游標：用 requestAnimationFrame 平滑跟隨，
+// 並且只有在這段成功執行後才隱藏原生游標。
+(function () {
+    var dot = document.querySelector('.cursor-dot');
+    var outline = document.querySelector('.cursor-outline');
+    if (!dot || !outline || window.innerWidth <= 992) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    document.body.classList.add('custom-cursor');
+
+    var x = window.innerWidth / 2, y = window.innerHeight / 2;
+    var ox = x, oy = y;
+
+    window.addEventListener('mousemove', function (e) {
+        x = e.clientX; y = e.clientY;
+        dot.style.left = x + 'px';
+        dot.style.top = y + 'px';
+    }, { passive: true });
+
+    (function loop() {
+        ox += (x - ox) * 0.18;
+        oy += (y - oy) * 0.18;
+        outline.style.left = ox + 'px';
+        outline.style.top = oy + 'px';
+        requestAnimationFrame(loop);
+    })();
+
+    document.querySelectorAll('.hover-target').forEach(function (t) {
+        t.addEventListener('mouseenter', function () { document.body.classList.add('hovering'); });
+        t.addEventListener('mouseleave', function () { document.body.classList.remove('hovering'); });
+    });
+})();
+</script>

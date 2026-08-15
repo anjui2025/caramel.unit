@@ -1,0 +1,109 @@
+<!--meta
+title: 找不到這個零件
+description: 這個頁面不存在，或是已經被搬到別的地方了。
+footer: false
+back_to_top: false
+noindex: true
+-->
+
+<style>
+/* 讓內容垂直置中 */
+        .main-stage {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .error-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error-code {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--caramel);
+            opacity: 0.8;
+            line-height: 1;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 讓 0 跳動的小動畫 */
+        .bounce-digit {
+            display: inline-block;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .error-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .error-msg {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* 你喜歡的那個按鈕樣式 */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: var(--caramel);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(166, 123, 91, 0.3);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(166, 123, 91, 0.4);
+            background: #8e6548; /* 稍微深一點的焦糖色 */
+        }
+
+        .illustration {
+            font-size: 4rem;
+            color: var(--caramel-light);
+            margin-bottom: 20px;
+        }
+
+        /* RWD 微調 */
+        @media (max-width: 768px) {
+            .error-code { font-size: 6rem; }
+            .error-title { font-size: 1.5rem; }
+        }
+</style>
+
+<div class="error-container">
+            <div class="illustration"><i class="bi bi-cup-hot"></i></div> 
+            
+            <div class="error-code">
+                4<span class="bounce-digit">0</span>4
+            </div>
+            
+            <h1 class="error-title">這裡什麼都沒有</h1>
+            
+            <p class="error-msg">
+                就像我不小心打翻的焦糖布丁，空空如也。<br>
+                （或者是我的腦袋，開玩笑的。）
+            </p>
+            
+            <a href="index.html" class="home-btn">
+                <i class="bi bi-arrow-left"></i> 返回首頁
+            </a>
+        </div>

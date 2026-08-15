@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://anjui2025.github.io/caramel.unit/sitemap.xml

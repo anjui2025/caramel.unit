@@ -1,0 +1,256 @@
+<!--meta
+title: 創新之路・混沌漫游
+description: 研究所畢業個展。以 TouchDesigner 結合影像與互動，打造可自由穿梭於秩序與混沌之間的數位旅程。
+nav: project.html
+cta: true
+libs: lightbox
+include: scrollspy
+-->
+
+<style>
+/* 捲動優化 */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 140px; 
+        }
+        body { 
+            overflow-y: visible; /* 覆蓋掉可能的 overflow: hidden */
+        }
+        /* 因為這頁內容較多，確保主容器可見 */
+        .main-stage { overflow: visible !important; }
+</style>
+
+<div class="case-header">
+            <h1 class="case-title">創新之路-混沌漫游</h1>
+            <p class="case-subtitle">Chaos Roaming: A Digital Journey Between Order and Disorder</p>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>互動展覽</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>獨立製作</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2024.05</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>TouchDesigner, AI</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#background" class="mobile-toc-link">創作背景</a>
+            <a href="#idea" class="mobile-toc-link">內容發想</a>
+            <a href="#tech" class="mobile-toc-link">技術規劃</a>
+            <a href="#challenge" class="mobile-toc-link">挑戰解法</a>
+            <a href="#feedback" class="mobile-toc-link">回饋收穫</a>
+            <a href="#gallery" class="mobile-toc-link">展覽剪影</a>
+        </div>
+
+        <div class="hero-media">
+            <video autoplay muted loop playsinline poster="assets/img/chaos/1.jpg">
+                <source src="assets/img/chaos/video.mov" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="content-wrapper">
+            
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">展覽簡介</a>
+                <a href="#background" class="toc-link">創作背景</a>
+                <a href="#idea" class="toc-link">內容發想</a>
+                <a href="#tech" class="toc-link">技術與規劃</a>
+                <a href="#challenge" class="toc-link">挑戰與解法</a>
+                <a href="#feedback" class="toc-link">回饋與收穫</a>
+                <a href="#gallery" class="toc-link">展覽剪影</a>
+            </aside>
+
+            <article class="article-content">
+                
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">展覽簡介</h2>
+                    <p>
+                        《混沌漫游》是我的研究所畢業個人展。透過影像與互動的結合，打造出一場可自由穿梭於秩序與混沌之間的數位旅程。觀眾可以透過與場景的互動，體驗日常與失序的交錯節奏。
+                    </p>
+                </section>
+
+                <section id="background" class="article-section">
+                    <h2 class="section-title">為什麼想做《混沌漫游》？</h2>
+                    <img src="assets/img/chaos/concept.jpg" alt="Concept Art" class="article-img">
+                    <p>
+                        對我來說，這場展覽或許是想完成某種人生清單吧──辦一場展覽、為自己的創作做一次公開的總結，也算是一個轉捩點。
+                    </p>
+                    <p>
+                        《混沌漫游》的出發點，其實來自我對生活中<strong>「失序感」</strong>的長期觀察與思考。在這個快速變動的時代，我們經常被突如其來的事件打亂節奏：親人離去、工作失衡、或是長時間無法紓解的壓力。
+                        這些看似混亂的經歷，乍看像是崩潰的開端，但我開始想——它們，會不會其實也是<strong>創新的起點</strong>？
+                    </p>
+                    <blockquote>
+                        「也許，正是在混沌中，新的秩序正在誕生。」
+                    </blockquote>
+                    <p>
+                        受到「熵」這個物理概念的啟發，我開始重新理解「秩序與混亂」之間的關係。
+                        因此，我嘗試以沉浸式互動展覽的形式，將這個抽象的思考具象化。透過生成式 AI 視覺與環形場域的構成，讓觀眾以感官為引，進入一段關於崩解與重構的旅程。
+                    </p>
+                </section>
+
+                <section id="idea" class="article-section">
+                    <h2 class="section-title">展覽內容發想</h2>
+                    <p>
+                        光是思考<strong>「到底要做什麼？」</strong>這件事，就花了我非常多時間。
+                        指導教授曾經對我說：「你就一直看別人的作品，沒事就多看...看著看著，你就會突然想到你想做什麼了。」
+                        當時我完全不相信，結果——真的是這樣！
+                    </p>
+                    <img src="assets/img/chaos/sketch.jpg" alt="Sketch" class="article-img">
+                    <p class="caption">創作初期的手稿與發想過程</p>
+                    <p>
+                        回頭來看，其實那些靈感是慢慢累積起來的。透過大量觀看，我像是在一層層撥開迷霧，慢慢確定自己真正想表達的東西。
+                        在理論建構上，我不僅回顧了熵的科學定義，也參考資訊論與藝術中的應用轉化。最後，我發展出「雙日循環」的概念設計：第一天象徵秩序，第二天則進入變化與失序的感受。
+                    </p>
+                </section>
+
+                <section id="tech" class="article-section">
+                    <h2 class="section-title">技術與規劃</h2>
+                    <p>
+                        在技術實作方面，我選擇以 <strong>TouchDesigner</strong> 作為整體互動系統的開發工具。
+                        為了製作符合主題氛圍的影像素材，我搭配使用生成式 AI 工具 <strong>Midjourney</strong>，根據不同互動情境的需求設計 prompt，再由 ChatGPT 協助進行文字生成與調整。
+                    </p>
+                    <img src="assets/img/chaos/touchdesigner.jpg" alt="TouchDesigner" class="article-img">
+                    <p>
+                        整個互動設計可分為三個主要區塊：
+                        <ul>
+                            <li><strong>身體互動區</strong>：利用 Kinect 深度攝影機擷取觀眾骨架與臉部，讓系統根據肢體動作產生即時互動。</li>
+                            <li><strong>聲音互動區</strong>：麥克風模組偵測聲音強度與頻率，觸發視覺特效。</li>
+                            <li><strong>自動轉場邏輯</strong>：將感測資料匯入資料流，控制場景的自動切換。</li>
+                        </ul>
+                    </p>
+                </section>
+
+                <section id="challenge" class="article-section">
+                    <h2 class="section-title">挑戰與解法</h2>
+                    <p>
+                        最大的挑戰之一，是如何將「熵」與「失序」這種抽象的概念，轉化為一般觀眾也能感受的體驗。
+                        我不希望透過大量文字解說來硬塞知識，而是希望觀眾能「感受到」。
+                        因此，我規劃了<strong>雙日循環</strong>：第一天的場景象徵秩序，所有動作都有可預期的結果；第二天則進入失序狀態，互動結果變得難以掌控。
+                    </p>
+                    <img src="assets/img/chaos/map.jpg" alt="Map" class="article-img">
+                    <p>
+                        此外，<strong>環形場域的建置</strong>也是一大難題。展場中共設置了 8 台投影機，需要手動進行畫面 mapping 與邊緣融合（edge blending）。
+                        這些投影機必須像無縫拼接般連成一圈，稍有誤差就會破壞沉浸感。這是第一次從內容規劃、技術整合到空間營造，全由我一手包辦的展覽。
+                    </p>
+                </section>
+
+                <section id="feedback" class="article-section">
+                    <h2 class="section-title">回饋與收穫</h2>
+                    <p>
+                        展覽結束後的問卷回饋顯示，大多數觀眾表示：「互動形式提升了參與感」、「場域氛圍成功讓人進入不同狀態」。
+                        有些觀眾特別提到，展覽的節奏安排讓他們彷彿經歷了一段情緒上的轉化旅程，感覺像是在跟自己的內在對話。
+                    </p>
+                    <div class="row" style="margin-top:20px; display: flex; gap: 20px;">
+                        <div class="col-md-6" style="flex:1;">
+                            <img src="assets/img/chaos/survey-result.jpg" alt="Survey" class="article-img" style="margin-top:0;">
+                        </div>
+                        <div class="col-md-6" style="flex:1;">
+                            <img src="assets/img/chaos/self-reflection.jpg" alt="Postcard" class="article-img" style="margin-top:0;">
+                        </div>
+                    </div>
+                    <p>
+                        這場展覽讓我實際經歷了從概念發展到觀眾溝通的完整流程。
+                    </p>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">展覽剪影</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/chaos/1.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/chaos/1.jpg"></a>
+                        <a href="assets/img/chaos/2.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/chaos/2.jpg"></a>
+                        <a href="assets/img/chaos/3.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/chaos/3.jpg"></a>
+                        <a href="assets/img/chaos/4.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/chaos/4.jpg"></a>
+                        <a href="assets/img/chaos/5.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/chaos/5.jpg"></a>
+                        <a href="assets/img/chaos/6.jpg" data-lightbox="gallery" class="gallery-thumb"><img src="assets/img/chaos/6.jpg"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>
+
+<script>
+// --- IntersectionObserver Scroll Spy (精準版) ---
+        let isManualScrolling = false; 
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -70% 0px', 
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (isManualScrolling) return;
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    updateActiveNav(id);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.article-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function updateActiveNav(id) {
+
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) link.classList.add('active');
+            });
+
+            document.querySelectorAll('.mobile-toc-link').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                    const container = document.getElementById('mobileToc');
+                    const scrollLeft = link.offsetLeft - (container.offsetWidth / 2) + (link.offsetWidth / 2);
+                    container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // --- 手機版點擊處理 ---
+        document.querySelectorAll('.mobile-toc-link, .toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                isManualScrolling = true;
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                updateActiveNav(targetId);
+
+                const offset = 140; 
+                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                setTimeout(() => {
+                    isManualScrolling = false;
+                }, 800);
+            });
+        });
+        
+        // 處理底部邊界
+</script>
