@@ -202,9 +202,9 @@ back_to_top: false
     .cv-lede { font-size: .8rem; line-height: 1.75; margin-bottom: 10px; }
     .cv-contact { font-size: .72rem; gap: 4px 14px; }
 
-    .cv-section { margin-top: 24px; }
+    .cv-section { margin-top: 20px; }
     .cv-section > h2 { font-size: .9rem; margin-bottom: 12px; padding-bottom: 6px; break-after: avoid; }
-    .cv-item { margin-bottom: 13px; }
+    .cv-item { margin-bottom: 11px; }
     .cv-item-title { font-size: .85rem; }
     .cv-item-meta { font-size: .7rem; }
     .cv-item-role { font-size: .7rem; margin-bottom: 3px; }
@@ -219,7 +219,7 @@ back_to_top: false
     .cv-skills dt { font-size: .7rem; }
 
     /* 這幾塊各自綁在一起，才不會出現只有兩行的孤兒頁 */
-    .cv-cols { break-inside: avoid; margin-top: 24px; }
+    .cv-cols { break-inside: avoid; margin-top: 20px; }
     .cv-cols .cv-section { margin-top: 0; }
 
     .cv-lede, .cv-item p, .cv-item ul, .cv-skills dd { color: #2b2b2b; }
@@ -278,6 +278,20 @@ back_to_top: false
 
     <section class="cv-section">
         <h2>代表專案</h2>
+
+        <div class="cv-item">
+            <div class="cv-item-head">
+                <span class="cv-item-title"><a href="project-checkin.html">簽到通・活動出勤管理系統</a></span>
+                <span class="cv-item-meta">2026.07 上線　聚豐整合行銷</span>
+            </div>
+            <p class="cv-item-role">獨立開發（需求釐清、系統規劃、前後端實作）</p>
+            <p>
+                把散在 Excel 班表、紙本查驗單與人工計薪的出勤流程整併成一條線：上傳班表自動建場次、
+                批次生成含 QR code 的查驗單、現場以 LINE 掃碼簽到、依出勤自動結算。
+                簽到端採 LIFF，用 LINE 既有身分取代帳號密碼——主要使用者是年長志工，
+                任何需要註冊的方案在現場都推不動。架構刻意不自建後端，避免留下需要專人維運的系統。
+            </p>
+        </div>
 
         <div class="cv-item">
             <div class="cv-item-head">
@@ -352,13 +366,14 @@ back_to_top: false
 
         <div class="cv-item">
             <div class="cv-item-head">
-                <span class="cv-item-title"><a href="small_project.html">MyMediaTrek 觀影紀錄系統</a></span>
-                <span class="cv-item-meta">自主開發</span>
+                <span class="cv-item-title"><a href="small_project.html">自主開發的小工具</a></span>
+                <span class="cv-item-meta">持續進行</span>
             </div>
-            <p class="cv-item-role">獨立開發（前後端）</p>
+            <p class="cv-item-role">獨立開發</p>
             <p>
-                以 Flask 與 PostgreSQL 建置的個人觀影紀錄系統，含 JWT 身分驗證與多使用者資料隔離、完整 CRUD 與 RWD 介面。
-                是我借助 AI 工具跨出設計本行、實際完成後端實作的一次驗證。
+                <strong>健身日誌 Telegram Bot</strong>：Cloudflare Workers 串接 Telegram 與 Notion，把自由輸入的訓練文字自動解析成結構化紀錄。<br>
+                <strong>MyMediaTrek</strong>：Flask 與 PostgreSQL，含 JWT 驗證與多使用者資料隔離。<br>
+                兩者都是我借助 AI 工具跨出設計本行、實際完成後端實作的驗證。
             </p>
         </div>
 

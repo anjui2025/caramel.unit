@@ -1,0 +1,260 @@
+<!--meta
+title: 簽到通・活動出勤管理系統
+description: 為聚豐整合行銷開發的活動出勤管理系統。從 Excel 班表匯入、自動生成查驗單、LINE 掃碼簽到到薪資結算的完整流程，2026 年 7 月上線。
+nav: project.html
+cta: true
+libs: lightbox
+include: scrollspy
+-->
+
+<style>
+/* 捲動優化 */
+        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+        body { overflow-y: visible; }
+        .main-stage { overflow: visible !important; }
+
+        /* 直式手機截圖：限寬置中，避免被撐成過高的巨圖 */
+        .shot-portrait {
+            display: block;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+</style>
+
+<div class="case-header">
+            <h1 class="case-title">簽到通・活動出勤管理系統</h1>
+            <p class="case-subtitle">From Excel Chaos to One-Tap Check-in</p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>系統規劃／前後端開發</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>獨立開發</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2026.07 上線</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>LINE LIFF, Firebase, JavaScript</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#problem" class="mobile-toc-link">原本的流程</a>
+            <a href="#why-line" class="mobile-toc-link">為什麼是 LINE</a>
+            <a href="#build" class="mobile-toc-link">怎麼組起來</a>
+            <a href="#messy" class="mobile-toc-link">現場的髒資料</a>
+            <a href="#tradeoff" class="mobile-toc-link">取捨與限制</a>
+            <a href="#result" class="mobile-toc-link">成果</a>
+            <a href="#gallery" class="mobile-toc-link">畫面</a>
+        </div>
+
+        <div class="content-wrapper">
+
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">專案簡介</a>
+                <a href="#problem" class="toc-link">原本的流程有多難</a>
+                <a href="#why-line" class="toc-link">為什麼是 LINE</a>
+                <a href="#build" class="toc-link">怎麼組起來的</a>
+                <a href="#messy" class="toc-link">現場的髒資料</a>
+                <a href="#tradeoff" class="toc-link">取捨與已知限制</a>
+                <a href="#result" class="toc-link">成果與現況</a>
+                <a href="#gallery" class="toc-link">畫面</a>
+            </aside>
+
+            <article class="article-content">
+
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">專案簡介</h2>
+                    <p>
+                        「簽到通」是我為<strong>聚豐整合行銷</strong>開發的活動出勤管理系統，
+                        處理他們每年數十場到校巡迴演出與現場活動的排班、簽到與計薪。
+                        2026 年 7 月上線，目前是他們實際在使用的系統。
+                    </p>
+                    <p>
+                        先說清楚一件事：聚豐是我父母的公司。
+                        這件事對這個案子的影響是——我拿得到一般接案很難拿到的東西：
+                        完整的營運現場、所有沒被寫進需求文件的抱怨，以及上線之後長期而誠實的回饋。
+                        這個系統不是交付完就結束，它每個月都還在被使用、被挑毛病。
+                    </p>
+                </section>
+
+                <section id="problem" class="article-section">
+                    <h2 class="section-title">原本的流程有多難</h2>
+                    <p>
+                        他們的活動分兩種，痛點也是兩種。
+                    </p>
+                    <p>
+                        <strong>現場活動</strong>用紙本簽到。活動一忙就會忘了請人簽，
+                        簽到單在收拾現場的混亂裡很容易不見——而那張紙是後續計薪的唯一依據。
+                    </p>
+                    <p>
+                        <strong>到校巡迴</strong>的複雜度則是另一個層級。
+                        一場活動要同時對齊：哪一間學校、什麼時間、教材要準備多少份、
+                        工作人員有誰、演出人員有誰、現場志工有誰。
+                        而這些欄位在活動前還會一直變動——有人臨時請假、有人被調去別場。
+                    </p>
+                    <p>
+                        更關鍵的是，這套流程有兩個不能動的地方：
+                        <strong>班表是 Excel</strong>，那是他們已經用了很久的工具，而且會反覆修改；
+                        <strong>查驗單要列印出來給學校單位簽名</strong>，欄位與格式是規定好的，不能自己發明。
+                    </p>
+                    <blockquote>
+                        所以這個系統的限制條件從一開始就很清楚：<br>
+                        不能要求他們改變工作方式，只能把重複的部分自動化。
+                    </blockquote>
+                </section>
+
+                <section id="why-line" class="article-section">
+                    <h2 class="section-title">為什麼是 LINE</h2>
+                    <p>
+                        現場志工的年齡普遍偏大。
+                        任何需要下載 App、註冊帳號、記住密碼的方案，對他們都是一道障礙——
+                        而且活動當天現場很忙，沒有人有空在門口教一位長輩怎麼註冊。
+                    </p>
+                    <p>
+                        LINE 是他們本來就每天在用的東西，掃 QR code 也是他們已經熟悉的動作。
+                        所以簽到端做成 <strong>LIFF</strong>（在 LINE 裡直接開啟的網頁），
+                        用 LINE 本身的身分辨識取代帳號密碼：
+                    </p>
+                    <p>
+                        掃 QR → LINE 自動辨識身分 → 第一次使用時綁定本名 → 確認活動資訊 → 一鍵簽到。
+                    </p>
+                    <img src="assets/img/checkin/01-liff.jpg" alt="LINE 內的簽到流程：掃碼、確認活動資訊、簽到完成" class="article-img shot-portrait">
+                    <p class="caption">簽到端在 LINE 裡開啟，不需要下載或註冊任何東西</p>
+                    <p>
+                        「不用學新東西」聽起來不像一個設計決策，但它其實是這個案子最重要的一個。
+                        技術上有更嚴謹的做法，但只要多一個註冊步驟，這套系統在現場就推不動。
+                    </p>
+                </section>
+
+                <section id="build" class="article-section">
+                    <h2 class="section-title">怎麼組起來的</h2>
+                    <p>
+                        架構上我做了一個刻意的決定：<strong>沒有自建後端</strong>。
+                        整套是純前端加上 Firebase，用原生 JavaScript ES Modules，沒有框架、沒有打包流程。
+                    </p>
+                    <p>
+                        原因是使用者是一間中小型公司。我不想留下一個需要有人固定維運的東西給他們，
+                        也不想讓自己變成那個唯一能維護它的人。
+                        少一層自建服務，就少一個會在半夜壞掉、而且只有我修得好的環節。
+                    </p>
+                    <p>後台分成四個模組：</p>
+                    <p>
+                        <ul>
+                            <li><strong>儀表板</strong>：統計卡與即時簽到動態流。用 Firestore 的即時監聽，現場有人簽到，畫面就跳一筆。</li>
+                            <li><strong>活動管理</strong>：支援兩種計費型態——巡迴場採固定場費，單場則是角色 × 時薪 × 時數。</li>
+                            <li><strong>Excel 班表批次建立</strong>：上傳既有班表 → 選月份與日期 → 預覽當天所有場次與人力配置 → 一鍵建立活動與名單。</li>
+                            <li><strong>薪資結算</strong>：依出勤自動計費，區分已付與待付，可依月份篩選並匯出 CSV。</li>
+                        </ul>
+                    </p>
+                    <img src="assets/img/checkin/03-import.jpg" alt="Excel 班表匯入後的預覽畫面，顯示當天所有場次與人力配置" class="article-img">
+                    <p class="caption">上傳原本的 Excel 班表，系統直接預覽當天要建立的所有場次</p>
+                    <p>
+                        第三個模組是整套系統裡我覺得最有價值的一段，因為它同時服務兩種完全不同的使用者：
+                        <strong>內部人員</strong>要在幾分鐘內建好幾十場活動，
+                        <strong>學校單位</strong>則要拿到一張格式正確、可以當場簽名的紙。
+                    </p>
+                    <p>
+                        所以匯入之後會自動生成整批可列印的 A4 查驗單，
+                        上面帶著該場的 QR code，教材數量依班級數與人數自動換算，
+                        而且幼兒園與小學用的是不同版型。
+                    </p>
+                    <img src="assets/img/checkin/04-sheet.jpg" alt="自動生成的 A4 查驗單，含 QR code 與教材數量欄位" class="article-img">
+                    <p class="caption">自動生成的查驗單。QR code、教材數量、版型都依場次條件自動決定</p>
+                </section>
+
+                <section id="messy" class="article-section">
+                    <h2 class="section-title">現場的髒資料</h2>
+                    <p>
+                        真正花時間的不是把功能做出來，是處理現實。
+                    </p>
+                    <p>
+                        系統實際跑起來之後才會遇到這些事：有人先簽到了，名字才被補進名單；
+                        同一場活動裡出現兩個同名的人；名單上根本沒有的臨時人員直接出現在現場。
+                    </p>
+                    <p>
+                        所以我寫了一段對帳邏輯，在名單更動時把既有的簽到紀錄依姓名對回本人；
+                        同一個人有多筆時保留最早的那一筆，避免同一場被重複計薪。
+                    </p>
+                    <blockquote>
+                        這段程式本身不難。難的是知道它需要存在。
+                    </blockquote>
+                    <p>
+                        這也是我覺得「有一個真實在營運的客戶」最大的價值：
+                        規格書上不會寫「會有人代打卡之外的十七種意外」，
+                        那些只會在第三場活動結束後，用一通電話的形式出現。
+                    </p>
+                </section>
+
+                <section id="tradeoff" class="article-section">
+                    <h2 class="section-title">取捨與已知限制</h2>
+                    <p>
+                        簽到端必須能在未登入的狀態下寫入資料，否則志工就得先登入——
+                        那就違背了「不用學新東西」這個前提。
+                    </p>
+                    <p>
+                        所以權限是分層設計的：簽到紀錄開放寫入與單筆讀取，
+                        但「列出全部」被鎖住，只有管理員能用；薪資資料則完全只有管理員可讀寫。
+                        這樣擋得住匿名者整批下載個資，這是我最在意的一條線。
+                    </p>
+                    <p>
+                        但它擋不住另一件事：<strong>知道活動 ID 的人可以寫入一筆假的簽到紀錄。</strong>
+                        現階段這個風險由流程補起來——QR code 是現場工作人員當下發的，
+                        而且每筆簽到都要對得上名單才會進入計薪。
+                    </p>
+                    <p>
+                        我把它記為已知限制而不是漏看的洞。
+                        下一步的處理方式是把寫入改走後端函式，或加上 App Check 做來源驗證。
+                        在便利性與嚴謹之間，我這次選了前者，但知道帳要記在哪裡。
+                    </p>
+                </section>
+
+                <section id="result" class="article-section">
+                    <h2 class="section-title">成果與現況</h2>
+                    <p>
+                        2026 年 7 月上線，目前是聚豐實際在使用的系統。
+                    </p>
+                    <p>
+                        原本需要人工對照 Excel、追回紙本簽到單、再手動計算薪資的流程，現在變成一條線：
+                    </p>
+                    <blockquote>
+                        上傳班表 → 自動建立場次 → 列印查驗單 → 現場掃碼簽到 → 自動結算
+                    </blockquote>
+                    <p>
+                        我沒有辦法給出一個「省下幾小時」的精確數字，因為他們原本就沒有在計時。
+                        但從「一疊可能會弄丟的紙本簽到單」到「後台按一次匯出」，
+                        這個差距本身大概已經說明了問題。
+                    </p>
+                    <img src="assets/img/checkin/05-payroll.jpg" alt="薪資結算頁面，依出勤自動計費並可匯出 CSV" class="article-img">
+                    <p class="caption">薪資結算：依出勤自動計費，區分已付與待付，可匯出 CSV</p>
+                    <p>
+                        基於系統目前裝載真實個資且仍在營運，這裡不公開部署網址。
+                        需要實際操作示範的話，歡迎與我聯繫。
+                    </p>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">畫面</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/checkin/02-dashboard.jpg" data-lightbox="checkin" data-title="後台儀表板" class="gallery-thumb"><img src="assets/img/checkin/02-dashboard.jpg" alt="後台儀表板：統計卡與即時簽到動態流"></a>
+                        <a href="assets/img/checkin/05-payroll.jpg" data-lightbox="checkin" data-title="薪資結算" class="gallery-thumb"><img src="assets/img/checkin/05-payroll.jpg" alt="薪資結算頁面"></a>
+                        <a href="assets/img/checkin/03-import.jpg" data-lightbox="checkin" data-title="Excel 班表匯入" class="gallery-thumb"><img src="assets/img/checkin/03-import.jpg" alt="Excel 班表匯入預覽"></a>
+                        <a href="assets/img/checkin/04-sheet.jpg" data-lightbox="checkin" data-title="自動生成查驗單" class="gallery-thumb"><img src="assets/img/checkin/04-sheet.jpg" alt="自動生成的 A4 查驗單"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>

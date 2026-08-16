@@ -7,33 +7,72 @@
   "ga_id": "G-6QKWZMKZ0W",
   "google_verification": "ueIEZCitrVjo9IaZEOzD8D3WFFhNsCKneadU259Sdlk",
   "default_description": "黃安睿 AN JUI 的作品集。UI/UX 設計、網頁開發、視覺設計與演講教學。",
-
   "cv_url": "resume.html",
   "cta_lead": "如果你手上也有一個還沒被說清楚的東西，<br>歡迎找我聊聊。",
-
   "case_order": [
-    "project-chaos.html", "lecture-tunghai.html", "project-bowling.html",
-    "project-care-app.html", "lecture-ai-workshop.html", "project-hakkayoung.html",
-    "project-duanwu.html", "project-game.html", "project-poster.html",
-    "project-deck.html", "project-resume.html", "lecture-library.html",
-    "lecture-philosophy.html", "lecture-aifly.html", "lecture-moonlamp.html"
+    "project-checkin.html",
+    "project-chaos.html",
+    "lecture-tunghai.html",
+    "project-bowling.html",
+    "project-care-app.html",
+    "lecture-ai-workshop.html",
+    "project-hakkayoung.html",
+    "project-duanwu.html",
+    "project-game.html",
+    "project-poster.html",
+    "project-deck.html",
+    "project-resume.html",
+    "lecture-library.html",
+    "lecture-philosophy.html",
+    "lecture-aifly.html",
+    "lecture-moonlamp.html"
   ],
-
-
   "nav": [
-    { "href": "index.html",         "en": "Home",        "zh": "首頁" },
-    { "href": "about.html",         "en": "About",       "zh": "關於" },
-    { "href": "project.html",       "en": "Major Units", "zh": "完整零件" },
-    { "href": "small_project.html", "en": "Fragments",   "zh": "生活碎片" },
-    { "href": "contact.html",       "en": "Contact",     "zh": "訊號" }
+    {
+      "href": "index.html",
+      "en": "Home",
+      "zh": "首頁"
+    },
+    {
+      "href": "about.html",
+      "en": "About",
+      "zh": "關於"
+    },
+    {
+      "href": "project.html",
+      "en": "Major Units",
+      "zh": "完整零件"
+    },
+    {
+      "href": "small_project.html",
+      "en": "Fragments",
+      "zh": "生活碎片"
+    },
+    {
+      "href": "contact.html",
+      "en": "Contact",
+      "zh": "訊號"
+    }
   ],
-
   "social": [
-    { "label": "Email",    "href": "mailto:caramel.unit@gmail.com",        "icon": "bi bi-envelope" },
-    { "label": "Line",     "href": "https://line.me/R/ti/p/@095xzwqa",     "icon": "bi bi-line",     "external": true },
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/aj0920/",  "icon": "bi bi-linkedin", "external": true }
+    {
+      "label": "Email",
+      "href": "mailto:caramel.unit@gmail.com",
+      "icon": "bi bi-envelope"
+    },
+    {
+      "label": "Line",
+      "href": "https://line.me/R/ti/p/@095xzwqa",
+      "icon": "bi bi-line",
+      "external": true
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/aj0920/",
+      "icon": "bi bi-linkedin",
+      "external": true
+    }
   ],
-
   "libs": {
     "lightbox": {
       "css": "https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css",
@@ -46,7 +85,6 @@
       "init": "if (window.Swiper) new Swiper('.mySwiper', {\n    loop: true,\n    autoplay: { delay: 3000, disableOnInteraction: false },\n    pagination: { el: '.swiper-pagination', clickable: true }\n});"
     }
   },
-
   "redirects": {
     "porject1_chaos.html": "project-chaos.html",
     "porject2_bowling.html": "project-bowling.html",
