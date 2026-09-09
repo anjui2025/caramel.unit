@@ -66,7 +66,32 @@ meta 之後就是這頁的內容。其中：
 - 產生 `sitemap.xml` 與 `robots.txt`
 - 導覽列的 active 狀態在 build 時就寫死，不再需要 jQuery
 
+## 放圖片與影片的規矩
+
+圖片和影片是這個站最大的重量來源，加新的時候照著做就不會又胖回去：
+
+- **圖片最長邊不要超過 2000px**。手機直出的 4032px 照片請先縮過再放進來。
+- `<img>` 一律要有 `alt`。除了每頁第一張（首屏主圖）之外，都要加
+  `loading="lazy" decoding="async"` 和 `width` / `height`。
+  width/height 是給瀏覽器算比例用的，載入時版面才不會跳動。
+- **影片**：不要寫 `autoplay`。改成
+  `preload="none" data-autoplay-in-view poster="assets/img/posters/xxx.jpg"`，
+  共用 JS 會在它滑進畫面時才開始載入播放，離開畫面自動暫停。
+  poster 首幀可以這樣抽：
+
+  ```bash
+  ffmpeg -ss 0.5 -i 影片.mp4 -frames:v 1 -q:v 4 assets/img/posters/影片.jpg
+  ```
+
+- 螢幕錄影請壓過再放：`-vf scale=960:-2 -crf 32 -an -movflags +faststart`，
+  通常可以從 5MB 壓到 200KB 而且看不出差別。
+- **檔名大小寫要跟引用完全一致**。Windows 不分大小寫，但 GitHub Pages 是 Linux，
+  `video.MOV` 寫成 `video.mov` 在本機看起來正常、上線就 404。
+
 ## 還沒處理的事
 
-- `project-game.html` 裡的遊戲連結目前是 `https://example.com/...` 佔位網址，要換成真的
-- `about.html` 的履歷連到 Canva 外部連結，建議另外放一份 PDF 備援
+- `assets/img/bowling/4.svg`（6.5MB）與 `assets/img/care/logo.svg`（4.2MB）都太大。
+  前者是純向量、傳輸時會被 gzip 壓掉不少；後者裡面內嵌了 8 張 base64 點陣圖，
+  要瘦身得把那些圖重新壓過。
+- `assets/img/cards/card1~5.png`（約 19MB）目前沒有任何頁面引用，確認不要的話可以刪掉。
+- 「打包帶走」目前只有 4 樣東西，其中人生賓果與「生活碎片」重複。

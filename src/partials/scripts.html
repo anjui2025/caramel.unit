@@ -31,6 +31,39 @@
         });
     })();
 
+    // 影片滑進畫面才載入播放（preload="none" + poster，首次載入不抓影片檔）
+    (function () {
+        var vids = document.querySelectorAll('video[data-autoplay-in-view]');
+        if (!vids.length) return;
+
+        // 使用者若要求減少動態效果，就停在 poster 不自動播
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            vids.forEach(function (v) { v.setAttribute('controls', ''); });
+            return;
+        }
+
+        function play(v) {
+            if (v.preload === 'none') v.preload = 'auto';
+            var p = v.play();
+            // 省電模式、低電量或瀏覽器政策擋下自動播放時，至少讓人可以自己點播
+            if (p && p.catch) p.catch(function () { v.setAttribute('controls', ''); });
+        }
+
+        if (!('IntersectionObserver' in window)) {   // 舊瀏覽器就直接播
+            vids.forEach(play);
+            return;
+        }
+
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) play(e.target);
+                else e.target.pause();               // 離開畫面就暫停，不浪費電
+            });
+        }, { rootMargin: '200px 0px' });
+
+        vids.forEach(function (v) { io.observe(v); });
+    })();
+
     // 回到頂端
     (function () {
         var btn = document.getElementById('backToTop');
