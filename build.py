@@ -145,6 +145,50 @@ def build_footer(site, tpl):
             .replace("{{BRAND}}", site["brand"]))
 
 
+def json_ld(site, base):
+    """首頁的結構化資料：讓搜尋引擎知道這個網站對應到哪一個人"""
+    person = {
+        "@type": "Person",
+        "name": site["person"]["name"],
+        "alternateName": site["person"].get("alt_name"),
+        "jobTitle": site["person"]["job_title"],
+        "description": site["default_description"],
+        "url": base,
+        "image": base + site["og_image"],
+        "email": site["person"].get("email"),
+        "sameAs": [s["href"] for s in site["social"] if s.get("external")],
+        "knowsAbout": site["person"].get("knows_about", []),
+    }
+    if site["person"].get("locality"):
+        person["address"] = {"@type": "PostalAddress",
+                             "addressLocality": site["person"]["locality"],
+                             "addressCountry": "TW"}
+    if site["person"].get("alumni_of"):
+        person["alumniOf"] = [{"@type": "CollegeOrUniversity", "name": n}
+                              for n in site["person"]["alumni_of"]]
+
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [
+            person,
+            {"@type": "WebSite", "name": site["site_name"], "alternateName": site["brand"],
+             "url": base, "inLanguage": "zh-Hant-TW",
+             "author": {"@type": "Person", "name": site["person"]["name"]}},
+        ],
+    }
+
+    def prune(o):          # 拿掉沒填的欄位，不要輸出 null
+        if isinstance(o, dict):
+            return {k: prune(v) for k, v in o.items() if v not in (None, "", [], {})}
+        if isinstance(o, list):
+            return [prune(x) for x in o]
+        return o
+
+    body = json.dumps(prune(data), ensure_ascii=False, indent=2)
+    return ('<script type="application/ld+json">' + chr(10)
+            + body + chr(10) + '    </script>')
+
+
 def lib_assets(site, names):
     css, js, init = [], [], []
     for n in names:
@@ -236,12 +280,13 @@ def main():
                 .replace("{{TITLE}}", full_title)
                 .replace("{{DESCRIPTION}}", desc)
                 .replace("{{PAGE_URL}}", page_url)
-                .replace("{{OG_IMAGE}}", base + site["og_image"])
+                .replace("{{OG_IMAGE}}", base + meta.get("og_image", site["og_image"]))
                 .replace("{{SITE_NAME}}", site["site_name"])
                 .replace("{{GA_ID}}", site["ga_id"])
                 .replace("{{VERIFICATION}}",
                          f'<meta name="google-site-verification" content="{site["google_verification"]}">'
                          if out_name == "index.html" else "")
+                .replace("{{JSONLD}}", json_ld(site, base) if out_name == "index.html" else "")
                 .replace("{{ROBOTS}}",
                          '<meta name="robots" content="noindex">' if truthy(meta.get("noindex"), False) else "")
                 .replace("{{LIB_CSS}}", lib_css)

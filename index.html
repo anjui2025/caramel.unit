@@ -9,6 +9,57 @@
     <link rel="canonical" href="https://anjui2025.github.io/caramel.unit/">
     
     <meta name="google-site-verification" content="ueIEZCitrVjo9IaZEOzD8D3WFFhNsCKneadU259Sdlk">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "黃安睿",
+      "alternateName": "Huang An Jui",
+      "jobTitle": "UI/UX 設計師",
+      "description": "黃安睿 AN JUI 的作品集。UI/UX 設計、網頁開發、視覺設計與演講教學。",
+      "url": "https://anjui2025.github.io/caramel.unit/",
+      "image": "https://anjui2025.github.io/caramel.unit/assets/img/OG.png",
+      "email": "caramel.unit@gmail.com",
+      "sameAs": [
+        "https://line.me/R/ti/p/@095xzwqa",
+        "https://www.linkedin.com/in/aj0920/"
+      ],
+      "knowsAbout": [
+        "UI/UX 設計",
+        "使用者研究",
+        "網頁前端開發",
+        "AI 應用規劃與導入",
+        "視覺設計",
+        "演講與教學"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "臺中市",
+        "addressCountry": "TW"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "東海大學"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "黃安睿 AN JUI",
+      "alternateName": "Caramel Unit",
+      "url": "https://anjui2025.github.io/caramel.unit/",
+      "inLanguage": "zh-Hant-TW",
+      "author": {
+        "@type": "Person",
+        "name": "黃安睿"
+      }
+    }
+  ]
+}
+    </script>
 
     <link rel="icon" type="image/png" href="assets/img/s-logo.png">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -283,6 +334,41 @@
         }, { rootMargin: '200px 0px' });
 
         vids.forEach(function (v) { io.observe(v); });
+    })();
+
+    // 追蹤「打包帶走」的下載與聯繫點擊
+    // 用自訂事件名稱，避免和 GA4 加強型評估自動送的 file_download 混在一起
+    (function () {
+        function send(name, params) {
+            if (typeof gtag !== 'function') return;      // 被擋掉或還沒載入就算了
+            gtag('event', name, params);
+        }
+
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest && e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+
+            // 打包帶走的檔案：記下是哪一份、哪一冊
+            if (href.indexOf('takeaways/') === 0) {
+                var card = a.closest('.tk-card');
+                var title = card && card.querySelector('.tk-title');
+                send('takeaway_download', {
+                    item_name: title ? title.textContent.trim() : '(未知)',
+                    file_name: decodeURIComponent(href.split('/').pop()),
+                    link_url: a.href
+                });
+                return;
+            }
+
+            // 聯繫管道：Line 與 Email
+            if (/^mailto:/i.test(href) || href.indexOf('line.me') > -1) {
+                send('contact_click', {
+                    method: /^mailto:/i.test(href) ? 'email' : 'line',
+                    link_url: href
+                });
+            }
+        }, true);
     })();
 
     // 回到頂端

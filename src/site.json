@@ -8,6 +8,24 @@
   "google_verification": "ueIEZCitrVjo9IaZEOzD8D3WFFhNsCKneadU259Sdlk",
   "default_description": "黃安睿 AN JUI 的作品集。UI/UX 設計、網頁開發、視覺設計與演講教學。",
   "cv_url": "resume.html",
+  "person": {
+    "name": "黃安睿",
+    "alt_name": "Huang An Jui",
+    "job_title": "UI/UX 設計師",
+    "email": "caramel.unit@gmail.com",
+    "locality": "臺中市",
+    "knows_about": [
+      "UI/UX 設計",
+      "使用者研究",
+      "網頁前端開發",
+      "AI 應用規劃與導入",
+      "視覺設計",
+      "演講與教學"
+    ],
+    "alumni_of": [
+      "東海大學"
+    ]
+  },
   "cta_lead": "如果你手上也有一個還沒被說清楚的東西，<br>歡迎找我聊聊。",
   "case_order": [
     "project-checkin.html",

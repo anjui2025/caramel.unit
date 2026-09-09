@@ -9,6 +9,7 @@
     <link rel="canonical" href="https://anjui2025.github.io/caramel.unit/small_project.html">
     
     
+    
 
     <link rel="icon" type="image/png" href="assets/img/s-logo.png">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -18,12 +19,12 @@
     <meta property="og:url" content="https://anjui2025.github.io/caramel.unit/small_project.html">
     <meta property="og:title" content="生活碎片｜黃安睿 AN JUI">
     <meta property="og:description" content="下班後的實驗品：小工具、小遊戲、2D 插畫、3D 建模與 AI 生成圖像。">
-    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
+    <meta property="og:image" content="https://anjui2025.github.io/caramel.unit/assets/img/og/small_project.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://anjui2025.github.io/caramel.unit/small_project.html">
     <meta name="twitter:title" content="生活碎片｜黃安睿 AN JUI">
     <meta name="twitter:description" content="下班後的實驗品：小工具、小遊戲、2D 插畫、3D 建模與 AI 生成圖像。">
-    <meta name="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/OG.png">
+    <meta name="twitter:image" content="https://anjui2025.github.io/caramel.unit/assets/img/og/small_project.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -496,6 +497,41 @@
         }, { rootMargin: '200px 0px' });
 
         vids.forEach(function (v) { io.observe(v); });
+    })();
+
+    // 追蹤「打包帶走」的下載與聯繫點擊
+    // 用自訂事件名稱，避免和 GA4 加強型評估自動送的 file_download 混在一起
+    (function () {
+        function send(name, params) {
+            if (typeof gtag !== 'function') return;      // 被擋掉或還沒載入就算了
+            gtag('event', name, params);
+        }
+
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest && e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+
+            // 打包帶走的檔案：記下是哪一份、哪一冊
+            if (href.indexOf('takeaways/') === 0) {
+                var card = a.closest('.tk-card');
+                var title = card && card.querySelector('.tk-title');
+                send('takeaway_download', {
+                    item_name: title ? title.textContent.trim() : '(未知)',
+                    file_name: decodeURIComponent(href.split('/').pop()),
+                    link_url: a.href
+                });
+                return;
+            }
+
+            // 聯繫管道：Line 與 Email
+            if (/^mailto:/i.test(href) || href.indexOf('line.me') > -1) {
+                send('contact_click', {
+                    method: /^mailto:/i.test(href) ? 'email' : 'line',
+                    link_url: href
+                });
+            }
+        }, true);
     })();
 
     // 回到頂端
