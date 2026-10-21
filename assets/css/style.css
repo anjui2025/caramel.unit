@@ -462,6 +462,14 @@ section {
     content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
     width: 40px; height: 10px; background: rgba(166, 123, 91, 0.2); opacity: 0.5;
 }
+.fragment-link {
+    display: inline-block; margin-top: 10px;
+    font-size: 0.85rem; color: var(--caramel); text-decoration: none;
+    border-bottom: 1px solid rgba(166, 123, 91, 0.35);
+    padding-bottom: 2px; transition: all 0.3s ease;
+}
+.fragment-link:hover { color: var(--text-main); border-color: var(--text-main); }
+
 .fragment-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; color: var(--text-main); }
 .fragment-desc { font-size: 0.95rem; color: #666; line-height: 1.6; }
 
@@ -2620,3 +2628,210 @@ html { scroll-behavior: smooth; }
 
 /* 導流區塊有多行時，行距拉開 */
 .section-crosslink p { margin: 0; line-height: 2; }
+
+/* =========================================
+   訂製零件頁（services.html）
+   ========================================= */
+
+.svc-container {
+    padding: 80px 5%;
+    width: 100%; max-width: 980px; margin: 0 auto;
+    text-align: left;
+}
+.svc-container .page-header { text-align: center; }
+
+/* --- 單一服務區塊 --- */
+.svc-item {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(166, 123, 91, 0.18);
+    border-radius: 10px;
+    padding: 36px 34px 30px;
+    margin-bottom: 28px;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.svc-item:hover {
+    border-color: rgba(166, 123, 91, 0.4);
+    box-shadow: 0 16px 34px rgba(166, 123, 91, 0.1);
+}
+
+/* 教學那一塊是這頁的主角，底色與左緣做出重量 */
+.svc-item--feature {
+    background: #fff;
+    border-left: 3px solid var(--caramel);
+}
+
+.svc-head {
+    display: flex; align-items: flex-start; gap: 18px;
+    padding-bottom: 20px; margin-bottom: 24px;
+    border-bottom: 1px solid rgba(166, 123, 91, 0.15);
+}
+
+.svc-num {
+    font-size: 0.95rem; font-weight: 600; letter-spacing: 0.12em;
+    color: var(--caramel); opacity: 0.8; padding-top: 6px; flex-shrink: 0;
+}
+
+.svc-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--text-main);
+    margin: 0 0 6px;
+}
+
+.svc-kicker { font-size: 0.88rem; color: var(--text-light); letter-spacing: 0.02em; }
+
+.svc-lead { font-size: 0.97rem; line-height: 1.95; color: #555; margin-bottom: 26px; }
+.svc-lead strong { color: var(--text-main); font-weight: 600; }
+
+/* --- 兩欄 --- */
+.svc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.svc-col { min-width: 0; }
+
+.svc-sub {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--caramel); margin-bottom: 12px; text-transform: none;
+}
+
+.svc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.svc-list li {
+    position: relative; padding-left: 18px;
+    font-size: 0.89rem; line-height: 1.75; color: #666;
+}
+.svc-list li::before {
+    content: ''; position: absolute; left: 1px; top: 0.72em;
+    width: 7px; height: 1px; background: var(--caramel); opacity: 0.55;
+}
+
+.svc-link {
+    display: inline-block; margin-top: 14px;
+    font-size: 0.86rem; color: var(--caramel); text-decoration: none;
+    border-bottom: 1px solid rgba(166, 123, 91, 0.35);
+    padding-bottom: 2px; transition: all 0.3s ease;
+}
+.svc-link:hover { color: var(--text-main); border-color: var(--text-main); }
+
+.svc-price {
+    margin-top: 26px; padding-top: 18px;
+    border-top: 1px dashed rgba(166, 123, 91, 0.25);
+    font-size: 0.86rem; color: #999;
+}
+
+/* --- 適合 / 不適合 --- */
+.svc-fit {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+    margin-top: 30px; padding-top: 26px;
+    border-top: 1px solid rgba(166, 123, 91, 0.15);
+}
+.svc-fit .svc-list li::before {
+    width: auto; height: auto; top: 0.1em; left: 0;
+    font-size: 0.8rem; opacity: 1; background: none;
+}
+.svc-fit--yes .svc-sub { color: var(--caramel); }
+.svc-fit--yes .svc-list li::before { content: '✓'; color: var(--caramel); }
+.svc-fit--no .svc-sub { color: #a9a09a; }
+.svc-fit--no .svc-list li::before { content: '×'; color: #b9b0aa; }
+.svc-fit--no .svc-list li { color: #8d8a86; }
+
+/* --- 先聊聊（免費）：刻意用暖色塊，讀起來像邀請而不是收費說明 --- */
+.svc-free {
+    margin-top: 30px;
+    background: var(--caramel-light);
+    border-radius: 8px;
+    padding: 24px 26px 22px;
+}
+.svc-free-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.05rem; font-weight: 600; color: var(--text-main);
+    margin-bottom: 10px;
+}
+.svc-free p { font-size: 0.9rem; line-height: 1.9; color: #6b6259; }
+.svc-free-note {
+    margin-top: 12px; padding-top: 12px;
+    border-top: 1px solid rgba(166, 123, 91, 0.2);
+    font-size: 0.86rem !important; color: #8a8178 !important;
+}
+
+/* --- 兩種付費形式 --- */
+.svc-plans {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-top: 20px;
+}
+.svc-plan {
+    border: 1px solid rgba(166, 123, 91, 0.25);
+    border-radius: 8px; padding: 22px 22px 18px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.svc-plan:hover {
+    border-color: var(--caramel);
+    box-shadow: 0 10px 22px rgba(166, 123, 91, 0.1);
+}
+.svc-plan--main { background: var(--caramel-light); border-color: rgba(166, 123, 91, 0.45); }
+
+.svc-plan-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.05rem; font-weight: 600; color: var(--text-main); margin-bottom: 4px;
+}
+.svc-plan-meta { font-size: 0.78rem; color: var(--caramel); letter-spacing: 0.02em; margin-bottom: 12px; }
+.svc-plan-desc { font-size: 0.87rem; line-height: 1.8; color: #6b6259; flex: 1; }
+.svc-plan-price span { font-size: 0.8rem; font-weight: 400; color: var(--text-light); margin-left: 2px; }
+
+.svc-plan-price {
+    margin-top: 16px; padding-top: 12px;
+    border-top: 1px dashed rgba(166, 123, 91, 0.3);
+    font-size: 0.95rem; font-weight: 600; color: var(--text-main);
+}
+
+/* --- 規格表 --- */
+.svc-spec {
+    margin-top: 30px; border-top: 1px solid rgba(166, 123, 91, 0.15); padding-top: 8px;
+}
+.svc-spec-row {
+    display: grid; grid-template-columns: 92px 1fr; gap: 16px;
+    padding: 11px 0; font-size: 0.88rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+.svc-spec-row:last-child { border-bottom: none; }
+.svc-spec-row > span:first-child { color: var(--caramel); font-size: 0.82rem; letter-spacing: 0.04em; }
+.svc-spec-row > span:last-child { color: #666; line-height: 1.7; }
+.svc-spec-row--price > span:last-child { color: var(--text-main); font-weight: 600; }
+
+/* --- 怎麼開始 --- */
+.svc-start {
+    margin-top: 56px; padding: 40px 34px 36px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.5px dashed rgba(166, 123, 91, 0.35);
+    border-radius: 10px;
+}
+.svc-start-title {
+    font-family: 'Noto Serif TC', serif; font-size: 1.35rem;
+    color: var(--text-main); margin-bottom: 28px; text-align: center;
+}
+.svc-steps { list-style: none; margin: 0 0 32px; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.svc-steps li { display: flex; gap: 16px; align-items: flex-start; }
+.svc-step-n {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--caramel); color: #fff;
+    font-size: 0.8rem; display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+}
+.svc-steps h3 { font-size: 0.97rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+.svc-steps p { font-size: 0.88rem; line-height: 1.8; color: #666; }
+
+.svc-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.svc-btn {
+    padding: 12px 26px; font-size: 0.92rem; border-radius: 50px;
+    text-decoration: none; transition: all 0.3s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+}
+
+@media (max-width: 768px) {
+    .svc-container { padding: 40px 20px; }
+    .svc-item { padding: 26px 20px 22px; }
+    .svc-cols, .svc-fit { grid-template-columns: 1fr; gap: 24px; }
+    .svc-plans { grid-template-columns: 1fr; }
+    .svc-head { gap: 12px; }
+    .svc-title { font-size: 1.25rem; }
+    .svc-spec-row { grid-template-columns: 1fr; gap: 3px; }
+    .svc-start { padding: 30px 20px 28px; }
+    .svc-btn { flex: 1 1 100%; }
+}
