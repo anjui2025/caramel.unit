@@ -2853,6 +2853,27 @@ html { scroll-behavior: smooth; }
 .svc-steps h3 { font-size: 0.97rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
 .svc-steps p { font-size: 0.88rem; line-height: 1.8; color: #666; }
 
+/* Line 按鈕：用官方品牌綠，在整頁米色調裡最跳，讓人一眼看到 */
+.btn-line {
+    background: #06C755; color: #fff; border: 1px solid #06C755;
+    font-weight: 500;
+    box-shadow: 0 6px 16px rgba(6, 199, 85, 0.25);
+}
+.btn-line:hover {
+    background: #05b34c; border-color: #05b34c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(6, 199, 85, 0.32);
+}
+.btn-line i { font-size: 1.05rem; }
+
+/* 步驟一裡的 Line 連結 */
+.svc-steps h3 a {
+    color: #06C755; text-decoration: none;
+    border-bottom: 1px solid rgba(6, 199, 85, 0.45);
+    padding-bottom: 1px; transition: all 0.3s ease;
+}
+.svc-steps h3 a:hover { color: #05b34c; border-color: #05b34c; }
+
 .svc-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .svc-btn {
     padding: 12px 26px; font-size: 0.92rem; border-radius: 50px;
