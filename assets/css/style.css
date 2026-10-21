@@ -2781,6 +2781,42 @@ html { scroll-behavior: smooth; }
     font-size: 0.95rem; font-weight: 600; color: var(--text-main);
 }
 
+/* 方案卡底下的補充說明 */
+.svc-plan-note {
+    margin-top: 8px; font-size: 0.78rem; color: var(--text-light); line-height: 1.6;
+}
+
+/* --- 組合方案：橫幅樣式，視覺上包住上面兩張卡 --- */
+.svc-combo {
+    margin-top: 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+    background: var(--caramel-light);
+    border: 1.5px solid rgba(166, 123, 91, 0.45);
+    border-radius: 8px;
+    padding: 24px 26px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.svc-combo:hover {
+    border-color: var(--caramel);
+    box-shadow: 0 12px 26px rgba(166, 123, 91, 0.13);
+}
+.svc-combo-main { flex: 1 1 380px; min-width: 0; }
+
+.svc-combo-tag {
+    display: inline-block; margin-bottom: 8px;
+    background: var(--caramel); color: #fff;
+    font-size: 0.72rem; letter-spacing: 0.04em;
+    padding: 3px 10px; border-radius: 20px;
+}
+
+.svc-combo-price { flex: 0 0 auto; text-align: right; }
+.svc-combo-price .svc-plan-price { margin-top: 0; padding-top: 0; border-top: none; font-size: 1.25rem; }
+.svc-combo-save {
+    margin-top: 4px; font-size: 0.78rem; color: var(--text-light);
+    text-decoration: line-through; text-decoration-color: rgba(166, 123, 91, 0.5);
+}
+
 /* --- 規格表 --- */
 .svc-spec {
     margin-top: 30px; border-top: 1px solid rgba(166, 123, 91, 0.15); padding-top: 8px;
@@ -2829,6 +2865,8 @@ html { scroll-behavior: smooth; }
     .svc-item { padding: 26px 20px 22px; }
     .svc-cols, .svc-fit { grid-template-columns: 1fr; gap: 24px; }
     .svc-plans { grid-template-columns: 1fr; }
+    .svc-combo { flex-direction: column; align-items: flex-start; padding: 22px 20px; }
+    .svc-combo-price { text-align: left; }
     .svc-head { gap: 12px; }
     .svc-title { font-size: 1.25rem; }
     .svc-spec-row { grid-template-columns: 1fr; gap: 3px; }
