@@ -236,7 +236,6 @@ section {
     margin-bottom: 1rem;
     display: block;
     text-transform: uppercase;
-    opacity: 0.8;
 }
 
 /* --- 1. Manifesto (關於這裡) --- */
@@ -2670,7 +2669,7 @@ html { scroll-behavior: smooth; }
 
 .svc-num {
     font-size: 0.95rem; font-weight: 600; letter-spacing: 0.12em;
-    color: var(--caramel-text); opacity: 0.8; padding-top: 6px; flex-shrink: 0;
+    color: var(--caramel-text); padding-top: 6px; flex-shrink: 0;
 }
 
 .svc-title {
