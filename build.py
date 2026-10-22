@@ -244,6 +244,53 @@ def page_json_ld(site, base, out_name, meta, page_url, title, desc, order):
     return (chr(10) + "    ").join(blocks)
 
 
+def minify_css(css):
+    """保守的 CSS 壓縮：拿掉註解、收掉多餘空白。
+
+    只處理 { } ; : , 周圍的空白，不碰 + - > ~ ——
+    因為 calc(100% - 280px) 這種寫法少了空格就會失效。
+    字串內容原樣保留，content: '✓' 不會被動到。
+    """
+    out, i, n = [], 0, len(css)
+    while i < n:
+        c = css[i]
+
+        if c in "\"'":                      # 字串：整段照抄
+            j = i + 1
+            while j < n:
+                if css[j] == "\\":
+                    j += 2
+                    continue
+                if css[j] == c:
+                    j += 1
+                    break
+                j += 1
+            out.append(css[i:j])
+            i = j
+            continue
+
+        if c == "/" and css.startswith("/*", i):   # 註解：丟掉
+            j = css.find("*/", i + 2)
+            i = n if j == -1 else j + 2
+            continue
+
+        if c in " \t\r\n\f":                # 連續空白收成一個，必要時整個拿掉
+            j = i
+            while j < n and css[j] in " \t\r\n\f":
+                j += 1
+            prev = out[-1][-1] if out and out[-1] else ""
+            nxt = css[j] if j < n else ""
+            if prev not in "{};:," and nxt not in "{};:,":
+                out.append(" ")
+            i = j
+            continue
+
+        out.append(c)
+        i += 1
+
+    return "".join(out).replace(";}", "}").strip()
+
+
 def lib_assets(site, names):
     css, js, init = [], [], []
     for n in names:
@@ -397,6 +444,14 @@ def main():
             time.localtime(os.path.getmtime(os.path.join(PAGES, src_name))))
         built.append((out_name, page_url, truthy(meta.get("noindex"), False), lastmod))
         print(f"  ✓ {out_name}")
+
+    # ---- 壓縮 CSS ----
+    # style.css 是你編輯的那一份；頁面載入的是壓縮後的 style.min.css
+    css_src = os.path.join(ROOT, "assets", "css", "style.css")
+    raw = read(css_src)
+    mini = minify_css(raw)
+    write(os.path.join(ROOT, "assets", "css", "style.min.css"), mini)
+    print(f"  ✓ style.min.css（{len(raw)/1024:.0f} KB → {len(mini)/1024:.0f} KB）")
 
     # ---- 舊網址轉址頁 ----
     stub = read(os.path.join(PARTIALS, "redirect.html"))

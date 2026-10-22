@@ -7,7 +7,7 @@
     --caramel-light: rgba(166, 123, 91, 0.1);
     --text-main: #2A2A2A;
     --text-light: #888888;
-    --paper-texture: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    --paper-texture: url('../img/cream-paper.png');   /* 自己放，不依賴第三方網站 */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
