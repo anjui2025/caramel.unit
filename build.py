@@ -19,6 +19,7 @@ import json
 import os
 import re
 import shutil
+import time
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -189,6 +190,60 @@ def json_ld(site, base):
             + body + chr(10) + '    </script>')
 
 
+def ld_block(data):
+    """把一份資料包成 <script type="application/ld+json">"""
+    body = json.dumps(data, ensure_ascii=False, indent=2)
+    return ('<script type="application/ld+json">' + chr(10)
+            + body + chr(10) + '    </script>')
+
+
+def page_json_ld(site, base, out_name, meta, page_url, title, desc, order):
+    """案例與演講頁的結構化資料：作品本身 + 麵包屑
+
+    date 寫在頁面 meta 裡（例如 date: 2024.05）；沒寫就不輸出日期。
+    """
+    blocks = []
+
+    date = (meta.get("date") or "").strip().replace(".", "-")
+    if date or out_name in order:
+        work = {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "name": title,
+            "description": desc,
+            "url": page_url,
+            "inLanguage": "zh-Hant-TW",
+            "author": {"@type": "Person", "name": site["person"]["name"]},
+            "creator": {"@type": "Person", "name": site["person"]["name"]},
+        }
+        if date:
+            work["datePublished"] = date
+        if meta.get("og_image"):
+            work["image"] = base + meta["og_image"].strip()
+        blocks.append(ld_block(work))
+
+    # 麵包屑：首頁 > 分區 > 這一頁
+    parent = meta.get("nav", "").strip()
+    if not parent or parent == out_name:
+        parent = "project.html" if out_name in order else ""
+    if parent and parent != out_name:
+        names = {"project.html": "完整零件", "small_project.html": "生活碎片",
+                 "takeaways.html": "打包帶走", "services.html": "訂製零件"}
+        if parent in names:
+            blocks.append(ld_block({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首頁", "item": base},
+                    {"@type": "ListItem", "position": 2, "name": names[parent],
+                     "item": base + parent},
+                    {"@type": "ListItem", "position": 3, "name": title, "item": page_url},
+                ],
+            }))
+
+    return (chr(10) + "    ").join(blocks)
+
+
 def lib_assets(site, names):
     css, js, init = [], [], []
     for n in names:
@@ -227,7 +282,7 @@ def main():
         meta, body = parse_page(read(os.path.join(PAGES, fname)))
         out_name = meta.get("output", fname)
         titles[out_name] = meta.get("title", out_name)
-        parsed.append((out_name, meta, body))
+        parsed.append((out_name, meta, body, fname))
 
     cta_tpl = read(os.path.join(PARTIALS, "case-cta.html"))
     order = site.get("case_order", [])
@@ -246,7 +301,7 @@ def main():
                 .replace("{{NEXT_CASE}}", nxt))
 
     # ---- 第二遍：組裝並輸出 ----
-    for out_name, meta, body in parsed:
+    for out_name, meta, body, src_name in parsed:
 
         page_style, body = pop_blocks(body, "style")
         page_script, body = pop_blocks(body, "script")
@@ -286,7 +341,10 @@ def main():
                 .replace("{{VERIFICATION}}",
                          f'<meta name="google-site-verification" content="{site["google_verification"]}">'
                          if out_name == "index.html" else "")
-                .replace("{{JSONLD}}", json_ld(site, base) if out_name == "index.html" else "")
+                .replace("{{JSONLD}}",
+                         json_ld(site, base) if out_name == "index.html"
+                         else page_json_ld(site, base, out_name, meta, page_url,
+                                           title, desc, order))
                 .replace("{{ROBOTS}}",
                          '<meta name="robots" content="noindex">' if truthy(meta.get("noindex"), False) else "")
                 .replace("{{LIB_CSS}}", lib_css)
@@ -334,7 +392,10 @@ def main():
             sys.exit(f"[build] {out_name} 有沒被取代的樣板變數：{set(leftover)}")
 
         write(os.path.join(ROOT, out_name), html + "\n")
-        built.append((out_name, page_url, truthy(meta.get("noindex"), False)))
+        lastmod = time.strftime(
+            "%Y-%m-%d",
+            time.localtime(os.path.getmtime(os.path.join(PAGES, src_name))))
+        built.append((out_name, page_url, truthy(meta.get("noindex"), False), lastmod))
         print(f"  ✓ {out_name}")
 
     # ---- 舊網址轉址頁 ----
@@ -347,7 +408,8 @@ def main():
 
     # ---- sitemap ----
     urls = "\n".join(
-        f"  <url><loc>{u}</loc></url>" for _, u, noindex in sorted(built) if not noindex
+        f"  <url><loc>{u}</loc><lastmod>{lm}</lastmod></url>"
+        for _, u, noindex, lm in sorted(built) if not noindex
     )
     write(os.path.join(ROOT, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -355,7 +417,7 @@ def main():
           f"{urls}\n</urlset>\n")
     write(os.path.join(ROOT, "robots.txt"),
           f"User-agent: *\nAllow: /\n\nSitemap: {base}sitemap.xml\n")
-    print(f"  ✓ sitemap.xml（{len([b for b in built if not b[2]])} 頁）")
+    print(f"  ✓ sitemap.xml（{len([b for b in built if not b[2]])} 頁，含 lastmod）")
     print(f"\n完成，共產生 {len(built)} 頁。")
 
 
