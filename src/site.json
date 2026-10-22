@@ -57,8 +57,13 @@
       "zh": "關於"
     },
     {
+      "href": "services.html",
+      "en": "Services",
+      "zh": "訂製零件"
+    },
+    {
       "href": "project.html",
-      "en": "Major Units",
+      "en": "Projects",
       "zh": "完整零件"
     },
     {
@@ -70,11 +75,6 @@
       "href": "takeaways.html",
       "en": "Takeaways",
       "zh": "打包帶走"
-    },
-    {
-      "href": "services.html",
-      "en": "Custom Parts",
-      "zh": "訂製零件"
     },
     {
       "href": "contact.html",

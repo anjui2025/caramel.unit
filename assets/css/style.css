@@ -1260,6 +1260,7 @@ section {
         flex-direction: column; /* 手機版改成直排，比較好閱讀 */
     }
     .ally-card {
+        flex: 0 0 auto;      /* 直排時主軸變垂直，280px 的 flex-basis 會變成高度 */
         max-width: 100%;     /* 卡片寬度佔滿 */
         border-radius: 12px; /* 手機版改回圓角矩形，視覺較整齊 */
     }
@@ -2715,6 +2716,45 @@ html { scroll-behavior: smooth; }
     font-size: 0.86rem; color: #999;
 }
 
+/* --- 能做什麼：卡片式，比條列顯眼 --- */
+.svc-cards {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 14px; margin-top: 4px;
+}
+.svc-card {
+    background: #fff;
+    border: 1px solid rgba(166, 123, 91, 0.2);
+    border-radius: 8px;
+    padding: 20px 20px 18px;
+    transition: all 0.3s ease;
+}
+.svc-card:hover {
+    border-color: var(--caramel);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(166, 123, 91, 0.12);
+}
+.svc-card i {
+    display: block; font-size: 1.35rem; color: var(--caramel);
+    margin-bottom: 10px; opacity: 0.85;
+}
+.svc-card h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem; font-weight: 600; color: var(--text-main);
+    margin-bottom: 6px;
+}
+.svc-card p { font-size: 0.85rem; line-height: 1.7; color: #777; }
+
+/* 第五張「其他」：橫跨整列、虛線框，表示它不是第五個分類而是開放邀請 */
+.svc-card--open {
+    grid-column: 1 / -1;
+    background: transparent;
+    border-style: dashed;
+    border-color: rgba(166, 123, 91, 0.35);
+}
+.svc-card--open:hover { background: rgba(255, 255, 255, 0.6); }
+
+.svc-done { margin-top: 30px; }
+
 /* --- 適合 / 不適合 --- */
 .svc-fit {
     display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
@@ -2817,6 +2857,33 @@ html { scroll-behavior: smooth; }
     text-decoration: line-through; text-decoration-color: rgba(166, 123, 91, 0.5);
 }
 
+/* --- 收合的補充說明（延長、續堂） --- */
+.svc-more { margin-top: 18px; }
+.svc-more summary {
+    cursor: pointer; list-style: none;
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 0.85rem; color: var(--caramel);
+    padding: 7px 0; transition: color 0.3s ease;
+}
+.svc-more summary::-webkit-details-marker { display: none; }
+.svc-more summary::before {
+    content: '+';
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 17px; height: 17px; border-radius: 50%;
+    border: 1px solid rgba(166, 123, 91, 0.45);
+    font-size: 0.78rem; line-height: 1;
+    transition: all 0.3s ease;
+}
+.svc-more[open] summary::before { content: '−'; background: var(--caramel); color: #fff; border-color: var(--caramel); }
+.svc-more summary:hover { color: var(--text-main); }
+
+.svc-more-body {
+    padding: 4px 0 2px 24px;
+    border-left: 1px solid rgba(166, 123, 91, 0.2);
+    margin-left: 8px;
+}
+.svc-more-body p { font-size: 0.86rem; line-height: 1.85; color: #777; margin-bottom: 12px; }
+
 /* --- 規格表 --- */
 .svc-spec {
     margin-top: 30px; border-top: 1px solid rgba(166, 123, 91, 0.15); padding-top: 8px;
@@ -2853,26 +2920,25 @@ html { scroll-behavior: smooth; }
 .svc-steps h3 { font-size: 0.97rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
 .svc-steps p { font-size: 0.88rem; line-height: 1.8; color: #666; }
 
-/* Line 按鈕：用官方品牌綠，在整頁米色調裡最跳，讓人一眼看到 */
+/* Line 按鈕：用站上原本的主按鈕樣式，品牌綠在米色調裡太跳 */
 .btn-line {
-    background: #06C755; color: #fff; border: 1px solid #06C755;
+    background: var(--text-main); color: #fff; border: 1px solid var(--text-main);
     font-weight: 500;
-    box-shadow: 0 6px 16px rgba(6, 199, 85, 0.25);
 }
 .btn-line:hover {
-    background: #05b34c; border-color: #05b34c;
+    background: var(--caramel); border-color: var(--caramel);
     transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(6, 199, 85, 0.32);
+    box-shadow: 0 10px 22px rgba(166, 123, 91, 0.2);
 }
 .btn-line i { font-size: 1.05rem; }
 
 /* 步驟一裡的 Line 連結 */
 .svc-steps h3 a {
-    color: #06C755; text-decoration: none;
-    border-bottom: 1px solid rgba(6, 199, 85, 0.45);
+    color: var(--caramel); text-decoration: none;
+    border-bottom: 1px solid rgba(166, 123, 91, 0.45);
     padding-bottom: 1px; transition: all 0.3s ease;
 }
-.svc-steps h3 a:hover { color: #05b34c; border-color: #05b34c; }
+.svc-steps h3 a:hover { color: var(--text-main); border-color: var(--text-main); }
 
 .svc-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .svc-btn {
@@ -2885,8 +2951,11 @@ html { scroll-behavior: smooth; }
     .svc-container { padding: 40px 20px; }
     .svc-item { padding: 26px 20px 22px; }
     .svc-cols, .svc-fit { grid-template-columns: 1fr; gap: 24px; }
+    .svc-cards { grid-template-columns: 1fr; gap: 12px; }
     .svc-plans { grid-template-columns: 1fr; }
     .svc-combo { flex-direction: column; align-items: flex-start; padding: 22px 20px; }
+    /* 直排時主軸變垂直，380px 的 flex-basis 會變成高度，要關掉 */
+    .svc-combo-main { flex: 0 0 auto; }
     .svc-combo-price { text-align: left; }
     .svc-head { gap: 12px; }
     .svc-title { font-size: 1.25rem; }
