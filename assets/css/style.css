@@ -2636,7 +2636,7 @@ html { scroll-behavior: smooth; }
 
 .svc-container {
     padding: 80px 5%;
-    width: 100%; max-width: 980px; margin: 0 auto;
+    width: 100%; max-width: 1200px; margin: 0 auto;
     text-align: left;
 }
 .svc-container .page-header { text-align: center; }
@@ -2646,7 +2646,7 @@ html { scroll-behavior: smooth; }
     background: rgba(255, 255, 255, 0.72);
     border: 1px solid rgba(166, 123, 91, 0.18);
     border-radius: 10px;
-    padding: 36px 34px 30px;
+    padding: 36px 48px 32px;
     margin-bottom: 28px;
     transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
@@ -2660,6 +2660,34 @@ html { scroll-behavior: smooth; }
     background: #fff;
     border-left: 3px solid var(--caramel);
 }
+
+/* --- 服務區塊的橫幅圖：滿版貼齊卡片邊緣，上緣跟著卡片圓角 --- */
+.svc-banner {
+    display: block;
+    margin: -36px -48px 26px;          /* 抵銷 .svc-item 的內距，做成滿版 */
+    border-radius: 9px 9px 0 0;
+    overflow: hidden;
+    background: #F2EBE5;
+}
+.svc-banner img {
+    width: 100%; height: auto; display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.svc-item:hover .svc-banner img { transform: scale(1.015); }
+
+/* 橫幅圖裡已經有編號、標題與說明了，文字版視覺上隱藏，
+   但保留在 DOM 裡給螢幕閱讀器與搜尋引擎讀（h2 的層級不能少） */
+.svc-banner + .svc-head {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+/* 標題被隱藏後，內文自己補回上緣間距 */
+.svc-banner ~ .svc-body { padding-top: 2px; }
 
 .svc-head {
     display: flex; align-items: flex-start; gap: 18px;
@@ -2950,6 +2978,7 @@ html { scroll-behavior: smooth; }
 @media (max-width: 768px) {
     .svc-container { padding: 40px 20px; }
     .svc-item { padding: 26px 20px 22px; }
+    .svc-banner { margin: -26px -20px 20px; border-radius: 9px 9px 0 0; }
     .svc-cols, .svc-fit { grid-template-columns: 1fr; gap: 24px; }
     .svc-cards { grid-template-columns: 1fr; gap: 12px; }
     .svc-plans { grid-template-columns: 1fr; }
