@@ -898,6 +898,28 @@ section {
 }
 .lightbox-close:hover { transform: rotate(90deg); }
 
+.lightbox-caption {
+    margin: 14px 0 0; text-align: center; color: #F2EBE5;
+    font-size: 0.95rem; letter-spacing: 0.03em;
+}
+.lightbox-caption[hidden] { display: none; }
+
+.lightbox-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.35); border: none; color: #fff;
+    width: 44px; height: 44px; border-radius: 50%; font-size: 1.3rem;
+    cursor: pointer; transition: background 0.2s;
+}
+.lightbox-nav:hover { background: rgba(0,0,0,0.65); }
+.lightbox-nav[hidden] { display: none; }
+.lightbox-prev { left: -60px; }
+.lightbox-next { right: -60px; }
+
+@media (max-width: 768px) {
+    .lightbox-prev { left: 4px; }
+    .lightbox-next { right: 4px; }
+}
+
 /* RWD */
 @media (max-width: 768px) {
     .gallery-container { padding: 40px 20px; }

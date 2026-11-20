@@ -1,0 +1,258 @@
+<!--meta
+title: 薛西佛斯・用 Canva 做一個工作室網站
+description: 陪一間台中的身心靈工作室，用三小時把網站做出來並上線。先用紙筆決定網站有哪幾塊，再用手機在 Canva 一起填完、發布。交付的不是一個網站，是一個她自己改得動的網站。
+nav: project.html
+cta: true
+libs: lightbox
+include: scrollspy
+og_image: assets/img/og/lecture-sisyphean.jpg
+date: 2026.11
+-->
+
+<style>
+/* 捲動優化 */
+        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+        body { overflow-y: visible; }
+        .main-stage { overflow: visible !important; }
+
+        /* 直式手機截圖：限寬置中，避免被撐成過高的巨圖 */
+        .shot-portrait {
+            display: block;
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 這頁專屬：懸浮 CTA，靠右下，疊在回到頂端按鈕下面 */
+        .float-cta {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            z-index: 1500;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 14px 26px;
+            border-radius: 40px;
+            background: var(--text-main);
+            border: 1px solid var(--text-main);
+            color: #f7f5f2;
+            font-size: 0.98rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 10px 28px rgba(42, 42, 42, 0.28);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(16px);
+            transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.3s ease;
+        }
+        .float-cta.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .float-cta:hover {
+            background: var(--caramel);
+            border-color: var(--caramel);
+            color: #fff;
+        }
+        .float-cta i { font-size: 1.15rem; }
+
+        /* 回到頂端往上讓位，變成上下疊在同一欄 */
+        .back-to-top { bottom: 98px; }
+
+        @media (max-width: 768px) {
+            .float-cta {
+                right: 20px;
+                bottom: 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            .back-to-top { bottom: 82px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .float-cta { transition: opacity 0.2s ease; transform: none; }
+            .float-cta.show { transform: none; }
+        }
+</style>
+
+<div class="case-header">
+            <h1 class="case-title">薛西佛斯・用 Canva 做一個工作室網站</h1>
+            <p class="case-subtitle">Her Site, Her Phone, Her Hands</p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <h4>Type</h4>
+                    <p>一對一教學／網站架構規劃</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Role</h4>
+                    <p>規劃與帶做</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Date</h4>
+                    <p>2026.11 · 三小時</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Tools</h4>
+                    <p>Canva 網站, 手機</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-toc" id="mobileToc">
+            <a href="#intro" class="mobile-toc-link">簡介</a>
+            <a href="#prep" class="mobile-toc-link">準備</a>
+            <a href="#limits" class="mobile-toc-link">限制與取捨</a>
+            <a href="#result" class="mobile-toc-link">成果</a>
+            <a href="#gallery" class="mobile-toc-link">畫面</a>
+        </div>
+
+        <div class="content-wrapper">
+
+            <aside class="toc-sidebar">
+                <a href="#intro" class="toc-link">這堂課在做什麼</a>
+                <a href="#prep" class="toc-link">一開始的各種準備</a>
+                <a href="#limits" class="toc-link">限制與取捨</a>
+                <a href="#result" class="toc-link">成果與交付</a>
+                <a href="#gallery" class="toc-link">畫面</a>
+            </aside>
+
+            <article class="article-content">
+
+                <section id="intro" class="article-section">
+                    <h2 class="section-title">這堂課在做什麼</h2>
+                    <p>
+                        <strong>薛西佛斯</strong>是台中的一間身心靈工作室，做療癒服務與手作體驗課，
+                        客人大多從 Instagram 來。她原本的問題很具體：IG 簡介只能放一個連結，
+                        但她有十幾個服務、每個都有不同的時長和價格，貼文一往下滑就不見了。
+                    </p>
+                    <p>
+                        這是一堂三小時的一對一課，我們在三小時內把網站做出來、發布上線：
+                        <a href="https://sisyphean2021.my.canva.site/" target="_blank" rel="noopener">sisyphean2021.my.canva.site</a>。
+                    </p>
+                    <blockquote>
+                        她要的不是一個設計師做的網站，<br>
+                        是一個她自己可以改的網站。
+                    </blockquote>
+                    <p>
+                        老實說，如果交給我維護、交給我幫她做網站，那我可以收維護與更新的費用，
+                        但是我同時也知道，其實這對一個一個人經營的工作室來說，那是個長期的支出。
+                        外加一個小小的困難點是她目前擁有的設備只有手機，
+                        所以這個案子的交付物不是網站檔案，是「她能自己維護的能力」，
+                        而網站只是那堂課結束時剛好能實際帶走的東西。
+                    </p>
+                    <img src="assets/img/sisyphean/01-hero.jpg" alt="薛西佛斯網站首頁：工作室名稱、一句話介紹與立即預約按鈕" class="article-img" width="800" height="500">
+                    <p class="caption">上線後的首頁</p>
+                </section>
+
+                <section id="prep" class="article-section">
+                    <h2 class="section-title">一開始的各種準備</h2>
+                    <p>
+                        我們一開始並不是直接開始做網站，而是從簡單的 Canva 教學開始。
+                        不過因為她自己有使用過，所以我們很快速地帶過，
+                        只有稍微複習一下，並且帶到今天會用到的工具。
+                    </p>
+                    <p>
+                        再來我們就一起討論 IA，用討論與紙本畫圖的方式，去建構出她想要呈現的內容。
+                        很開心她自己有很多想法，所以這塊我們也很順利地討論出她想要的樣子。
+                    </p>
+                    <p>
+                        因為我自己本身就是做 UI/UX，我從旁告訴她或許可以改成什麼樣的樣式、
+                        或是還有什麼其他呈現方式可能更適合，讓她多一點選項去做選擇。
+                    </p>
+                    <p>
+                        這張紙最後我請她拍照留著。她之後要新增課程時，照著它擴充就好。
+                    </p>
+                </section>
+
+                <section id="limits" class="article-section">
+                    <h2 class="section-title">限制與取捨</h2>
+                    <p>
+                        這次稍微比較困難的限制是：她目前的設備只有手機，
+                        並且希望將花的錢降到最低——她最終想要的，只是一個簡單的介紹網站。
+                    </p>
+                    <p>
+                        所以縱使我知道有很多其他的工具可以呈現得更好、可以做出更多不同花樣，
+                        我最後還是選擇 Canva 這個工具。
+                        因為我希望找到一個只要三個小時她就可以上手、就可以自己做後續修改，
+                        <strong>真正適合她的工具。</strong>
+                    </p>
+                </section>
+
+                <section id="result" class="article-section">
+                    <h2 class="section-title">成果與交付</h2>
+                    <p>
+                        三小時結束時，網站已經發布在
+                        <a href="https://sisyphean2021.my.canva.site/" target="_blank" rel="noopener">sisyphean2021.my.canva.site</a>，
+                        現在上面有十二個服務、九項療癒服務與三堂體驗課，每一項都有說明、時長、價格與預約按鈕，
+                        還有關於我們、環境照片與預約須知。
+                    </p>
+                    <p>
+                        當天我們完成了大約九成的區塊，整體架構與圖片、文字都加上去了，
+                        最後有些區塊我有給她一些建議可以怎麼增加，
+                        並且確認她知道怎麼發布、怎麼更改等等的。
+                    </p>
+                    <p>
+                        網站最上面那條「最新消息」是刻意留的位置——
+                        放當週的駐點資訊，是整個網站最需要被經常更新的一塊，
+                        所以它被放在最顯眼、也最好改的地方。
+                    </p>
+                </section>
+
+                <section id="gallery" class="article-section">
+                    <h2 class="section-title">畫面</h2>
+                    <div class="project-gallery">
+                        <a href="assets/img/sisyphean/01-hero.jpg" data-lightbox="sisyphean" data-title="首頁首屏" class="gallery-thumb"><img src="assets/img/sisyphean/01-hero.jpg" alt="網站首頁首屏" loading="lazy" decoding="async" width="800" height="500"></a>
+                        <a href="assets/img/sisyphean/02-courses.jpg" data-lightbox="sisyphean" data-title="課程一覽" class="gallery-thumb"><img src="assets/img/sisyphean/02-courses.jpg" alt="課程一覽區塊" loading="lazy" decoding="async" width="800" height="500"></a>
+                        <a href="assets/img/sisyphean/04-detail.jpg" data-lightbox="sisyphean" data-title="課程詳細介紹" class="gallery-thumb"><img src="assets/img/sisyphean/04-detail.jpg" alt="課程詳細介紹區塊：一張主圖、一段說明、時長價格與預約按鈕" loading="lazy" decoding="async" width="800" height="500"></a>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="project.html" class="back-btn">← 返回完整零件</a>
+        </div>
+
+<!--body-suffix-->
+<a class="float-cta" id="floatCta" href="https://line.me/R/ti/p/@095xzwqa" target="_blank" rel="noopener">
+    <i class="bi bi-line" aria-hidden="true"></i> 我也想要做自己的網站！
+</a>
+<!--/body-suffix-->
+
+<script>
+(function () {
+    var cta = document.getElementById('floatCta');
+    if (!cta) return;
+
+    // 捲過 300px 才浮出來，跟「回到頂端」同一個門檻
+    function toggle() {
+        if (window.scrollY > 300) cta.classList.add('show');
+        else cta.classList.remove('show');
+    }
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+
+    // 手機上改用 oaMessage：直接開啟對話並把訊息打好，對方按送出就好。
+    // 這個 scheme 只支援 iOS / Android 的 LINE，電腦版維持原本的 ti/p（會顯示 QR code）。
+    var LINE_ID = '%40095xzwqa';
+    var MSG = '我在你的網站看到薛西佛斯的案例，我也想做一個自己的網站';
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        cta.href = 'https://line.me/R/oaMessage/' + LINE_ID + '/?' + encodeURIComponent(MSG);
+    }
+
+    // 記一筆事件，之後在 GA 看得到有多少人從這頁按下去
+    cta.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+            gtag('event', 'line_cta_click', {
+                event_category: 'cta',
+                event_label: 'lecture-sisyphean'
+            });
+        }
+    });
+})();
+</script>

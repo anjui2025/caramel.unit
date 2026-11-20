@@ -29,6 +29,7 @@
   "cta_lead": "如果你手上也有一個還沒被說清楚的東西，<br>歡迎找我聊聊。",
   "case_order": [
     "project-checkin.html",
+    "lecture-sisyphean.html",
     "project-chaos.html",
     "lecture-tunghai.html",
     "project-bowling.html",
@@ -103,9 +104,7 @@
   ],
   "libs": {
     "lightbox": {
-      "css": "https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css",
-      "js": "https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js",
-      "init": "if (window.lightbox) lightbox.option({ resizeDuration: 200, wrapAround: true, albumLabel: '作品 %1 / %2' });"
+      "js": "assets/js/lightbox.js"
     },
     "swiper": {
       "css": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",

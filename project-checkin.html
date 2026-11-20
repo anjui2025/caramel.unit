@@ -91,7 +91,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css">
+    
     <style>
 /* 捲動優化 */
         html { scroll-behavior: smooth; scroll-padding-top: 140px; }
@@ -389,7 +389,7 @@
             <a href="contact.html" class="case-cta-btn primary hover-target">聊聊你的需求</a>
             <a href="resume.html" class="case-cta-btn hover-target">看完整履歷</a>
         </div>
-        <p class="case-cta-next">看下一個案例：<a href="project-chaos.html" class="hover-target">創新之路・混沌漫游 →</a></p>
+        <p class="case-cta-next">看下一個案例：<a href="lecture-sisyphean.html" class="hover-target">薛西佛斯・用 Canva 做一個工作室網站 →</a></p>
     </section>
 
 
@@ -413,7 +413,7 @@
     </button>
 
 </main>
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+<script src="assets/js/lightbox.js"></script>
 <script>
     // 手機版選單開關（用 class 切換，動畫交給 CSS）
     (function () {
@@ -527,8 +527,6 @@
     })();
 </script>
 <script>
-if (window.lightbox) lightbox.option({ resizeDuration: 200, wrapAround: true, albumLabel: '作品 %1 / %2' });
-
 // 長文頁側邊目錄：捲動時自動高亮當前段落
 (function () {
     var sections = document.querySelectorAll('.article-section');
